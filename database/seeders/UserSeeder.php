@@ -50,12 +50,13 @@ class UserSeeder extends Seeder
         $env = env('APP_ENV');
         if (str_contains($env, 'prod')) return;
 
-        $user = User::factory()
-            ->count(1)
-            ->create([
-                'email' => 'admin@admin.com',
-                'password' => \Hash::make('admin'),
-            ]);
+        $user = User::create([
+            'name' => 'Admin',
+            'email' => 'admin@admin.com',
+            'password' => \Hash::make('admin'),
+            'email_verified_at' => now(),
+            'remember_token' => Str::random(10),
+        ]);
         $user->assignRole($adminRole);
     }
 }
