@@ -13,8 +13,8 @@ class ShipTypeSeeder extends Seeder
     public function run(): void
     {
         ShipType::insert([
-            ['name' => 'Tugboat'],
-            ['name' => 'Tongkang'],
+            ['name' => 'Tug Boat'],
+            ['name' => 'Barge'],
         ]);
     }
 }
