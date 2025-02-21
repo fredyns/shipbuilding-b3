@@ -12,8 +12,10 @@ class ShipyardSeeder extends Seeder
      */
     public function run(): void
     {
-        Shipyard::factory()
-            ->count(5)
-            ->create();
+        Shipyard::insert([
+            ['name' => 'Sagulung'],
+            ['name' => 'Tj.Uncang'],
+            ['name' => 'Sekupang'],
+        ]);
     }
 }
