@@ -12,8 +12,9 @@ class ShipTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        ShipType::factory()
-            ->count(5)
-            ->create();
+        ShipType::insert([
+            ['name' => 'Tugboat'],
+            ['name' => 'Tongkang'],
+        ]);
     }
 }

@@ -11,12 +11,19 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // system
+
         $this->call(PermissionsSeeder::class);
+        $this->call(UserSeeder::class);
+
+        // master tables
+
+        $this->call(ShipTypeSeeder::class);
+        $this->call(ShipyardSeeder::class);
+
+        // activities
 
         $this->call(ShipbuildingSeeder::class);
         $this->call(ShipbuildingTaskSeeder::class);
-        $this->call(ShipTypeSeeder::class);
-        $this->call(ShipyardSeeder::class);
-        $this->call(UserSeeder::class);
     }
 }
