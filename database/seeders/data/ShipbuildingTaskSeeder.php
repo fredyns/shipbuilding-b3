@@ -88,7 +88,7 @@ return [
     ["id" => "86", "level" => "3", "parent_task_id" => "54", "name" => "GAS LPG BOX", "weight" => "0.50", "sub_tasks_count" => "0", "sub_tasks_weight_sum" => "0.00"],
     ["id" => "87", "level" => "3", "parent_task_id" => "54", "name" => "ENGINE ROOM FLOORING ", "weight" => "0.50", "sub_tasks_count" => "0", "sub_tasks_weight_sum" => "0.00"],
     ["id" => "88", "level" => "3", "parent_task_id" => "1", "name" => "CUTTING PLAN", "weight" => "6.00", "sub_tasks_count" => "0", "sub_tasks_weight_sum" => "0.00"],
-    ["id" => "89", "level" => "1", "parent_task_id" => null, "name" => "Engineering & Design", "weight" => "15.00", "sub_tasks_count" => "15", "sub_tasks_weight_sum" => "100.00"],
+    ["id" => "89", "level" => "1", "parent_task_id" => null, "name" => "Procurement", "weight" => "15.00", "sub_tasks_count" => "15", "sub_tasks_weight_sum" => "100.00"],
     ["id" => "90", "level" => "2", "parent_task_id" => "89", "name" => "MAIN MATERIALS FOR CONTRUCTION", "weight" => "8.00", "sub_tasks_count" => "0", "sub_tasks_weight_sum" => "0.00"],
     ["id" => "91", "level" => "2", "parent_task_id" => "89", "name" => "MATERIALS PIPE FOR PIPING SYSTEM", "weight" => "3.00", "sub_tasks_count" => "0", "sub_tasks_weight_sum" => "0.00"],
     ["id" => "92", "level" => "2", "parent_task_id" => "89", "name" => "MATERIALS  ACC FOR PIPING SYSTEM", "weight" => "2.00", "sub_tasks_count" => "0", "sub_tasks_weight_sum" => "0.00"],

@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-use Datetime;
-use Snippet\Helpers\JsonField;
 use App\Models\Scopes\Searchable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Datetime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * This is the model class for table "shipbuildings".
@@ -78,5 +76,24 @@ class Shipbuilding extends Model
     public function shipbuildingTasks()
     {
         return $this->hasMany(ShipbuildingTask::class);
+    }
+
+    protected $tasksFamily;
+
+    /**
+     * @param ShipbuildingTask|null $parentTask
+     * @return \Generator
+     */
+    public function breakdownTasks(ShipbuildingTask|null $parentTask = null)
+    {
+        if (!is_array($this->tasksFamily)) {
+            foreach ($this->shipbuildingTasks as $shipbuildingTask) {
+                $parentID = (int)$shipbuildingTask->parent_task_id;
+                $this->tasksFamily[$parentID][$shipbuildingTask->id] = $shipbuildingTask;
+            }
+        }
+
+        $parentID = (int)optional($parentTask)->id;
+        return $this->tasksFamily[$parentID] ?? [];
     }
 }

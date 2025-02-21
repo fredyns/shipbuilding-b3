@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-use Datetime;
-use Snippet\Helpers\JsonField;
 use App\Models\Scopes\Searchable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Snippet\Helpers\JsonField;
 
 /**
  * This is the model class for table "shipbuilding_tasks".
@@ -102,5 +100,10 @@ class ShipbuildingTask extends Model
     public function shipbuildingTasks()
     {
         return $this->hasMany(ShipbuildingTask::class, 'parent_task_id');
+    }
+
+    public function children()
+    {
+        return $this->shipbuilding->breakdownTasks($this);
     }
 }
