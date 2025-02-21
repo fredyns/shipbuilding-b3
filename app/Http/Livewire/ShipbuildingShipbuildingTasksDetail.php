@@ -156,9 +156,7 @@ class ShipbuildingShipbuildingTasksDetail extends Component
     public function render(): View
     {
         return view('livewire.shipbuilding-shipbuilding-tasks-detail', [
-            'shipbuildingTasks' => $this->shipbuilding
-                ->shipbuildingTasks()
-                ->paginate(100),
+            'shipbuildingTasks' => $this->shipbuilding->breakdownTasks(),
         ]);
     }
 }
