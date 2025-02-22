@@ -15,6 +15,7 @@ use Snippet\Helpers\JsonField;
  * @property string $level
  * @property string $sort_order
  * @property string $parent_task_id
+ * @property string $item_type
  * @property string $name
  * @property string $description
  * @property float $weight
@@ -50,6 +51,7 @@ class ShipbuildingTask extends Model
         'level',
         'sort_order',
         'parent_task_id',
+        'item_type',
         'name',
         'description',
         'weight',

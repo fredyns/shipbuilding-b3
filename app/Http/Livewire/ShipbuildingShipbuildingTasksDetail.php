@@ -26,6 +26,7 @@ class ShipbuildingShipbuildingTasksDetail extends Component
     public $modalTitle = 'New ShipbuildingTask';
 
     protected $rules = [
+        'shipbuildingTask.item_type' => ['required', 'in:work-item,category'],
         'shipbuildingTask.name' => ['required', 'max:255', 'string'],
         'shipbuildingTask.description' => ['nullable', 'max:255', 'string'],
         'shipbuildingTask.weight' => ['required', 'numeric'],
@@ -44,6 +45,8 @@ class ShipbuildingShipbuildingTasksDetail extends Component
     public function resetShipbuildingTaskData(): void
     {
         $this->shipbuildingTask = new ShipbuildingTask();
+
+        $this->shipbuildingTask->item_type = 'work-item';
 
         $this->dispatchBrowserEvent('refresh');
     }

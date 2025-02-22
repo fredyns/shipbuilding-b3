@@ -95,6 +95,17 @@
             <div class="mt-5">
                 <div class="flex flex-wrap">
                     <x-inputs.group class="w-full">
+                        <x-inputs.select
+                            name="shipbuildingTask.item_type"
+                            wire:model="shipbuildingTask.item_type"
+                            label="{{ __('crud.shipbuilding_tasks.inputs.item_type') }}"
+                        >
+                            <option value="work-item" {{ $selected == 'work-item' ? 'selected' : '' }} >Work item
+                            </option>
+                            <option value="category" {{ $selected == 'category' ? 'selected' : '' }} >Category</option>
+                        </x-inputs.select>
+                    </x-inputs.group>
+                    <x-inputs.group class="w-full">
                         <x-inputs.text
                             name="shipbuildingTask.name"
                             wire:model="shipbuildingTask.name"

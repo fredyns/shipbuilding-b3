@@ -25,6 +25,7 @@ class ShipbuildingTaskFactory extends Factory
         return [
             'level' => $this->faker->randomNumber(),
             'sort_order' => $this->faker->randomNumber(0),
+            'item_type' => 'work-item',
             'name' => $this->faker->name(),
             'description' => $this->faker->sentence(15),
             'weight' => $this->faker->randomNumber(1),

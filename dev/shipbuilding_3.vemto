@@ -6702,7 +6702,8 @@
                                 3017,
                                 3018,
                                 3019,
-                                3020
+                                3020,
+                                3021
                             ]
                         },
                         "hasOne": {},
@@ -11807,6 +11808,7 @@
                                 3799,
                                 3800,
                                 3801,
+                                3820,
                                 3802,
                                 3803,
                                 3804,
@@ -11901,7 +11903,7 @@
                 "oldForeignsMigrationName": null,
                 "id": 397,
                 "createdAt": "2025-02-13 10:41:14",
-                "updatedAt": "2025-02-20 20:40:14"
+                "updatedAt": "2025-02-22 10:27:48"
             },
             "item_391": {
                 "__returnRelationsAutomatically": true,
@@ -11984,8 +11986,8 @@
         },
         "fields": {
             "fields": {
-                "count": 1635,
-                "lastPrimaryKey": 3819,
+                "count": 1636,
+                "lastPrimaryKey": 3820,
                 "index": {
                     "1": {
                         "hasMany": {},
@@ -27670,6 +27672,16 @@
                         "hasOne": {},
                         "belongsTo": {},
                         "belongsToMany": {}
+                    },
+                    "3820": {
+                        "hasMany": {
+                            "inputs.fieldId": [
+                                3021
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
                     }
                 },
                 "additionalIndexes": {},
@@ -28078,7 +28090,7 @@
                 "unique": false,
                 "id": 3797,
                 "createdAt": "2025-02-13 10:41:14",
-                "updatedAt": "2025-02-20 20:14:30",
+                "updatedAt": "2025-02-22 10:28:42",
                 "order": 0
             },
             "item_3798": {
@@ -28103,7 +28115,7 @@
                 "unique": false,
                 "id": 3798,
                 "createdAt": "2025-02-13 10:41:46",
-                "updatedAt": "2025-02-20 20:14:30",
+                "updatedAt": "2025-02-22 10:28:42",
                 "order": 1
             },
             "item_3799": {
@@ -28127,7 +28139,7 @@
                 "order": 2,
                 "id": 3799,
                 "createdAt": "2025-02-13 10:42:26",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3800": {
                 "__returnRelationsAutomatically": true,
@@ -28152,7 +28164,7 @@
                 "order": 3,
                 "id": 3800,
                 "createdAt": "2025-02-13 10:42:38",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3801": {
                 "__returnRelationsAutomatically": true,
@@ -28176,8 +28188,36 @@
                 "unique": false,
                 "id": 3801,
                 "createdAt": "2025-02-13 10:43:27",
-                "updatedAt": "2025-02-20 20:14:30",
+                "updatedAt": "2025-02-22 10:28:42",
                 "order": 4
+            },
+            "item_3820": {
+                "__returnRelationsAutomatically": true,
+                "__saveDataToStorage": true,
+                "__onUpdateListener": null,
+                "__customEventsEnabled": false,
+                "name": "item_type",
+                "entityId": 397,
+                "type": "enum",
+                "pk": false,
+                "fk": false,
+                "params": {
+                    "options": [
+                        "work-item",
+                        "category"
+                    ]
+                },
+                "faker": "'{DEFAULT_OR_FIRST}'",
+                "nullable": false,
+                "hidden": false,
+                "fillable": true,
+                "defaultValue": "work-item",
+                "index": false,
+                "unique": false,
+                "order": 5,
+                "id": 3820,
+                "createdAt": "2025-02-22 10:27:51",
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3802": {
                 "__returnRelationsAutomatically": true,
@@ -28197,10 +28237,10 @@
                 "defaultValue": null,
                 "index": false,
                 "unique": false,
-                "order": 5,
+                "order": 6,
                 "id": 3802,
                 "createdAt": "2025-02-13 10:43:32",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3803": {
                 "__returnRelationsAutomatically": true,
@@ -28220,10 +28260,10 @@
                 "defaultValue": null,
                 "index": false,
                 "unique": false,
-                "order": 6,
+                "order": 7,
                 "id": 3803,
                 "createdAt": "2025-02-13 10:45:21",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3804": {
                 "__returnRelationsAutomatically": true,
@@ -28247,10 +28287,10 @@
                 "defaultValue": "0",
                 "index": false,
                 "unique": false,
-                "order": 7,
+                "order": 8,
                 "id": 3804,
                 "createdAt": "2025-02-13 10:43:47",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3805": {
                 "__returnRelationsAutomatically": true,
@@ -28272,10 +28312,10 @@
                 "defaultValue": "0",
                 "index": false,
                 "unique": false,
-                "order": 8,
+                "order": 9,
                 "id": 3805,
                 "createdAt": "2025-02-20 19:03:35",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3807": {
                 "__returnRelationsAutomatically": true,
@@ -28300,7 +28340,7 @@
                 "order": 10,
                 "id": 3807,
                 "createdAt": "2025-02-13 10:47:42",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3808": {
                 "__returnRelationsAutomatically": true,
@@ -28327,7 +28367,7 @@
                 "order": 11,
                 "id": 3808,
                 "createdAt": "2025-02-13 10:47:46",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3809": {
                 "__returnRelationsAutomatically": true,
@@ -28354,7 +28394,7 @@
                 "order": 12,
                 "id": 3809,
                 "createdAt": "2025-02-13 10:47:26",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3810": {
                 "__returnRelationsAutomatically": true,
@@ -28381,7 +28421,7 @@
                 "order": 13,
                 "id": 3810,
                 "createdAt": "2025-02-13 10:50:35",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3811": {
                 "__returnRelationsAutomatically": true,
@@ -28408,7 +28448,7 @@
                 "order": 14,
                 "id": 3811,
                 "createdAt": "2025-02-13 10:51:49",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3813": {
                 "__returnRelationsAutomatically": true,
@@ -28430,10 +28470,10 @@
                 "defaultValue": "0",
                 "index": false,
                 "unique": false,
-                "order": 16,
+                "order": 15,
                 "id": 3813,
                 "createdAt": "2025-02-13 10:49:55",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3814": {
                 "__returnRelationsAutomatically": true,
@@ -28457,10 +28497,10 @@
                 "defaultValue": "0",
                 "index": false,
                 "unique": false,
-                "order": 17,
+                "order": 16,
                 "id": 3814,
                 "createdAt": "2025-02-13 10:50:23",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3815": {
                 "__returnRelationsAutomatically": true,
@@ -28484,10 +28524,10 @@
                 "defaultValue": "0",
                 "index": false,
                 "unique": false,
-                "order": 18,
+                "order": 17,
                 "id": 3815,
                 "createdAt": "2025-02-13 14:42:13",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3816": {
                 "__returnRelationsAutomatically": true,
@@ -28511,10 +28551,10 @@
                 "defaultValue": "0",
                 "index": false,
                 "unique": false,
-                "order": 19,
+                "order": 18,
                 "id": 3816,
                 "createdAt": "2025-02-13 10:52:08",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3817": {
                 "__returnRelationsAutomatically": true,
@@ -28538,10 +28578,10 @@
                 "defaultValue": "0",
                 "index": false,
                 "unique": false,
-                "order": 20,
+                "order": 19,
                 "id": 3817,
                 "createdAt": "2025-02-13 10:54:08",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3818": {
                 "__returnRelationsAutomatically": true,
@@ -28565,10 +28605,10 @@
                 "defaultValue": "0",
                 "index": false,
                 "unique": false,
-                "order": 21,
+                "order": 20,
                 "id": 3818,
                 "createdAt": "2025-02-13 10:52:30",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3819": {
                 "__returnRelationsAutomatically": true,
@@ -28590,10 +28630,10 @@
                 "defaultValue": null,
                 "index": false,
                 "unique": false,
-                "order": 22,
+                "order": 21,
                 "id": 3819,
                 "createdAt": "2025-02-14 11:51:33",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:28:42"
             },
             "item_3763": {
                 "__returnRelationsAutomatically": true,
@@ -31058,8 +31098,8 @@
         },
         "inputs": {
             "inputs": {
-                "count": 1116,
-                "lastPrimaryKey": 3020,
+                "count": 1117,
+                "lastPrimaryKey": 3021,
                 "index": {
                     "1": {
                         "hasMany": {},
@@ -37756,6 +37796,12 @@
                         "hasOne": {},
                         "belongsTo": {},
                         "belongsToMany": {}
+                    },
+                    "3021": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
                     }
                 },
                 "additionalIndexes": {},
@@ -38509,6 +38555,67 @@
                 "createdAt": "2025-02-13 11:21:12",
                 "updatedAt": "2025-02-20 20:14:28"
             },
+            "item_3021": {
+                "__returnRelationsAutomatically": true,
+                "__saveDataToStorage": true,
+                "__onUpdateListener": null,
+                "__customEventsEnabled": false,
+                "crudId": 390,
+                "fieldId": 3820,
+                "relationshipId": null,
+                "relationshipCollectionName": null,
+                "foreignId": null,
+                "foreignCollectionName": null,
+                "livewireSelectVariableName": null,
+                "name": "item_type",
+                "label": "Item Type",
+                "placeholder": "Item Type",
+                "order": 0,
+                "cols": 12,
+                "colsMedium": 12,
+                "colsLarge": 12,
+                "readOnly": false,
+                "required": true,
+                "defaultValue": "work-item",
+                "starterOptionText": "",
+                "isComputed": false,
+                "computedFormula": null,
+                "showComputedOnLivewireForm": false,
+                "livewireInputReference": "shipbuildingTask.item_type",
+                "type": "select",
+                "checked": false,
+                "max": 255,
+                "min": null,
+                "step": null,
+                "items": [
+                    {
+                        "value": "work-item",
+                        "label": "Work item"
+                    },
+                    {
+                        "value": "category",
+                        "label": "Category"
+                    }
+                ],
+                "dependentSelectItems": {},
+                "validation": [
+                    "required",
+                    "in:work-item,category"
+                ],
+                "updateValidation": [
+                    "required",
+                    "in:work-item,category"
+                ],
+                "onCreate": true,
+                "onUpdate": true,
+                "onShow": false,
+                "onIndex": false,
+                "onForms": true,
+                "dependentSelectId": null,
+                "id": 3021,
+                "createdAt": "2025-02-22 10:29:41",
+                "updatedAt": "2025-02-22 10:31:00"
+            },
             "item_3014": {
                 "__returnRelationsAutomatically": true,
                 "__saveDataToStorage": true,
@@ -38524,7 +38631,7 @@
                 "name": "name",
                 "label": "Name",
                 "placeholder": "Name",
-                "order": 5,
+                "order": 1,
                 "cols": 12,
                 "colsMedium": 12,
                 "colsLarge": 12,
@@ -38561,7 +38668,7 @@
                 "dependentSelectId": null,
                 "id": 3014,
                 "createdAt": "2025-02-14 15:16:42",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:29:46"
             },
             "item_3015": {
                 "__returnRelationsAutomatically": true,
@@ -38578,7 +38685,7 @@
                 "name": "description",
                 "label": "Description",
                 "placeholder": "Description",
-                "order": 6,
+                "order": 2,
                 "cols": 12,
                 "colsMedium": 12,
                 "colsLarge": 12,
@@ -38615,7 +38722,7 @@
                 "dependentSelectId": null,
                 "id": 3015,
                 "createdAt": "2025-02-14 15:16:42",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:29:46"
             },
             "item_3016": {
                 "__returnRelationsAutomatically": true,
@@ -38632,7 +38739,7 @@
                 "name": "weight",
                 "label": "Weight",
                 "placeholder": "Weight",
-                "order": 7,
+                "order": 3,
                 "cols": 12,
                 "colsMedium": 12,
                 "colsLarge": 12,
@@ -38667,7 +38774,7 @@
                 "dependentSelectId": null,
                 "id": 3016,
                 "createdAt": "2025-02-14 15:16:42",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:29:46"
             },
             "item_3017": {
                 "__returnRelationsAutomatically": true,
@@ -38684,7 +38791,7 @@
                 "name": "progress_options",
                 "label": "Progress Options",
                 "placeholder": "Progress Options",
-                "order": 8,
+                "order": 4,
                 "cols": 12,
                 "colsMedium": 12,
                 "colsLarge": 12,
@@ -38721,7 +38828,7 @@
                 "dependentSelectId": null,
                 "id": 3017,
                 "createdAt": "2025-02-14 15:16:42",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:29:46"
             },
             "item_3018": {
                 "__returnRelationsAutomatically": true,
@@ -38738,7 +38845,7 @@
                 "name": "progress",
                 "label": "Progress",
                 "placeholder": "Progress",
-                "order": 14,
+                "order": 5,
                 "cols": 12,
                 "colsMedium": 12,
                 "colsLarge": 12,
@@ -38773,7 +38880,7 @@
                 "dependentSelectId": null,
                 "id": 3018,
                 "createdAt": "2025-02-14 15:16:42",
-                "updatedAt": "2025-02-20 20:14:30"
+                "updatedAt": "2025-02-22 10:29:46"
             },
             "item_3019": {
                 "__returnRelationsAutomatically": true,
@@ -38790,7 +38897,7 @@
                 "name": "target",
                 "label": "Target",
                 "placeholder": "Target",
-                "order": 15,
+                "order": 6,
                 "cols": 12,
                 "colsMedium": 12,
                 "colsLarge": 12,
@@ -38825,7 +38932,7 @@
                 "dependentSelectId": null,
                 "id": 3019,
                 "createdAt": "2025-02-14 15:16:42",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:29:46"
             },
             "item_3020": {
                 "__returnRelationsAutomatically": true,
@@ -38842,7 +38949,7 @@
                 "name": "deviation",
                 "label": "Deviation",
                 "placeholder": "Deviation",
-                "order": 16,
+                "order": 7,
                 "cols": 12,
                 "colsMedium": 12,
                 "colsLarge": 12,
@@ -38877,7 +38984,7 @@
                 "dependentSelectId": null,
                 "id": 3020,
                 "createdAt": "2025-02-14 15:16:42",
-                "updatedAt": "2025-02-20 20:14:31"
+                "updatedAt": "2025-02-22 10:29:46"
             }
         },
         "projects": {
@@ -39418,8 +39525,8 @@
                     "viewsFolder": "/resources/views/app",
                     "controllerNameMode": "singular",
                     "schemaZoom": 0.8,
-                    "schemaScrollTop": 3930.39990234375,
-                    "schemaScrollLeft": 4884.7998046875,
+                    "schemaScrollTop": 4120,
+                    "schemaScrollLeft": 5188.7998046875,
                     "turbolinks": false,
                     "modules": []
                 },
@@ -39525,7 +39632,7 @@
                 "files": {
                     ".env": {
                         "deleteOnGeneration": true,
-                        "content": "APP_NAME=\"shipbuilding_3 [plan]\"\nAPP_ENV=local\nAPP_KEY=base64:nDJQyJrcwS46b/ROTsi2P5d4TM3zoTrYtI98f6kZU4Q=\nAPP_DEBUG=true\nAPP_URL=http://shipbuilding_3.test\n\nLOG_CHANNEL=stack\nLOG_DEPRECATIONS_CHANNEL=null\nLOG_LEVEL=debug\n\nDB_CONNECTION=pgsql\nDB_HOST=127.0.0.1\nDB_PORT=5432\nDB_DATABASE=shipbuilding_3\nDB_USERNAME=postgres\nDB_PASSWORD=\"\"\n\nBROADCAST_DRIVER=log\nCACHE_DRIVER=file\nFILESYSTEM_DISK=local\nQUEUE_CONNECTION=sync\nSESSION_DRIVER=database\nSESSION_LIFETIME=120\nMEMCACHED_HOST=127.0.0.1\n\nREDIS_HOST=127.0.0.1\nREDIS_PASSWORD=null\nREDIS_PORT=6379\n\nMAIL_MAILER=smtp\nMAIL_HOST=mailpit\nMAIL_PORT=1025\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ENCRYPTION=null\nMAIL_FROM_ADDRESS=\"hello@example.com\"\nMAIL_FROM_NAME=\"${APP_NAME}\"\n\nAWS_ACCESS_KEY_ID=\nAWS_SECRET_ACCESS_KEY=\nAWS_DEFAULT_REGION=us-east-1\nAWS_BUCKET=\nAWS_USE_PATH_STYLE_ENDPOINT=false\n\nPUSHER_APP_ID=\nPUSHER_APP_KEY=\nPUSHER_APP_SECRET=\nPUSHER_HOST=\nPUSHER_PORT=443\nPUSHER_SCHEME=https\nPUSHER_APP_CLUSTER=mt1\nVITE_APP_NAME=\"${APP_NAME}\"\nVITE_PUSHER_APP_KEY=\"${PUSHER_APP_KEY}\"\nVITE_PUSHER_HOST=\"${PUSHER_HOST}\"\nVITE_PUSHER_PORT=\"${PUSHER_PORT}\"\nVITE_PUSHER_SCHEME=\"${PUSHER_SCHEME}\"\nVITE_PUSHER_APP_CLUSTER=\"${PUSHER_APP_CLUSTER}\"\n",
+                        "content": "APP_NAME=\"shipbuilding_3\"\nAPP_ENV=local\nAPP_KEY=base64:nDJQyJrcwS46b/ROTsi2P5d4TM3zoTrYtI98f6kZU4Q=\nAPP_DEBUG=true\nAPP_URL=http://shipbuilding_3.test\n\nLOG_CHANNEL=stack\nLOG_DEPRECATIONS_CHANNEL=null\nLOG_LEVEL=debug\n\nDB_CONNECTION=pgsql\nDB_HOST=127.0.0.1\nDB_PORT=5432\nDB_DATABASE=shipbuilding_3\nDB_USERNAME=postgres\nDB_PASSWORD=\"\"\n\nBROADCAST_DRIVER=log\nCACHE_DRIVER=file\nFILESYSTEM_DISK=local\nQUEUE_CONNECTION=sync\nSESSION_DRIVER=database\nSESSION_LIFETIME=120\nMEMCACHED_HOST=127.0.0.1\n\nREDIS_HOST=127.0.0.1\nREDIS_PASSWORD=null\nREDIS_PORT=6379\n\nMAIL_MAILER=smtp\nMAIL_HOST=mailpit\nMAIL_PORT=1025\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ENCRYPTION=null\nMAIL_FROM_ADDRESS=\"hello@example.com\"\nMAIL_FROM_NAME=\"${APP_NAME}\"\n\nAWS_ACCESS_KEY_ID=\nAWS_SECRET_ACCESS_KEY=\nAWS_DEFAULT_REGION=us-east-1\nAWS_BUCKET=\nAWS_USE_PATH_STYLE_ENDPOINT=false\n\nPUSHER_APP_ID=\nPUSHER_APP_KEY=\nPUSHER_APP_SECRET=\nPUSHER_HOST=\nPUSHER_PORT=443\nPUSHER_SCHEME=https\nPUSHER_APP_CLUSTER=mt1\nVITE_APP_NAME=\"${APP_NAME}\"\nVITE_PUSHER_APP_KEY=\"${PUSHER_APP_KEY}\"\nVITE_PUSHER_HOST=\"${PUSHER_HOST}\"\nVITE_PUSHER_PORT=\"${PUSHER_PORT}\"\nVITE_PUSHER_SCHEME=\"${PUSHER_SCHEME}\"\nVITE_PUSHER_APP_CLUSTER=\"${PUSHER_APP_CLUSTER}\"\n",
                         "module": "base",
                         "path": ".env"
                     },
@@ -39567,7 +39674,7 @@
                     },
                     "\\app\\Http\\Controllers\\UserController.php": {
                         "deleteOnGeneration": true,
-                        "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\User;\nuse Illuminate\\View\\View;\nuse Illuminate\\Http\\Request;\nuse Spatie\\Permission\\Models\\Role;\nuse Illuminate\\Support\\Facades\\Hash;\nuse Illuminate\\Http\\RedirectResponse;\nuse App\\Http\\Requests\\UserStoreRequest;\nuse App\\Http\\Requests\\UserUpdateRequest;\nuse fredyns\\stringcleaner\\StringCleaner;\n\nclass UserController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     */\n    public function index(Request $request): View\n    {\n        $this->authorize('view-any', User::class);\n\n        $search = (string) $request->get('search', '');\n\n        if (!$search or $search == 'null') {\n            $search = '';\n        }\n\n        $users = User::search($search)\n            ->latest()\n            ->paginate(10)\n            ->withQueryString();\n\n        return view('app.users.index', compact('users', 'search'));\n    }\n\n    /**\n     * Show the form for creating a new resource.\n     */\n    public function create(Request $request): View\n    {\n        $this->authorize('create', User::class);\n\n        $roles = Role::get();\n\n        return view('app.users.create', compact('roles'));\n    }\n\n    /**\n     * Store a newly created resource in storage.\n     */\n    public function store(UserStoreRequest $request): RedirectResponse\n    {\n        $this->authorize('create', User::class);\n\n        $validated = $request->validated();\n        $validated['two_factor_secret'] = StringCleaner::forRTF(\n            $validated['two_factor_secret']\n        );\n        $validated['two_factor_recovery_codes'] = StringCleaner::forRTF(\n            $validated['two_factor_recovery_codes']\n        );\n        $validated['profile_photo_path'] = StringCleaner::forRTF(\n            $validated['profile_photo_path']\n        );\n\n        $validated['password'] = Hash::make($validated['password']);\n\n        $user = User::create($validated);\n\n        $user->syncRoles($request->roles);\n\n        return redirect()\n            ->route('users.show', $user)\n            ->withSuccess(__('crud.common.created'));\n    }\n\n    /**\n     * Display the specified resource.\n     */\n    public function show(Request $request, User $user): View\n    {\n        $this->authorize('view', $user);\n\n        return view('app.users.show', compact('user'));\n    }\n\n    /**\n     * Show the form for editing the specified resource.\n     */\n    public function edit(Request $request, User $user): View\n    {\n        $this->authorize('update', $user);\n\n        $roles = Role::get();\n\n        return view('app.users.edit', compact('user', 'roles'));\n    }\n\n    /**\n     * Update the specified resource in storage.\n     */\n    public function update(\n        UserUpdateRequest $request,\n        User $user\n    ): RedirectResponse {\n        $this->authorize('update', $user);\n\n        $validated = $request->validated();\n\n        $validated['two_factor_secret'] = StringCleaner::forRTF(\n            $validated['two_factor_secret']\n        );\n        $validated['two_factor_recovery_codes'] = StringCleaner::forRTF(\n            $validated['two_factor_recovery_codes']\n        );\n        $validated['profile_photo_path'] = StringCleaner::forRTF(\n            $validated['profile_photo_path']\n        );\n\n        if (empty($validated['password'])) {\n            unset($validated['password']);\n        } else {\n            $validated['password'] = Hash::make($validated['password']);\n        }\n\n        $user->update($validated);\n\n        $user->syncRoles($request->roles);\n\n        return redirect()\n            ->route('users.show', $user)\n            ->withSuccess(__('crud.common.saved'));\n    }\n\n    /**\n     * Remove the specified resource from storage.\n     */\n    public function destroy(Request $request, User $user): RedirectResponse\n    {\n        $this->authorize('delete', $user);\n\n        $user->delete();\n\n        return redirect()\n            ->route('users.index')\n            ->withSuccess(__('crud.common.removed'));\n    }\n}\n",
+                        "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\User;\nuse Illuminate\\View\\View;\nuse Illuminate\\Http\\Request;\nuse Spatie\\Permission\\Models\\Role;\nuse Illuminate\\Support\\Facades\\Hash;\nuse Illuminate\\Http\\RedirectResponse;\nuse App\\Http\\Requests\\UserStoreRequest;\nuse App\\Http\\Requests\\UserUpdateRequest;\nuse fredyns\\stringcleaner\\StringCleaner;\n\nclass UserController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     */\n    public function index(Request $request): View\n    {\n        $this->authorize('view-any', User::class);\n\n        $search = (string) $request->get('search', '');\n\n        if (!$search or $search == 'null') {\n            $search = '';\n        }\n\n        $users = User::search($search)\n            ->latest()\n            ->paginate(10)\n            ->withQueryString();\n\n        return view('app.users.index', compact('users', 'search'));\n    }\n\n    /**\n     * Show the form for creating a new resource.\n     */\n    public function create(Request $request): View\n    {\n        $this->authorize('create', User::class);\n\n        $roles = Role::get();\n\n        return view('app.users.create', compact('roles'));\n    }\n\n    /**\n     * Store a newly created resource in storage.\n     */\n    public function store(UserStoreRequest $request): RedirectResponse\n    {\n        $this->authorize('create', User::class);\n\n        $validated = $request->validated();\n        if (isset($validated['two_factor_secret'])) {\n            $validated['two_factor_secret'] = StringCleaner::forRTF(\n                $validated['two_factor_secret']\n            );\n        }\n        if (isset($validated['two_factor_recovery_codes'])) {\n            $validated['two_factor_recovery_codes'] = StringCleaner::forRTF(\n                $validated['two_factor_recovery_codes']\n            );\n        }\n        if (isset($validated['profile_photo_path'])) {\n            $validated['profile_photo_path'] = StringCleaner::forRTF(\n                $validated['profile_photo_path']\n            );\n        }\n\n        $validated['password'] = Hash::make($validated['password']);\n\n        $user = User::create($validated);\n\n        $user->syncRoles($request->roles);\n\n        return redirect()\n            ->route('users.show', $user)\n            ->withSuccess(__('crud.common.created'));\n    }\n\n    /**\n     * Display the specified resource.\n     */\n    public function show(Request $request, User $user): View\n    {\n        $this->authorize('view', $user);\n\n        return view('app.users.show', compact('user'));\n    }\n\n    /**\n     * Show the form for editing the specified resource.\n     */\n    public function edit(Request $request, User $user): View\n    {\n        $this->authorize('update', $user);\n\n        $roles = Role::get();\n\n        return view('app.users.edit', compact('user', 'roles'));\n    }\n\n    /**\n     * Update the specified resource in storage.\n     */\n    public function update(\n        UserUpdateRequest $request,\n        User $user\n    ): RedirectResponse {\n        $this->authorize('update', $user);\n\n        $validated = $request->validated();\n\n        $validated['two_factor_secret'] = StringCleaner::forRTF(\n            $validated['two_factor_secret']\n        );\n        $validated['two_factor_recovery_codes'] = StringCleaner::forRTF(\n            $validated['two_factor_recovery_codes']\n        );\n        $validated['profile_photo_path'] = StringCleaner::forRTF(\n            $validated['profile_photo_path']\n        );\n\n        if (empty($validated['password'])) {\n            unset($validated['password']);\n        } else {\n            $validated['password'] = Hash::make($validated['password']);\n        }\n\n        $user->update($validated);\n\n        $user->syncRoles($request->roles);\n\n        return redirect()\n            ->route('users.show', $user)\n            ->withSuccess(__('crud.common.saved'));\n    }\n\n    /**\n     * Remove the specified resource from storage.\n     */\n    public function destroy(Request $request, User $user): RedirectResponse\n    {\n        $this->authorize('delete', $user);\n\n        $user->delete();\n\n        return redirect()\n            ->route('users.index')\n            ->withSuccess(__('crud.common.removed'));\n    }\n}\n",
                         "module": "crud:387",
                         "path": "\\app\\Http\\Controllers\\UserController.php"
                     },
@@ -39729,7 +39836,7 @@
                     },
                     "\\app\\Http\\Controllers\\ShipbuildingController.php": {
                         "deleteOnGeneration": true,
-                        "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\ShipType;\nuse App\\Models\\Shipyard;\nuse Illuminate\\View\\View;\nuse App\\Models\\Shipbuilding;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Http\\RedirectResponse;\nuse Illuminate\\Support\\Facades\\Storage;\nuse fredyns\\stringcleaner\\StringCleaner;\nuse App\\Http\\Requests\\ShipbuildingStoreRequest;\nuse App\\Http\\Requests\\ShipbuildingUpdateRequest;\n\nclass ShipbuildingController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     */\n    public function index(Request $request): View\n    {\n        $this->authorize('view-any', Shipbuilding::class);\n\n        $search = (string) $request->get('search', '');\n\n        if (!$search or $search == 'null') {\n            $search = '';\n        }\n\n        $shipbuildings = Shipbuilding::search($search)\n            ->latest()\n            ->paginate(10)\n            ->withQueryString();\n\n        return view(\n            'app.shipbuildings.index',\n            compact('shipbuildings', 'search')\n        );\n    }\n\n    /**\n     * Show the form for creating a new resource.\n     */\n    public function create(Request $request): View\n    {\n        $this->authorize('create', Shipbuilding::class);\n\n        $shipTypes = ShipType::pluck('name', 'id');\n        $shipyards = Shipyard::pluck('name', 'id');\n\n        return view(\n            'app.shipbuildings.create',\n            compact('shipTypes', 'shipyards')\n        );\n    }\n\n    /**\n     * Store a newly created resource in storage.\n     */\n    public function store(ShipbuildingStoreRequest $request): RedirectResponse\n    {\n        $this->authorize('create', Shipbuilding::class);\n\n        $validated = $request->validated();\n        $validated['description'] = StringCleaner::forRTF(\n            $validated['description']\n        );\n        $validated['cover_image'] = StringCleaner::forRTF(\n            $validated['cover_image']\n        );\n\n        $uploadPath = 'public/shipbuildings/' . date('Y/m/d');\n        if ($request->hasFile('cover_image')) {\n            $validated['cover_image'] = $request\n                ->file('cover_image')\n                ->store($uploadPath);\n        }\n\n        $shipbuilding = Shipbuilding::create($validated);\n\n        return redirect()\n            ->route('shipbuildings.show', $shipbuilding)\n            ->withSuccess(__('crud.common.created'));\n    }\n\n    /**\n     * Display the specified resource.\n     */\n    public function show(Request $request, Shipbuilding $shipbuilding): View\n    {\n        $this->authorize('view', $shipbuilding);\n\n        return view('app.shipbuildings.show', compact('shipbuilding'));\n    }\n\n    /**\n     * Show the form for editing the specified resource.\n     */\n    public function edit(Request $request, Shipbuilding $shipbuilding): View\n    {\n        $this->authorize('update', $shipbuilding);\n\n        $shipTypes = ShipType::pluck('name', 'id');\n        $shipyards = Shipyard::pluck('name', 'id');\n\n        return view(\n            'app.shipbuildings.edit',\n            compact('shipbuilding', 'shipTypes', 'shipyards')\n        );\n    }\n\n    /**\n     * Update the specified resource in storage.\n     */\n    public function update(\n        ShipbuildingUpdateRequest $request,\n        Shipbuilding $shipbuilding\n    ): RedirectResponse {\n        $this->authorize('update', $shipbuilding);\n\n        $validated = $request->validated();\n\n        $validated['description'] = StringCleaner::forRTF(\n            $validated['description']\n        );\n        $validated['cover_image'] = StringCleaner::forRTF(\n            $validated['cover_image']\n        );\n\n        $uploadPath = 'public/shipbuildings/' . date('Y/m/d');\n        if ($request->hasFile('cover_image')) {\n            if ($shipbuilding->cover_image) {\n                Storage::delete($shipbuilding->cover_image);\n            }\n\n            $validated['cover_image'] = $request\n                ->file('cover_image')\n                ->store($uploadPath);\n        }\n\n        $shipbuilding->update($validated);\n\n        return redirect()\n            ->route('shipbuildings.show', $shipbuilding)\n            ->withSuccess(__('crud.common.saved'));\n    }\n\n    /**\n     * Remove the specified resource from storage.\n     */\n    public function destroy(\n        Request $request,\n        Shipbuilding $shipbuilding\n    ): RedirectResponse {\n        $this->authorize('delete', $shipbuilding);\n\n        if ($shipbuilding->cover_image) {\n            Storage::delete($shipbuilding->cover_image);\n        }\n\n        $shipbuilding->delete();\n\n        return redirect()\n            ->route('shipbuildings.index')\n            ->withSuccess(__('crud.common.removed'));\n    }\n}\n",
+                        "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse App\\Models\\ShipType;\nuse App\\Models\\Shipyard;\nuse Illuminate\\View\\View;\nuse App\\Models\\Shipbuilding;\nuse Illuminate\\Http\\Request;\nuse Illuminate\\Http\\RedirectResponse;\nuse Illuminate\\Support\\Facades\\Storage;\nuse fredyns\\stringcleaner\\StringCleaner;\nuse App\\Http\\Requests\\ShipbuildingStoreRequest;\nuse App\\Http\\Requests\\ShipbuildingUpdateRequest;\n\nclass ShipbuildingController extends Controller\n{\n    /**\n     * Display a listing of the resource.\n     */\n    public function index(Request $request): View\n    {\n        $this->authorize('view-any', Shipbuilding::class);\n\n        $search = (string) $request->get('search', '');\n\n        if (!$search or $search == 'null') {\n            $search = '';\n        }\n\n        $shipbuildings = Shipbuilding::search($search)\n            ->latest()\n            ->paginate(10)\n            ->withQueryString();\n\n        return view(\n            'app.shipbuildings.index',\n            compact('shipbuildings', 'search')\n        );\n    }\n\n    /**\n     * Show the form for creating a new resource.\n     */\n    public function create(Request $request): View\n    {\n        $this->authorize('create', Shipbuilding::class);\n\n        $shipTypes = ShipType::pluck('name', 'id');\n        $shipyards = Shipyard::pluck('name', 'id');\n\n        return view(\n            'app.shipbuildings.create',\n            compact('shipTypes', 'shipyards')\n        );\n    }\n\n    /**\n     * Store a newly created resource in storage.\n     */\n    public function store(ShipbuildingStoreRequest $request): RedirectResponse\n    {\n        $this->authorize('create', Shipbuilding::class);\n\n        $validated = $request->validated();\n        if (isset($validated['description'])) {\n            $validated['description'] = StringCleaner::forRTF(\n                $validated['description']\n            );\n        }\n        if (isset($validated['cover_image'])) {\n            $validated['cover_image'] = StringCleaner::forRTF(\n                $validated['cover_image']\n            );\n        }\n\n        $uploadPath = 'public/shipbuildings/' . date('Y/m/d');\n        if ($request->hasFile('cover_image')) {\n            $validated['cover_image'] = $request\n                ->file('cover_image')\n                ->store($uploadPath);\n        }\n\n        $shipbuilding = Shipbuilding::create($validated);\n\n        return redirect()\n            ->route('shipbuildings.show', $shipbuilding)\n            ->withSuccess(__('crud.common.created'));\n    }\n\n    /**\n     * Display the specified resource.\n     */\n    public function show(Request $request, Shipbuilding $shipbuilding): View\n    {\n        $this->authorize('view', $shipbuilding);\n\n        return view('app.shipbuildings.show', compact('shipbuilding'));\n    }\n\n    /**\n     * Show the form for editing the specified resource.\n     */\n    public function edit(Request $request, Shipbuilding $shipbuilding): View\n    {\n        $this->authorize('update', $shipbuilding);\n\n        $shipTypes = ShipType::pluck('name', 'id');\n        $shipyards = Shipyard::pluck('name', 'id');\n\n        return view(\n            'app.shipbuildings.edit',\n            compact('shipbuilding', 'shipTypes', 'shipyards')\n        );\n    }\n\n    /**\n     * Update the specified resource in storage.\n     */\n    public function update(\n        ShipbuildingUpdateRequest $request,\n        Shipbuilding $shipbuilding\n    ): RedirectResponse {\n        $this->authorize('update', $shipbuilding);\n\n        $validated = $request->validated();\n\n        $validated['description'] = StringCleaner::forRTF(\n            $validated['description']\n        );\n        $validated['cover_image'] = StringCleaner::forRTF(\n            $validated['cover_image']\n        );\n\n        $uploadPath = 'public/shipbuildings/' . date('Y/m/d');\n        if ($request->hasFile('cover_image')) {\n            if ($shipbuilding->cover_image) {\n                Storage::delete($shipbuilding->cover_image);\n            }\n\n            $validated['cover_image'] = $request\n                ->file('cover_image')\n                ->store($uploadPath);\n        }\n\n        $shipbuilding->update($validated);\n\n        return redirect()\n            ->route('shipbuildings.show', $shipbuilding)\n            ->withSuccess(__('crud.common.saved'));\n    }\n\n    /**\n     * Remove the specified resource from storage.\n     */\n    public function destroy(\n        Request $request,\n        Shipbuilding $shipbuilding\n    ): RedirectResponse {\n        $this->authorize('delete', $shipbuilding);\n\n        if ($shipbuilding->cover_image) {\n            Storage::delete($shipbuilding->cover_image);\n        }\n\n        $shipbuilding->delete();\n\n        return redirect()\n            ->route('shipbuildings.index')\n            ->withSuccess(__('crud.common.removed'));\n    }\n}\n",
                         "module": "crud:391",
                         "path": "\\app\\Http\\Controllers\\ShipbuildingController.php"
                     },
@@ -39771,25 +39878,25 @@
                     },
                     "\\lang\\en\\crud.php": {
                         "deleteOnGeneration": true,
-                        "content": "<?php\n\nreturn [\n    'common' => [\n        'actions' => 'Actions',\n        'create' => 'Create',\n        'edit' => 'Edit',\n        'update' => 'Update',\n        'new' => 'New',\n        'cancel' => 'Cancel',\n        'attach' => 'Attach',\n        'detach' => 'Detach',\n        'save' => 'Save',\n        'delete' => 'Delete',\n        'delete_selected' => 'Delete selected',\n        'search' => 'Search...',\n        'back' => 'Back to Index',\n        'are_you_sure' => 'Are you sure?',\n        'no_items_found' => 'No items found',\n        'created' => 'Successfully created',\n        'saved' => 'Saved successfully',\n        'removed' => 'Successfully removed',\n    ],\n\n    'users' => [\n        'name' => 'Users',\n        'index_title' => 'Users List',\n        'new_title' => 'New User',\n        'create_title' => 'Create User',\n        'edit_title' => 'Edit User',\n        'show_title' => 'Show User',\n        'inputs' => [\n            'name' => 'Name',\n            'email' => 'Email',\n            'password' => 'Password',\n        ],\n    ],\n\n    'ship_types' => [\n        'name' => 'Ship Types',\n        'index_title' => 'Ship Types List',\n        'new_title' => 'Add Ship Type',\n        'create_title' => 'Add Ship Type',\n        'edit_title' => 'Edit Ship Type',\n        'show_title' => 'Show Ship Type',\n        'inputs' => [\n            'name' => 'Name',\n        ],\n    ],\n\n    'shipyards' => [\n        'name' => 'Shipyards',\n        'index_title' => 'Shipyards List',\n        'new_title' => 'Add Shipyard',\n        'create_title' => 'Add Shipyard',\n        'edit_title' => 'Edit Shipyard',\n        'show_title' => 'Show Shipyard',\n        'inputs' => [\n            'name' => 'Name',\n        ],\n    ],\n\n    'shipbuildings' => [\n        'name' => 'Shipbuildings',\n        'index_title' => 'Shipbuildings List',\n        'new_title' => 'Add Shipbuilding',\n        'create_title' => 'Add Shipbuilding',\n        'edit_title' => 'Edit Shipbuilding',\n        'show_title' => 'Show Shipbuilding',\n        'inputs' => [\n            'cover_image' => 'Cover Image',\n            'number' => 'Number',\n            'name' => 'Name',\n            'description' => 'Description',\n            'progress' => 'Progress',\n            'ship_type_id' => 'Ship Type',\n            'shipyard_id' => 'Shipyard',\n            'start_date' => 'Start Date',\n            'end_date' => 'End Date',\n        ],\n    ],\n\n    'shipbuilding_shipbuilding_tasks' => [\n        'name' => 'Shipbuilding Shipbuilding Tasks',\n        'index_title' => 'ShipbuildingTasks List',\n        'new_title' => 'New Shipbuilding task',\n        'create_title' => 'Create ShipbuildingTask',\n        'edit_title' => 'Edit ShipbuildingTask',\n        'show_title' => 'Show ShipbuildingTask',\n        'inputs' => [\n            'name' => 'Name',\n            'description' => 'Description',\n            'weight' => 'Weight',\n            'progress_options' => 'Progress Options',\n            'progress' => 'Progress',\n            'target' => 'Target',\n            'deviation' => 'Deviation',\n        ],\n    ],\n\n    'roles' => [\n        'name' => 'Roles',\n        'index_title' => 'Roles List',\n        'create_title' => 'Create Role',\n        'edit_title' => 'Edit Role',\n        'show_title' => 'Show Role',\n        'inputs' => [\n            'name' => 'Name',\n        ],\n    ],\n\n    'permissions' => [\n        'name' => 'Permissions',\n        'index_title' => 'Permissions List',\n        'create_title' => 'Create Permission',\n        'edit_title' => 'Edit Permission',\n        'show_title' => 'Show Permission',\n        'inputs' => [\n            'name' => 'Name',\n        ],\n    ],\n];\n",
+                        "content": "<?php\n\nreturn [\n    'common' => [\n        'actions' => 'Actions',\n        'create' => 'Create',\n        'edit' => 'Edit',\n        'update' => 'Update',\n        'new' => 'New',\n        'cancel' => 'Cancel',\n        'attach' => 'Attach',\n        'detach' => 'Detach',\n        'save' => 'Save',\n        'delete' => 'Delete',\n        'delete_selected' => 'Delete selected',\n        'search' => 'Search...',\n        'back' => 'Back to Index',\n        'are_you_sure' => 'Are you sure?',\n        'no_items_found' => 'No items found',\n        'created' => 'Successfully created',\n        'saved' => 'Saved successfully',\n        'removed' => 'Successfully removed',\n    ],\n\n    'users' => [\n        'name' => 'Users',\n        'index_title' => 'Users List',\n        'new_title' => 'New User',\n        'create_title' => 'Create User',\n        'edit_title' => 'Edit User',\n        'show_title' => 'Show User',\n        'inputs' => [\n            'name' => 'Name',\n            'email' => 'Email',\n            'password' => 'Password',\n        ],\n    ],\n\n    'ship_types' => [\n        'name' => 'Ship Types',\n        'index_title' => 'Ship Types List',\n        'new_title' => 'Add Ship Type',\n        'create_title' => 'Add Ship Type',\n        'edit_title' => 'Edit Ship Type',\n        'show_title' => 'Show Ship Type',\n        'inputs' => [\n            'name' => 'Name',\n        ],\n    ],\n\n    'shipyards' => [\n        'name' => 'Shipyards',\n        'index_title' => 'Shipyards List',\n        'new_title' => 'Add Shipyard',\n        'create_title' => 'Add Shipyard',\n        'edit_title' => 'Edit Shipyard',\n        'show_title' => 'Show Shipyard',\n        'inputs' => [\n            'name' => 'Name',\n        ],\n    ],\n\n    'shipbuildings' => [\n        'name' => 'Shipbuildings',\n        'index_title' => 'Shipbuildings List',\n        'new_title' => 'Add Shipbuilding',\n        'create_title' => 'Add Shipbuilding',\n        'edit_title' => 'Edit Shipbuilding',\n        'show_title' => 'Show Shipbuilding',\n        'inputs' => [\n            'cover_image' => 'Cover Image',\n            'number' => 'Number',\n            'name' => 'Name',\n            'description' => 'Description',\n            'progress' => 'Progress',\n            'ship_type_id' => 'Ship Type',\n            'shipyard_id' => 'Shipyard',\n            'start_date' => 'Start Date',\n            'end_date' => 'End Date',\n        ],\n    ],\n\n    'shipbuilding_shipbuilding_tasks' => [\n        'name' => 'Shipbuilding Shipbuilding Tasks',\n        'index_title' => 'ShipbuildingTasks List',\n        'new_title' => 'New Shipbuilding task',\n        'create_title' => 'Create ShipbuildingTask',\n        'edit_title' => 'Edit ShipbuildingTask',\n        'show_title' => 'Show ShipbuildingTask',\n        'inputs' => [\n            'item_type' => 'Item Type',\n            'name' => 'Name',\n            'description' => 'Description',\n            'weight' => 'Weight',\n            'progress_options' => 'Progress Options',\n            'progress' => 'Progress',\n            'target' => 'Target',\n            'deviation' => 'Deviation',\n        ],\n    ],\n\n    'roles' => [\n        'name' => 'Roles',\n        'index_title' => 'Roles List',\n        'create_title' => 'Create Role',\n        'edit_title' => 'Edit Role',\n        'show_title' => 'Show Role',\n        'inputs' => [\n            'name' => 'Name',\n        ],\n    ],\n\n    'permissions' => [\n        'name' => 'Permissions',\n        'index_title' => 'Permissions List',\n        'create_title' => 'Create Permission',\n        'edit_title' => 'Edit Permission',\n        'show_title' => 'Show Permission',\n        'inputs' => [\n            'name' => 'Name',\n        ],\n    ],\n];\n",
                         "module": "base",
                         "path": "\\lang\\en\\crud.php"
                     },
                     "\\resources\\views\\livewire\\shipbuilding-shipbuilding-tasks-detail.blade.php": {
                         "deleteOnGeneration": true,
-                        "content": "<div>\n    <div>\n        @can('create', App\\Models\\ShipbuildingTask::class)\n        <button class=\"button\" wire:click=\"newShipbuildingTask\">\n            <i class=\"mr-1 icon ion-md-add text-primary\"></i>\n            @lang('crud.common.new')\n        </button>\n        @endcan @can('delete-any', App\\Models\\ShipbuildingTask::class)\n        <button\n            class=\"button button-danger\"\n             {{ empty($selected) ? 'disabled' : '' }} \n            onclick=\"confirm('{{ __('crud.common.are_you_sure') }}') || event.stopImmediatePropagation()\"\n            wire:click=\"destroySelected\"\n        >\n            <i class=\"mr-1 icon ion-md-trash text-primary\"></i>\n            @lang('crud.common.delete_selected')\n        </button>\n        @endcan\n    </div>\n\n    <x-modal wire:model=\"showingModalView\">\n        <div class=\"px-6 py-4\">\n            <div class=\"text-lg font-bold\">{{ $modalTitle }}</div>\n\n            <div class=\"mt-5\">\n                <div class=\"flex flex-wrap\">\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.name')\n                        </h5>\n                        <span> {{ $shipbuildingTask->name ?? '-' }} </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.description')\n                        </h5>\n                        <span>\n                            {{ $shipbuildingTask->description ?? '-' }}\n                        </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.weight')\n                        </h5>\n                        <span> {{ $shipbuildingTask->weight ?? '-' }} </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.progress')\n                        </h5>\n                        <span> {{ $shipbuildingTask->progress ?? '-' }} </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.target')\n                        </h5>\n                        <span> {{ $shipbuildingTask->target ?? '-' }} </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.deviation')\n                        </h5>\n                        <span> {{ $shipbuildingTask->deviation ?? '-' }} </span>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"px-6 py-4 bg-gray-50 flex justify-between\">\n            <button\n                type=\"button\"\n                class=\"button\"\n                wire:click=\"$toggle('showingModalView')\"\n            >\n                <i class=\"mr-1 icon ion-md-close\"></i>\n                @lang('text.close')\n            </button>\n            @can('update', $shipbuildingTask)\n            <button\n                type=\"button\"\n                class=\"button mr-1\"\n                wire:click=\"editShipbuildingTask('{{ $shipbuildingTask->id }}')\"\n            >\n                <i class=\"mr-1 icon ion-md-create\"></i>\n                @lang('crud.common.edit')\n            </button>\n            @endcan\n        </div>\n    </x-modal>\n\n    <x-modal wire:model=\"showingModalForm\">\n        <div class=\"px-6 py-4\">\n            <div class=\"text-lg font-bold\">{{ $modalTitle }}</div>\n\n            <div class=\"mt-5\">\n                <div class=\"flex flex-wrap\">\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.text\n                            name=\"shipbuildingTask.name\"\n                            wire:model=\"shipbuildingTask.name\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.name') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.name') }}\"\n                            maxlength=\"255\"\n                        ></x-inputs.text>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.textarea\n                            name=\"shipbuildingTask.description\"\n                            wire:model=\"shipbuildingTask.description\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.description') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.description') }}\"\n                            maxlength=\"255\"\n                        >\n                            {{ old('description', ($editing ?\n                            $shipbuildingTask->description : '')) }}\n                        </x-inputs.textarea>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.slider\n                            name=\"shipbuildingTask.weight\"\n                            wire:model=\"shipbuildingTask.weight\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.weight') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.weight') }}\"\n                            max=\"255\"\n                            step=\"0.01\"\n                        ></x-inputs.slider>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.textarea\n                            name=\"shipbuildingTask.progress_options\"\n                            wire:model=\"shipbuildingTask.progress_options\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.progress_options') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.progress_options') }}\"\n                            maxlength=\"255\"\n                        >\n                            {{ old('progress_options', ($editing ?\n                            $shipbuildingTask->progress_options : '')) }}\n                        </x-inputs.textarea>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.slider\n                            name=\"shipbuildingTask.progress\"\n                            wire:model=\"shipbuildingTask.progress\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.progress') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.progress') }}\"\n                            max=\"255\"\n                            step=\"0.01\"\n                        ></x-inputs.slider>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.slider\n                            name=\"shipbuildingTask.target\"\n                            wire:model=\"shipbuildingTask.target\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.target') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.target') }}\"\n                            max=\"255\"\n                            step=\"0.01\"\n                        ></x-inputs.slider>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.slider\n                            name=\"shipbuildingTask.deviation\"\n                            wire:model=\"shipbuildingTask.deviation\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.deviation') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.deviation') }}\"\n                            max=\"255\"\n                            step=\"0.01\"\n                        ></x-inputs.slider>\n                    </x-inputs.group>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"px-6 py-4 bg-gray-50 flex justify-between\">\n            <button\n                type=\"button\"\n                class=\"button\"\n                wire:click=\"$toggle('showingModalForm')\"\n            >\n                <i class=\"mr-1 icon ion-md-close\"></i>\n                @lang('crud.common.cancel')\n            </button>\n\n            <button\n                type=\"button\"\n                class=\"button button-primary\"\n                wire:click=\"save\"\n            >\n                <i class=\"mr-1 icon ion-md-save\"></i>\n                @lang('crud.common.save')\n            </button>\n        </div>\n    </x-modal>\n\n    <div class=\"block w-full overflow-auto scrolling-touch mt-4\">\n        <table class=\"w-full max-w-full mb-4 bg-transparent\">\n            <thead class=\"text-gray-700\">\n                <tr>\n                    <th class=\"px-4 py-3 text-left w-1\">\n                        <input\n                            type=\"checkbox\"\n                            wire:model=\"allSelected\"\n                            wire:click=\"toggleFullSelection\"\n                            title=\"{{ trans('crud.common.select_all') }}\"\n                        />\n                    </th>\n                    <th class=\"px-4 py-3 text-left\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.name')\n                    </th>\n                    <th class=\"px-4 py-3 text-right\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.weight')\n                    </th>\n                    <th class=\"px-4 py-3 text-right\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.progress')\n                    </th>\n                    <th class=\"px-4 py-3 text-right\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.target')\n                    </th>\n                    <th class=\"px-4 py-3 text-right\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.deviation')\n                    </th>\n                    <th></th>\n                </tr>\n            </thead>\n            <tbody class=\"text-gray-600\">\n                @foreach ($shipbuildingTasks as $shipbuildingTask)\n                <tr class=\"hover:bg-gray-100\">\n                    <td class=\"px-4 py-3 text-left\">\n                        <input\n                            type=\"checkbox\"\n                            value=\"{{ $shipbuildingTask->id }}\"\n                            wire:model=\"selected\"\n                        />\n                    </td>\n                    <td class=\"px-4 py-3 text-left\">\n                        {{ $shipbuildingTask->name ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\">\n                        {{ $shipbuildingTask->weight ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\">\n                        {{ $shipbuildingTask->progress ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\">\n                        {{ $shipbuildingTask->target ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\">\n                        {{ $shipbuildingTask->deviation ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\" style=\"width: 134px;\">\n                        <div\n                            role=\"group\"\n                            aria-label=\"Row Actions\"\n                            class=\"relative inline-flex align-middle\"\n                        >\n                            <button\n                                type=\"button\"\n                                class=\"button mr-1\"\n                                wire:click=\"viewShipbuildingTask('{{ $shipbuildingTask->id }}')\"\n                            >\n                                <i class=\"icon ion-md-eye\"></i>\n                            </button>\n                            @can('update', $shipbuildingTask)\n                            <button\n                                type=\"button\"\n                                class=\"button mr-1\"\n                                wire:click=\"editShipbuildingTask('{{ $shipbuildingTask->id }}')\"\n                            >\n                                <i class=\"icon ion-md-create\"></i>\n                            </button>\n                            @endcan\n                        </div>\n                    </td>\n                </tr>\n                @endforeach\n            </tbody>\n            <tfoot>\n                <tr>\n                    <td colspan=\"6\">\n                        <div class=\"mt-10 px-4\">\n                            {{ $shipbuildingTasks->render() }}\n                        </div>\n                    </td>\n                </tr>\n            </tfoot>\n        </table>\n    </div>\n</div>\n",
+                        "content": "<div>\n    <div>\n        @can('create', App\\Models\\ShipbuildingTask::class)\n        <button class=\"button\" wire:click=\"newShipbuildingTask\">\n            <i class=\"mr-1 icon ion-md-add text-primary\"></i>\n            @lang('crud.common.new')\n        </button>\n        @endcan @can('delete-any', App\\Models\\ShipbuildingTask::class)\n        <button\n            class=\"button button-danger\"\n             {{ empty($selected) ? 'disabled' : '' }} \n            onclick=\"confirm('{{ __('crud.common.are_you_sure') }}') || event.stopImmediatePropagation()\"\n            wire:click=\"destroySelected\"\n        >\n            <i class=\"mr-1 icon ion-md-trash text-primary\"></i>\n            @lang('crud.common.delete_selected')\n        </button>\n        @endcan\n    </div>\n\n    <x-modal wire:model=\"showingModalView\">\n        <div class=\"px-6 py-4\">\n            <div class=\"text-lg font-bold\">{{ $modalTitle }}</div>\n\n            <div class=\"mt-5\">\n                <div class=\"flex flex-wrap\">\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.name')\n                        </h5>\n                        <span> {{ $shipbuildingTask->name ?? '-' }} </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.description')\n                        </h5>\n                        <span>\n                            {{ $shipbuildingTask->description ?? '-' }}\n                        </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.weight')\n                        </h5>\n                        <span> {{ $shipbuildingTask->weight ?? '-' }} </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.progress')\n                        </h5>\n                        <span> {{ $shipbuildingTask->progress ?? '-' }} </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.target')\n                        </h5>\n                        <span> {{ $shipbuildingTask->target ?? '-' }} </span>\n                    </div>\n                    <div class=\"mb-4 w-full\">\n                        <h5 class=\"font-medium text-gray-700\">\n                            @lang('crud.shipbuilding-tasks.inputs.deviation')\n                        </h5>\n                        <span> {{ $shipbuildingTask->deviation ?? '-' }} </span>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"px-6 py-4 bg-gray-50 flex justify-between\">\n            <button\n                type=\"button\"\n                class=\"button\"\n                wire:click=\"$toggle('showingModalView')\"\n            >\n                <i class=\"mr-1 icon ion-md-close\"></i>\n                @lang('text.close')\n            </button>\n            @can('update', $shipbuildingTask)\n            <button\n                type=\"button\"\n                class=\"button mr-1\"\n                wire:click=\"editShipbuildingTask('{{ $shipbuildingTask->id }}')\"\n            >\n                <i class=\"mr-1 icon ion-md-create\"></i>\n                @lang('crud.common.edit')\n            </button>\n            @endcan\n        </div>\n    </x-modal>\n\n    <x-modal wire:model=\"showingModalForm\">\n        <div class=\"px-6 py-4\">\n            <div class=\"text-lg font-bold\">{{ $modalTitle }}</div>\n\n            <div class=\"mt-5\">\n                <div class=\"flex flex-wrap\">\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.select\n                            name=\"shipbuildingTask.item_type\"\n                            wire:model=\"shipbuildingTask.item_type\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.item_type') }}\"\n                        >\n                            <option value=\"work-item\" {{ $selected == 'work-item' ? 'selected' : '' }} >Work item</option>\n                            <option value=\"category\" {{ $selected == 'category' ? 'selected' : '' }} >Category</option>\n                        </x-inputs.select>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.text\n                            name=\"shipbuildingTask.name\"\n                            wire:model=\"shipbuildingTask.name\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.name') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.name') }}\"\n                            maxlength=\"255\"\n                        ></x-inputs.text>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.textarea\n                            name=\"shipbuildingTask.description\"\n                            wire:model=\"shipbuildingTask.description\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.description') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.description') }}\"\n                            maxlength=\"255\"\n                        >\n                            {{ old('description', ($editing ?\n                            $shipbuildingTask->description : '')) }}\n                        </x-inputs.textarea>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.slider\n                            name=\"shipbuildingTask.weight\"\n                            wire:model=\"shipbuildingTask.weight\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.weight') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.weight') }}\"\n                            max=\"255\"\n                            step=\"0.01\"\n                        ></x-inputs.slider>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.textarea\n                            name=\"shipbuildingTask.progress_options\"\n                            wire:model=\"shipbuildingTask.progress_options\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.progress_options') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.progress_options') }}\"\n                            maxlength=\"255\"\n                        >\n                            {{ old('progress_options', ($editing ?\n                            $shipbuildingTask->progress_options : '')) }}\n                        </x-inputs.textarea>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.slider\n                            name=\"shipbuildingTask.progress\"\n                            wire:model=\"shipbuildingTask.progress\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.progress') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.progress') }}\"\n                            max=\"255\"\n                            step=\"0.01\"\n                        ></x-inputs.slider>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.slider\n                            name=\"shipbuildingTask.target\"\n                            wire:model=\"shipbuildingTask.target\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.target') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.target') }}\"\n                            max=\"255\"\n                            step=\"0.01\"\n                        ></x-inputs.slider>\n                    </x-inputs.group>\n                    <x-inputs.group class=\"w-full\">\n                        <x-inputs.slider\n                            name=\"shipbuildingTask.deviation\"\n                            wire:model=\"shipbuildingTask.deviation\"\n                            label=\"{{ __('crud.shipbuilding_tasks.inputs.deviation') }}\"\n                            placeholder=\"{{ __('crud.shipbuilding_tasks.inputs.deviation') }}\"\n                            max=\"255\"\n                            step=\"0.01\"\n                        ></x-inputs.slider>\n                    </x-inputs.group>\n                </div>\n            </div>\n        </div>\n\n        <div class=\"px-6 py-4 bg-gray-50 flex justify-between\">\n            <button\n                type=\"button\"\n                class=\"button\"\n                wire:click=\"$toggle('showingModalForm')\"\n            >\n                <i class=\"mr-1 icon ion-md-close\"></i>\n                @lang('crud.common.cancel')\n            </button>\n\n            <button\n                type=\"button\"\n                class=\"button button-primary\"\n                wire:click=\"save\"\n            >\n                <i class=\"mr-1 icon ion-md-save\"></i>\n                @lang('crud.common.save')\n            </button>\n        </div>\n    </x-modal>\n\n    <div class=\"block w-full overflow-auto scrolling-touch mt-4\">\n        <table class=\"w-full max-w-full mb-4 bg-transparent\">\n            <thead class=\"text-gray-700\">\n                <tr>\n                    <th class=\"px-4 py-3 text-left w-1\">\n                        <input\n                            type=\"checkbox\"\n                            wire:model=\"allSelected\"\n                            wire:click=\"toggleFullSelection\"\n                            title=\"{{ trans('crud.common.select_all') }}\"\n                        />\n                    </th>\n                    <th class=\"px-4 py-3 text-left\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.name')\n                    </th>\n                    <th class=\"px-4 py-3 text-right\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.weight')\n                    </th>\n                    <th class=\"px-4 py-3 text-right\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.progress')\n                    </th>\n                    <th class=\"px-4 py-3 text-right\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.target')\n                    </th>\n                    <th class=\"px-4 py-3 text-right\">\n                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.deviation')\n                    </th>\n                    <th></th>\n                </tr>\n            </thead>\n            <tbody class=\"text-gray-600\">\n                @foreach ($shipbuildingTasks as $shipbuildingTask)\n                <tr class=\"hover:bg-gray-100\">\n                    <td class=\"px-4 py-3 text-left\">\n                        <input\n                            type=\"checkbox\"\n                            value=\"{{ $shipbuildingTask->id }}\"\n                            wire:model=\"selected\"\n                        />\n                    </td>\n                    <td class=\"px-4 py-3 text-left\">\n                        {{ $shipbuildingTask->name ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\">\n                        {{ $shipbuildingTask->weight ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\">\n                        {{ $shipbuildingTask->progress ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\">\n                        {{ $shipbuildingTask->target ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\">\n                        {{ $shipbuildingTask->deviation ?? '-' }}\n                    </td>\n                    <td class=\"px-4 py-3 text-right\" style=\"width: 134px;\">\n                        <div\n                            role=\"group\"\n                            aria-label=\"Row Actions\"\n                            class=\"relative inline-flex align-middle\"\n                        >\n                            <button\n                                type=\"button\"\n                                class=\"button mr-1\"\n                                wire:click=\"viewShipbuildingTask('{{ $shipbuildingTask->id }}')\"\n                            >\n                                <i class=\"icon ion-md-eye\"></i>\n                            </button>\n                            @can('update', $shipbuildingTask)\n                            <button\n                                type=\"button\"\n                                class=\"button mr-1\"\n                                wire:click=\"editShipbuildingTask('{{ $shipbuildingTask->id }}')\"\n                            >\n                                <i class=\"icon ion-md-create\"></i>\n                            </button>\n                            @endcan\n                        </div>\n                    </td>\n                </tr>\n                @endforeach\n            </tbody>\n            <tfoot>\n                <tr>\n                    <td colspan=\"6\">\n                        <div class=\"mt-10 px-4\">\n                            {{ $shipbuildingTasks->render() }}\n                        </div>\n                    </td>\n                </tr>\n            </tfoot>\n        </table>\n    </div>\n</div>\n",
                         "module": "crud:390",
                         "path": "\\resources\\views\\livewire\\shipbuilding-shipbuilding-tasks-detail.blade.php"
                     },
                     "\\app\\Http\\Livewire\\ShipbuildingShipbuildingTasksDetail.php": {
                         "deleteOnGeneration": true,
-                        "content": "<?php\n\nnamespace App\\Http\\Livewire;\n\nuse Livewire\\Component;\nuse Illuminate\\View\\View;\nuse Livewire\\WithPagination;\nuse App\\Models\\Shipbuilding;\nuse App\\Models\\ShipbuildingTask;\nuse Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests;\n\nclass ShipbuildingShipbuildingTasksDetail extends Component\n{\n    use WithPagination;\n    use AuthorizesRequests;\n\n    public Shipbuilding $shipbuilding;\n    public ShipbuildingTask $shipbuildingTask;\n\n    public $selected = [];\n    public $editing = false;\n    public $allSelected = false;\n    public $showingModalView = false;\n    public $showingModalForm = false;\n\n    public $modalTitle = 'New ShipbuildingTask';\n\n    protected $rules = [\n        'shipbuildingTask.name' => ['required', 'max:255', 'string'],\n        'shipbuildingTask.description' => ['nullable', 'max:255', 'string'],\n        'shipbuildingTask.weight' => ['required', 'numeric'],\n        'shipbuildingTask.progress_options' => ['nullable', 'max:255', 'json'],\n        'shipbuildingTask.progress' => ['required', 'numeric'],\n        'shipbuildingTask.target' => ['required', 'numeric'],\n        'shipbuildingTask.deviation' => ['required', 'numeric'],\n    ];\n\n    public function mount(Shipbuilding $shipbuilding): void\n    {\n        $this->shipbuilding = $shipbuilding;\n        $this->resetShipbuildingTaskData();\n    }\n\n    public function resetShipbuildingTaskData(): void\n    {\n        $this->shipbuildingTask = new ShipbuildingTask();\n\n        $this->dispatchBrowserEvent('refresh');\n    }\n\n    public function newShipbuildingTask(): void\n    {\n        $this->editing = false;\n        $this->modalTitle = trans(\n            'crud.shipbuilding_shipbuilding_tasks.new_title'\n        );\n        $this->resetShipbuildingTaskData();\n\n        $this->showModalForm();\n    }\n\n    public function viewShipbuildingTask(\n        ShipbuildingTask $shipbuildingTask\n    ): void {\n        $this->editing = false;\n        $this->modalTitle = trans(\n            'crud.shipbuilding_shipbuilding_tasks.show_title'\n        );\n        $this->shipbuildingTask = $shipbuildingTask;\n\n        $this->dispatchBrowserEvent('refresh');\n\n        $this->showModalView();\n    }\n\n    public function editShipbuildingTask(\n        ShipbuildingTask $shipbuildingTask\n    ): void {\n        $this->editing = true;\n        $this->modalTitle = trans(\n            'crud.shipbuilding_shipbuilding_tasks.edit_title'\n        );\n        $this->shipbuildingTask = $shipbuildingTask;\n\n        $this->dispatchBrowserEvent('refresh');\n\n        $this->showModalForm();\n    }\n\n    public function showModalView(): void\n    {\n        $this->resetErrorBag();\n        $this->showingModalView = true;\n        $this->showingModalForm = false;\n    }\n\n    public function showModalForm(): void\n    {\n        $this->resetErrorBag();\n        $this->showingModalView = false;\n        $this->showingModalForm = true;\n    }\n\n    public function hideModal(): void\n    {\n        $this->showingModalView = false;\n        $this->showingModalForm = false;\n    }\n\n    public function save(): void\n    {\n        $this->validate();\n\n        if (!$this->shipbuildingTask->shipbuilding_id) {\n            $this->authorize('create', ShipbuildingTask::class);\n\n            $this->shipbuildingTask->shipbuilding_id = $this->shipbuilding->id;\n        } else {\n            $this->authorize('update', $this->shipbuildingTask);\n        }\n\n        $this->shipbuildingTask->progress_options = json_decode(\n            $this->shipbuildingTask->progress_options,\n            true\n        );\n\n        $this->shipbuildingTask->save();\n\n        $this->hideModal();\n    }\n\n    public function destroySelected(): void\n    {\n        $this->authorize('delete-any', ShipbuildingTask::class);\n\n        ShipbuildingTask::whereIn('id', $this->selected)->delete();\n\n        $this->selected = [];\n        $this->allSelected = false;\n\n        $this->resetShipbuildingTaskData();\n    }\n\n    public function toggleFullSelection(): void\n    {\n        if (!$this->allSelected) {\n            $this->selected = [];\n            return;\n        }\n\n        foreach ($this->shipbuilding->shipbuildingTasks as $shipbuildingTask) {\n            array_push($this->selected, $shipbuildingTask->id);\n        }\n    }\n\n    public function render(): View\n    {\n        return view('livewire.shipbuilding-shipbuilding-tasks-detail', [\n            'shipbuildingTasks' => $this->shipbuilding\n                ->shipbuildingTasks()\n                ->paginate(100),\n        ]);\n    }\n}\n",
+                        "content": "<?php\n\nnamespace App\\Http\\Livewire;\n\nuse Livewire\\Component;\nuse Illuminate\\View\\View;\nuse Livewire\\WithPagination;\nuse App\\Models\\Shipbuilding;\nuse App\\Models\\ShipbuildingTask;\nuse Illuminate\\Foundation\\Auth\\Access\\AuthorizesRequests;\n\nclass ShipbuildingShipbuildingTasksDetail extends Component\n{\n    use WithPagination;\n    use AuthorizesRequests;\n\n    public Shipbuilding $shipbuilding;\n    public ShipbuildingTask $shipbuildingTask;\n\n    public $selected = [];\n    public $editing = false;\n    public $allSelected = false;\n    public $showingModalView = false;\n    public $showingModalForm = false;\n\n    public $modalTitle = 'New ShipbuildingTask';\n\n    protected $rules = [\n        'shipbuildingTask.item_type' => ['required', 'in:work-item,category'],\n        'shipbuildingTask.name' => ['required', 'max:255', 'string'],\n        'shipbuildingTask.description' => ['nullable', 'max:255', 'string'],\n        'shipbuildingTask.weight' => ['required', 'numeric'],\n        'shipbuildingTask.progress_options' => ['nullable', 'max:255', 'json'],\n        'shipbuildingTask.progress' => ['required', 'numeric'],\n        'shipbuildingTask.target' => ['required', 'numeric'],\n        'shipbuildingTask.deviation' => ['required', 'numeric'],\n    ];\n\n    public function mount(Shipbuilding $shipbuilding): void\n    {\n        $this->shipbuilding = $shipbuilding;\n        $this->resetShipbuildingTaskData();\n    }\n\n    public function resetShipbuildingTaskData(): void\n    {\n        $this->shipbuildingTask = new ShipbuildingTask();\n\n        $this->shipbuildingTask->item_type = 'work-item';\n\n        $this->dispatchBrowserEvent('refresh');\n    }\n\n    public function newShipbuildingTask(): void\n    {\n        $this->editing = false;\n        $this->modalTitle = trans(\n            'crud.shipbuilding_shipbuilding_tasks.new_title'\n        );\n        $this->resetShipbuildingTaskData();\n\n        $this->showModalForm();\n    }\n\n    public function viewShipbuildingTask(\n        ShipbuildingTask $shipbuildingTask\n    ): void {\n        $this->editing = false;\n        $this->modalTitle = trans(\n            'crud.shipbuilding_shipbuilding_tasks.show_title'\n        );\n        $this->shipbuildingTask = $shipbuildingTask;\n\n        $this->dispatchBrowserEvent('refresh');\n\n        $this->showModalView();\n    }\n\n    public function editShipbuildingTask(\n        ShipbuildingTask $shipbuildingTask\n    ): void {\n        $this->editing = true;\n        $this->modalTitle = trans(\n            'crud.shipbuilding_shipbuilding_tasks.edit_title'\n        );\n        $this->shipbuildingTask = $shipbuildingTask;\n\n        $this->dispatchBrowserEvent('refresh');\n\n        $this->showModalForm();\n    }\n\n    public function showModalView(): void\n    {\n        $this->resetErrorBag();\n        $this->showingModalView = true;\n        $this->showingModalForm = false;\n    }\n\n    public function showModalForm(): void\n    {\n        $this->resetErrorBag();\n        $this->showingModalView = false;\n        $this->showingModalForm = true;\n    }\n\n    public function hideModal(): void\n    {\n        $this->showingModalView = false;\n        $this->showingModalForm = false;\n    }\n\n    public function save(): void\n    {\n        $this->validate();\n\n        if (!$this->shipbuildingTask->shipbuilding_id) {\n            $this->authorize('create', ShipbuildingTask::class);\n\n            $this->shipbuildingTask->shipbuilding_id = $this->shipbuilding->id;\n        } else {\n            $this->authorize('update', $this->shipbuildingTask);\n        }\n\n        $this->shipbuildingTask->progress_options = json_decode(\n            $this->shipbuildingTask->progress_options,\n            true\n        );\n\n        $this->shipbuildingTask->save();\n\n        $this->hideModal();\n    }\n\n    public function destroySelected(): void\n    {\n        $this->authorize('delete-any', ShipbuildingTask::class);\n\n        ShipbuildingTask::whereIn('id', $this->selected)->delete();\n\n        $this->selected = [];\n        $this->allSelected = false;\n\n        $this->resetShipbuildingTaskData();\n    }\n\n    public function toggleFullSelection(): void\n    {\n        if (!$this->allSelected) {\n            $this->selected = [];\n            return;\n        }\n\n        foreach ($this->shipbuilding->shipbuildingTasks as $shipbuildingTask) {\n            array_push($this->selected, $shipbuildingTask->id);\n        }\n    }\n\n    public function render(): View\n    {\n        return view('livewire.shipbuilding-shipbuilding-tasks-detail', [\n            'shipbuildingTasks' => $this->shipbuilding\n                ->shipbuildingTasks()\n                ->paginate(100),\n        ]);\n    }\n}\n",
                         "module": "crud:390",
                         "path": "\\app\\Http\\Livewire\\ShipbuildingShipbuildingTasksDetail.php"
                     },
                     "\\routes\\api.php": {
                         "deleteOnGeneration": true,
-                        "content": "<?php\r\n\r\nuse Illuminate\\Http\\Request;\r\nuse Illuminate\\Support\\Facades\\Route;\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| API Routes\r\n|--------------------------------------------------------------------------\r\n|\r\n| Here is where you can register API routes for your application. These\r\n| routes are loaded by the RouteServiceProvider within a group which\r\n| is assigned the \"api\" middleware group. Enjoy building your API!\r\n|\r\n*/\r\n\r\nRoute::middleware('auth:sanctum')->get('/user', function (Request $request) {\r\n    return $request->user();\r\n});\r\n",
+                        "content": "<?php\r\n\r\nuse Illuminate\\Http\\Request;\r\nuse Illuminate\\Support\\Facades\\Route;\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| API Routes\r\n|--------------------------------------------------------------------------\r\n|\r\n| Here is where you can register API routes for your application. These\r\n| routes are loaded by the RouteServiceProvider within a group which\r\n| is assigned the \"api\" middleware group. Enjoy building your API!\r\n|\r\n*/\r\n\r\nRoute::middleware('auth:api')->get('/user', function (Request $request) {\r\n    return $request->user();\r\n});\r\n",
                         "module": "base",
                         "path": "\\routes\\api.php"
                     },
@@ -40125,7 +40232,7 @@
                     },
                     "\\resources\\views\\layouts\\app.blade.php": {
                         "deleteOnGeneration": true,
-                        "content": "<!DOCTYPE html>\r\n<html lang=\"{{ str_replace('_', '-', app()->getLocale()) }}\">\r\n    <head>\r\n        <meta charset=\"utf-8\">\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n        <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\r\n        \r\n        <title>shipbuilding_3 [plan]</title>\r\n        \r\n        <!-- Fonts -->\r\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\r\n        \r\n        <!-- Styles -->\r\n        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css\">\r\n        \r\n        <!-- Icons -->\r\n        <link href=\"https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css\" rel=\"stylesheet\">\r\n        \r\n        <!-- Scripts -->\r\n        @vite(['resources/css/app.css', 'resources/js/app.js'])\r\n\r\n        \r\n        @livewireStyles\r\n    </head>\r\n    <body class=\"font-sans antialiased\">\r\n        <x-banner />\r\n\r\n        <div class=\"min-h-screen bg-gray-100\">\r\n            @livewire('navigation-menu')\r\n        \r\n            <!-- Page Heading -->\r\n            @if (isset($header))\r\n                <header class=\"bg-white shadow\">\r\n                    <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\r\n                        {{ $header }}\r\n                    </div>\r\n                </header>\r\n            @endif\r\n        \r\n            <!-- Page Content -->\r\n            <main>\r\n                {{ $slot }}\r\n            </main>\r\n        </div>\r\n\r\n        @stack('modals')\n        \n        @livewireScripts\n        \n        @stack('scripts')\n        \n        <script src=\"https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js\"></script>\n        \n        <script>\n            /* simple notification */\n            var notyf = new Notyf({dismissible: true});\n        \n            @if (session()->has('success'))\n            notyf.success('{{ session('success') }}')\n            @endif\n        \n            @if (session()->has('error'))\n            notyf.error('{{ session('error') }}')\n            @endif\n        </script>\n        \r\n        \r\n        <script>\r\n            /* Simple Alpine Image Viewer */\r\n            document.addEventListener('alpine:init', () => {\r\n                Alpine.data('imageViewer', (src = '') => {\r\n                    return {\r\n                        imageUrl: src,\r\n        \r\n                        refreshUrl() {\r\n                            this.imageUrl = this.$el.getAttribute(\"image-url\")\r\n                        },\r\n        \r\n                        fileChosen(event) {\r\n                            this.fileToDataUrl(event, src => this.imageUrl = src)\r\n                        },\r\n        \r\n                        fileToDataUrl(event, callback) {\r\n                            if (! event.target.files.length) return\r\n        \r\n                            let file = event.target.files[0],\r\n                                reader = new FileReader()\r\n        \r\n                            reader.readAsDataURL(file)\r\n                            reader.onload = e => callback(e.target.result)\r\n                        },\r\n                    }\r\n                })\r\n            })\r\n        </script>\r\n    </body>\r\n</html>\r\n",
+                        "content": "<!DOCTYPE html>\r\n<html lang=\"{{ str_replace('_', '-', app()->getLocale()) }}\">\r\n    <head>\r\n        <meta charset=\"utf-8\">\r\n        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n        <meta name=\"csrf-token\" content=\"{{ csrf_token() }}\">\r\n        \r\n        <title>shipbuilding_3</title>\r\n        \r\n        <!-- Fonts -->\r\n        <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap\">\r\n        \r\n        <!-- Styles -->\r\n        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css\">\r\n        \r\n        <!-- Icons -->\r\n        <link href=\"https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css\" rel=\"stylesheet\">\r\n        \r\n        <!-- Scripts -->\r\n        @vite(['resources/css/app.css', 'resources/js/app.js'])\r\n\r\n        \r\n        @livewireStyles\r\n    </head>\r\n    <body class=\"font-sans antialiased\">\r\n        <x-banner />\r\n\r\n        <div class=\"min-h-screen bg-gray-100\">\r\n            @livewire('navigation-menu')\r\n        \r\n            <!-- Page Heading -->\r\n            @if (isset($header))\r\n                <header class=\"bg-white shadow\">\r\n                    <div class=\"max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8\">\r\n                        {{ $header }}\r\n                    </div>\r\n                </header>\r\n            @endif\r\n        \r\n            <!-- Page Content -->\r\n            <main>\r\n                {{ $slot }}\r\n            </main>\r\n        </div>\r\n\r\n        @stack('modals')\n        \n        @livewireScripts\n        \n        @stack('scripts')\n        \n        <script src=\"https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js\"></script>\n        \n        <script>\n            /* simple notification */\n            var notyf = new Notyf({dismissible: true});\n        \n            @if (session()->has('success'))\n            notyf.success('{{ session('success') }}')\n            @endif\n        \n            @if (session()->has('error'))\n            notyf.error('{{ session('error') }}')\n            @endif\n        </script>\n        \r\n        \r\n        <script>\r\n            /* Simple Alpine Image Viewer */\r\n            document.addEventListener('alpine:init', () => {\r\n                Alpine.data('imageViewer', (src = '') => {\r\n                    return {\r\n                        imageUrl: src,\r\n        \r\n                        refreshUrl() {\r\n                            this.imageUrl = this.$el.getAttribute(\"image-url\")\r\n                        },\r\n        \r\n                        fileChosen(event) {\r\n                            this.fileToDataUrl(event, src => this.imageUrl = src)\r\n                        },\r\n        \r\n                        fileToDataUrl(event, callback) {\r\n                            if (! event.target.files.length) return\r\n        \r\n                            let file = event.target.files[0],\r\n                                reader = new FileReader()\r\n        \r\n                            reader.readAsDataURL(file)\r\n                            reader.onload = e => callback(e.target.result)\r\n                        },\r\n                    }\r\n                })\r\n            })\r\n        </script>\r\n    </body>\r\n</html>\r\n",
                         "module": "base",
                         "path": "\\resources\\views\\layouts\\app.blade.php"
                     },
@@ -40143,7 +40250,7 @@
                     },
                     "\\database\\factories\\ShipbuildingTaskFactory.php": {
                         "deleteOnGeneration": true,
-                        "content": "<?php\n\nnamespace Database\\Factories;\n\nuse Illuminate\\Support\\Str;\nuse App\\Models\\ShipbuildingTask;\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\n\nclass ShipbuildingTaskFactory extends Factory\n{\n    /**\n     * The name of the factory's corresponding model.\n     *\n     * @var string\n     */\n    protected $model = ShipbuildingTask::class;\n\n    /**\n     * Define the model's default state.\n     *\n     * @return array<string, mixed>\n     */\n    public function definition(): array\n    {\n        return [\n            'level' => $this->faker->randomNumber(),\n            'sort_order' => $this->faker->randomNumber(0),\n            'name' => $this->faker->name(),\n            'description' => $this->faker->sentence(15),\n            'weight' => $this->faker->randomNumber(1),\n            'progress_options' => [],\n            'sub_tasks_count' => $this->faker->randomNumber(0),\n            'sub_tasks_weight_sum' => $this->faker->randomNumber(1),\n            'metadata' => [],\n            'shipbuilding_id' => \\App\\Models\\Shipbuilding::factory(),\n            'parent_task_id' => function () {\n                return \\App\\Models\\ShipbuildingTask::factory()->create([\n                    'parent_task_id' => null,\n                ])->id;\n            },\n        ];\n    }\n}\n",
+                        "content": "<?php\n\nnamespace Database\\Factories;\n\nuse Illuminate\\Support\\Str;\nuse App\\Models\\ShipbuildingTask;\nuse Illuminate\\Database\\Eloquent\\Factories\\Factory;\n\nclass ShipbuildingTaskFactory extends Factory\n{\n    /**\n     * The name of the factory's corresponding model.\n     *\n     * @var string\n     */\n    protected $model = ShipbuildingTask::class;\n\n    /**\n     * Define the model's default state.\n     *\n     * @return array<string, mixed>\n     */\n    public function definition(): array\n    {\n        return [\n            'level' => $this->faker->randomNumber(),\n            'sort_order' => $this->faker->randomNumber(0),\n            'item_type' => 'work-item',\n            'name' => $this->faker->name(),\n            'description' => $this->faker->sentence(15),\n            'weight' => $this->faker->randomNumber(1),\n            'progress_options' => [],\n            'sub_tasks_count' => $this->faker->randomNumber(0),\n            'sub_tasks_weight_sum' => $this->faker->randomNumber(1),\n            'metadata' => [],\n            'shipbuilding_id' => \\App\\Models\\Shipbuilding::factory(),\n            'parent_task_id' => function () {\n                return \\App\\Models\\ShipbuildingTask::factory()->create([\n                    'parent_task_id' => null,\n                ])->id;\n            },\n        ];\n    }\n}\n",
                         "module": "entity:397",
                         "path": "\\database\\factories\\ShipbuildingTaskFactory.php"
                     },
@@ -40239,7 +40346,7 @@
                     },
                     "\\database\\migrations\\2025_02_13_000002_create_shipbuilding_tasks_table.php": {
                         "deleteOnGeneration": true,
-                        "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Schema;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Database\\Migrations\\Migration;\n\nreturn new class extends Migration {\n    /**\n     * Run the migrations.\n     */\n    public function up(): void\n    {\n        Schema::create('shipbuilding_tasks', function (Blueprint $table) {\n            $table->bigIncrements('id');\n            $table->foreignId('shipbuilding_id');\n            $table->integer('level')->default(1);\n            $table->integer('sort_order')->default(1);\n            $table->foreignId('parent_task_id')->nullable();\n            $table->string('name');\n            $table->text('description')->nullable();\n            $table->decimal('weight', 10, 3)->default(0);\n            $table->bigInteger('lock_element_set')->default(0);\n            $table->json('progress_options')->nullable();\n            $table->decimal('progress', 6, 3)->default(0);\n            $table->decimal('target', 6, 3)->default(0);\n            $table->decimal('deviation', 6, 3)->default(0);\n            $table->decimal('score', 10, 3)->default(10);\n            $table->integer('sub_tasks_count')->default(0);\n            $table->decimal('sub_tasks_weight_sum', 10, 3)->default(0);\n            $table->decimal('sub_tasks_score_sum', 10, 3)->default(0);\n            $table->decimal('on_group_progress', 6, 3)->default(0);\n            $table->decimal('on_project_weight', 10, 3)->default(0);\n            $table->decimal('on_project_progress', 6, 3)->default(0);\n            $table->json('metadata')->nullable();\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     */\n    public function down(): void\n    {\n        Schema::dropIfExists('shipbuilding_tasks');\n    }\n};\n",
+                        "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Schema;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Database\\Migrations\\Migration;\n\nreturn new class extends Migration {\n    /**\n     * Run the migrations.\n     */\n    public function up(): void\n    {\n        Schema::create('shipbuilding_tasks', function (Blueprint $table) {\n            $table->bigIncrements('id');\n            $table->foreignId('shipbuilding_id');\n            $table->integer('level')->default(1);\n            $table->integer('sort_order')->default(1);\n            $table->foreignId('parent_task_id')->nullable();\n            $table\n                ->enum('item_type', ['work-item', 'category'])\n                ->default('work-item');\n            $table->string('name');\n            $table->text('description')->nullable();\n            $table->decimal('weight', 10, 3)->default(0);\n            $table->bigInteger('lock_element_set')->default(0);\n            $table->json('progress_options')->nullable();\n            $table->decimal('progress', 6, 3)->default(0);\n            $table->decimal('target', 6, 3)->default(0);\n            $table->decimal('deviation', 6, 3)->default(0);\n            $table->decimal('score', 10, 3)->default(10);\n            $table->integer('sub_tasks_count')->default(0);\n            $table->decimal('sub_tasks_weight_sum', 10, 3)->default(0);\n            $table->decimal('sub_tasks_score_sum', 10, 3)->default(0);\n            $table->decimal('on_group_progress', 6, 3)->default(0);\n            $table->decimal('on_project_weight', 10, 3)->default(0);\n            $table->decimal('on_project_progress', 6, 3)->default(0);\n            $table->json('metadata')->nullable();\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     */\n    public function down(): void\n    {\n        Schema::dropIfExists('shipbuilding_tasks');\n    }\n};\n",
                         "module": "entity:397",
                         "path": "\\database\\migrations\\2025_02_13_000002_create_shipbuilding_tasks_table.php"
                     },
@@ -40281,7 +40388,7 @@
                     },
                     "\\app\\Models\\ShipbuildingTask.php": {
                         "deleteOnGeneration": true,
-                        "content": "<?php\n\nnamespace App\\Models;\n\nuse Datetime;\nuse Snippet\\Helpers\\JsonField;\nuse App\\Models\\Scopes\\Searchable;\nuse Illuminate\\Database\\Eloquent\\Model;\nuse Illuminate\\Database\\Eloquent\\Concerns\\HasUuids;\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n\n/**\n * This is the model class for table \"shipbuilding_tasks\".\n *\n * @property string $id\n * @property string $shipbuilding_id\n * @property string $level\n * @property string $sort_order\n * @property string $parent_task_id\n * @property string $name\n * @property string $description\n * @property float $weight\n * @property integer $lock_element_set\n * @property array $progress_options\n * @property float $progress\n * @property float $target\n * @property float $deviation\n * @property float $score\n * @property string $sub_tasks_count\n * @property float $sub_tasks_weight_sum\n * @property float $sub_tasks_score_sum\n * @property float $on_group_progress\n * @property float $on_project_weight\n * @property float $on_project_progress\n * @property array $metadata\n *\n * @property Shipbuilding $shipbuilding\n *\n * @property ShipbuildingTask $shipbuildingTask\n *\n * @property ShipbuildingTask[] $shipbuildingTasks\n *\n *\n */\nclass ShipbuildingTask extends Model\n{\n    use HasFactory;\n    use Searchable;\n\n    protected $fillable = [\n        'shipbuilding_id',\n        'level',\n        'sort_order',\n        'parent_task_id',\n        'name',\n        'description',\n        'weight',\n        'lock_element_set',\n        'progress_options',\n        'progress',\n        'target',\n        'deviation',\n        'score',\n        'sub_tasks_count',\n        'sub_tasks_weight_sum',\n        'sub_tasks_score_sum',\n        'on_group_progress',\n        'on_project_weight',\n        'on_project_progress',\n        'metadata',\n    ];\n\n    protected $searchableFields = ['*'];\n\n    protected $table = 'shipbuilding_tasks';\n\n    protected $casts = [\n        'progress_options' => 'array',\n        'metadata' => 'array',\n    ];\n\n    public function progress_options($key = null, $default = null)\n    {\n        return JsonField::getField($this, 'progress_options', $key, $default);\n    }\n\n    public function metadata($key = null, $default = null)\n    {\n        return JsonField::getField($this, 'metadata', $key, $default);\n    }\n\n    public function shipbuilding()\n    {\n        return $this->belongsTo(Shipbuilding::class);\n    }\n\n    public function shipbuildingTask()\n    {\n        return $this->belongsTo(ShipbuildingTask::class, 'parent_task_id');\n    }\n\n    public function shipbuildingTasks()\n    {\n        return $this->hasMany(ShipbuildingTask::class, 'parent_task_id');\n    }\n}\n",
+                        "content": "<?php\n\nnamespace App\\Models;\n\nuse Datetime;\nuse Snippet\\Helpers\\JsonField;\nuse App\\Models\\Scopes\\Searchable;\nuse Illuminate\\Database\\Eloquent\\Model;\nuse Illuminate\\Database\\Eloquent\\Concerns\\HasUuids;\nuse Illuminate\\Database\\Eloquent\\Factories\\HasFactory;\n\n/**\n * This is the model class for table \"shipbuilding_tasks\".\n *\n * @property string $id\n * @property string $shipbuilding_id\n * @property string $level\n * @property string $sort_order\n * @property string $parent_task_id\n * @property string $item_type\n * @property string $name\n * @property string $description\n * @property float $weight\n * @property integer $lock_element_set\n * @property array $progress_options\n * @property float $progress\n * @property float $target\n * @property float $deviation\n * @property float $score\n * @property string $sub_tasks_count\n * @property float $sub_tasks_weight_sum\n * @property float $sub_tasks_score_sum\n * @property float $on_group_progress\n * @property float $on_project_weight\n * @property float $on_project_progress\n * @property array $metadata\n *\n * @property Shipbuilding $shipbuilding\n *\n * @property ShipbuildingTask $shipbuildingTask\n *\n * @property ShipbuildingTask[] $shipbuildingTasks\n *\n *\n */\nclass ShipbuildingTask extends Model\n{\n    use HasFactory;\n    use Searchable;\n\n    protected $fillable = [\n        'shipbuilding_id',\n        'level',\n        'sort_order',\n        'parent_task_id',\n        'item_type',\n        'name',\n        'description',\n        'weight',\n        'lock_element_set',\n        'progress_options',\n        'progress',\n        'target',\n        'deviation',\n        'score',\n        'sub_tasks_count',\n        'sub_tasks_weight_sum',\n        'sub_tasks_score_sum',\n        'on_group_progress',\n        'on_project_weight',\n        'on_project_progress',\n        'metadata',\n    ];\n\n    protected $searchableFields = ['*'];\n\n    protected $table = 'shipbuilding_tasks';\n\n    protected $casts = [\n        'progress_options' => 'array',\n        'metadata' => 'array',\n    ];\n\n    public function progress_options($key = null, $default = null)\n    {\n        return JsonField::getField($this, 'progress_options', $key, $default);\n    }\n\n    public function metadata($key = null, $default = null)\n    {\n        return JsonField::getField($this, 'metadata', $key, $default);\n    }\n\n    public function shipbuilding()\n    {\n        return $this->belongsTo(Shipbuilding::class);\n    }\n\n    public function shipbuildingTask()\n    {\n        return $this->belongsTo(ShipbuildingTask::class, 'parent_task_id');\n    }\n\n    public function shipbuildingTasks()\n    {\n        return $this->hasMany(ShipbuildingTask::class, 'parent_task_id');\n    }\n}\n",
                         "module": "entity:397",
                         "path": "\\app\\Models\\ShipbuildingTask.php"
                     },
@@ -40432,7 +40539,7 @@
                 "usesVite": true,
                 "id": 34,
                 "createdAt": "2025-02-10 16:31:15",
-                "updatedAt": "2025-02-21 06:20:32"
+                "updatedAt": "2025-02-22 10:32:27"
             }
         },
         "manytomanycomponents": {},
@@ -40698,6 +40805,15 @@
         "Field:3801:manyToManylocalModelRelationships",
         "Field:3801:typedMorphRelationships",
         "Field:3801:identifiedMorphRelationships",
+        "Field:3820:inputs",
+        "Field:3820:foreign",
+        "Field:3820:relatedForeigns",
+        "Field:3820:basicParentRelationships",
+        "Field:3820:basicForeignRelationships",
+        "Field:3820:manyToManyModelRelationships",
+        "Field:3820:manyToManylocalModelRelationships",
+        "Field:3820:typedMorphRelationships",
+        "Field:3820:identifiedMorphRelationships",
         "Field:3802:inputs",
         "Field:3802:foreign",
         "Field:3802:relatedForeigns",

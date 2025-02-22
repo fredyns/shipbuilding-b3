@@ -88,6 +88,7 @@ return [
         'edit_title' => 'Edit ShipbuildingTask',
         'show_title' => 'Show ShipbuildingTask',
         'inputs' => [
+            'item_type' => 'Item Type',
             'name' => 'Name',
             'description' => 'Description',
             'weight' => 'Weight',

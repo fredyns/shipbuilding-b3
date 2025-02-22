@@ -16,6 +16,9 @@ return new class extends Migration {
             $table->integer('level')->default(1);
             $table->integer('sort_order')->default(1);
             $table->foreignId('parent_task_id')->nullable();
+            $table
+                ->enum('item_type', ['work-item', 'category'])
+                ->default('work-item');
             $table->string('name');
             $table->text('description')->nullable();
             $table->decimal('weight', 10, 3)->default(0);
