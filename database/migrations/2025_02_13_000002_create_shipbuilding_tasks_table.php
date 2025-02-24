@@ -23,8 +23,8 @@ return new class extends Migration {
             $table->text('description')->nullable();
             $table->decimal('weight', 10, 3)->default(0);
             $table
-                ->enum('enable_sub_progress', ['work-item', 'category'])
-                ->default('work-item');
+                ->enum('enable_sub_progress', ['none', 'category', 'work-item'])
+                ->default('none');
             $table->bigInteger('lock_element_set')->default(0);
             $table->json('progress_options')->nullable();
             $table->decimal('progress', 6, 3)->default(0);

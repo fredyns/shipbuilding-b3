@@ -38,6 +38,11 @@
                         Shipbuildings
                         </x-dropdown-link>
                         @endcan
+                        @can('view-any', App\Models\ShipbuildingTask::class)
+                        <x-dropdown-link href="{{ route('shipbuilding-tasks.index') }}">
+                        Shipbuilding Tasks
+                        </x-dropdown-link>
+                        @endcan
                 </x-nav-dropdown>
 
                     @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
@@ -198,6 +203,11 @@
                 @can('view-any', App\Models\Shipbuilding::class)
                 <x-responsive-nav-link href="{{ route('shipbuildings.index') }}">
                 Shipbuildings
+                </x-responsive-nav-link>
+                @endcan
+                @can('view-any', App\Models\ShipbuildingTask::class)
+                <x-responsive-nav-link href="{{ route('shipbuilding-tasks.index') }}">
+                Shipbuilding Tasks
                 </x-responsive-nav-link>
                 @endcan
 

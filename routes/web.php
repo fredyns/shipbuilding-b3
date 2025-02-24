@@ -8,6 +8,7 @@ use App\Http\Controllers\ShipTypeController;
 use App\Http\Controllers\ShipyardController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ShipbuildingController;
+use App\Http\Controllers\ShipbuildingTaskController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
@@ -66,4 +67,8 @@ Route::prefix('/')
         Route::resource('ship-types', ShipTypeController::class);
         Route::resource('shipyards', ShipyardController::class);
         Route::resource('shipbuildings', ShipbuildingController::class);
+        Route::resource(
+            'shipbuilding-tasks',
+            ShipbuildingTaskController::class
+        );
     });

@@ -99,6 +99,45 @@ return [
         ],
     ],
 
+    'shipbuilding_tasks' => [
+        'name' => 'Shipbuilding Tasks',
+        'index_title' => 'Shipbuilding Tasks List',
+        'new_title' => 'Add Shipbuilding Task',
+        'create_title' => 'Add Shipbuilding Task',
+        'edit_title' => 'Edit Shipbuilding Task',
+        'show_title' => 'Show Shipbuilding Task',
+        'inputs' => [
+            'shipbuilding_id' => 'Shipbuilding',
+            'parent_task_id' => 'Parent Task',
+            'item_type' => 'Item Type',
+            'name' => 'Name',
+            'description' => 'Description',
+            'weight' => 'Weight',
+            'enable_sub_progress' => 'Enable Sub Progress',
+            'progress' => 'Progress',
+            'target' => 'Target',
+            'deviation' => 'Deviation',
+        ],
+    ],
+
+    'shipbuilding_task_shipbuilding_tasks' => [
+        'name' => 'Shipbuilding Task Shipbuilding Tasks',
+        'index_title' => 'Shipbuilding Tasks List',
+        'new_title' => 'Add Shipbuilding Task',
+        'create_title' => 'Add Shipbuilding Task',
+        'edit_title' => 'Edit Shipbuilding Task',
+        'show_title' => 'Show Shipbuilding Task',
+        'inputs' => [
+            'name' => 'Name',
+            'description' => 'Description',
+            'weight' => 'Weight',
+            'enable_sub_progress' => 'Enable Sub Progress',
+            'progress' => 'Progress',
+            'target' => 'Target',
+            'deviation' => 'Deviation',
+        ],
+    ],
+
     'roles' => [
         'name' => 'Roles',
         'index_title' => 'Roles List',
