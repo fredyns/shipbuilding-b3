@@ -48,7 +48,7 @@ class ShipbuildingTaskShipbuildingTasksDetail extends Component
         $this->shipbuildingTask = new ShipbuildingTask();
 
         $this->shipbuildingTask->shipbuilding_id = $this->parentTask->shipbuilding_id;
-        $this->shipbuildingTask->level = eval($this->parentTask->level) + 1;
+        $this->shipbuildingTask->level = 1 + (int)optional($this->parentTask)->level;
         $this->shipbuildingTask->parent_task_id = $this->parentTask->id;
         $this->shipbuildingTask->item_type = 'work-item';
         $this->shipbuildingTask->enable_sub_progress = 'none';
