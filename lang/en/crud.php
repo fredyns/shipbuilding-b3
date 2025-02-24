@@ -82,11 +82,11 @@ return [
 
     'shipbuilding_shipbuilding_tasks' => [
         'name' => 'Shipbuilding Tasks',
-        'index_title' => 'ShipbuildingTasks List',
+        'index_title' => 'Shipbuilding Tasks List',
         'new_title' => 'New Shipbuilding task',
-        'create_title' => 'Create ShipbuildingTask',
-        'edit_title' => 'Edit ShipbuildingTask',
-        'show_title' => 'Show ShipbuildingTask',
+        'create_title' => 'Create Shipbuilding Task',
+        'edit_title' => 'Edit Shipbuilding Task',
+        'show_title' => 'Show Shipbuilding Task',
         'inputs' => [
             'item_type' => 'Item Type',
             'name' => 'Name',
