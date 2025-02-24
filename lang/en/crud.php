@@ -81,7 +81,7 @@ return [
     ],
 
     'shipbuilding_shipbuilding_tasks' => [
-        'name' => 'Shipbuilding Shipbuilding Tasks',
+        'name' => 'Shipbuilding Tasks',
         'index_title' => 'ShipbuildingTasks List',
         'new_title' => 'New Shipbuilding task',
         'create_title' => 'Create ShipbuildingTask',
