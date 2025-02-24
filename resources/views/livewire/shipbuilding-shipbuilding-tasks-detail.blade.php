@@ -1,20 +1,20 @@
 <div>
     <div>
         @can('create', App\Models\ShipbuildingTask::class)
-            <button class="button" wire:click="newShipbuildingTask">
-                <i class="mr-1 icon ion-md-add text-primary"></i>
-                @lang('crud.common.new')
-            </button>
+        <button class="button" wire:click="newShipbuildingTask">
+            <i class="mr-1 icon ion-md-add text-primary"></i>
+            @lang('crud.common.new')
+        </button>
         @endcan @can('delete-any', App\Models\ShipbuildingTask::class)
-            <button
-                class="button button-danger"
-                {{ empty($selected) ? 'disabled' : '' }}
-                onclick="confirm('{{ __('crud.common.are_you_sure') }}') || event.stopImmediatePropagation()"
-                wire:click="destroySelected"
-            >
-                <i class="mr-1 icon ion-md-trash text-primary"></i>
-                @lang('crud.common.delete_selected')
-            </button>
+        <button
+            class="button button-danger"
+             {{ empty($selected) ? 'disabled' : '' }} 
+            onclick="confirm('{{ __('crud.common.are_you_sure') }}') || event.stopImmediatePropagation()"
+            wire:click="destroySelected"
+        >
+            <i class="mr-1 icon ion-md-trash text-primary"></i>
+            @lang('crud.common.delete_selected')
+        </button>
         @endcan
     </div>
 
@@ -26,13 +26,13 @@
                 <div class="flex flex-wrap">
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding-tasks.inputs.name')
+                            @lang('crud.shipbuilding_shipbuilding_tasks.inputs.name')
                         </h5>
                         <span> {{ $shipbuildingTask->name ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding-tasks.inputs.description')
+                            @lang('crud.shipbuilding_shipbuilding_tasks.inputs.description')
                         </h5>
                         <span>
                             {{ $shipbuildingTask->description ?? '-' }}
@@ -40,25 +40,25 @@
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding-tasks.inputs.weight')
+                            @lang('crud.shipbuilding_shipbuilding_tasks.inputs.weight')
                         </h5>
                         <span> {{ $shipbuildingTask->weight ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding-tasks.inputs.progress')
+                            @lang('crud.shipbuilding_shipbuilding_tasks.inputs.progress')
                         </h5>
                         <span> {{ $shipbuildingTask->progress ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding-tasks.inputs.target')
+                            @lang('crud.shipbuilding_shipbuilding_tasks.inputs.target')
                         </h5>
                         <span> {{ $shipbuildingTask->target ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding-tasks.inputs.deviation')
+                            @lang('crud.shipbuilding_shipbuilding_tasks.inputs.deviation')
                         </h5>
                         <span> {{ $shipbuildingTask->deviation ?? '-' }} </span>
                     </div>
@@ -76,14 +76,14 @@
                 @lang('text.close')
             </button>
             @can('update', $shipbuildingTask)
-                <button
-                    type="button"
-                    class="button mr-1"
-                    wire:click="editShipbuildingTask('{{ $shipbuildingTask->id }}')"
-                >
-                    <i class="mr-1 icon ion-md-create"></i>
-                    @lang('crud.common.edit')
-                </button>
+            <button
+                type="button"
+                class="button mr-1"
+                wire:click="editShipbuildingTask('{{ $shipbuildingTask->id }}')"
+            >
+                <i class="mr-1 icon ion-md-create"></i>
+                @lang('crud.common.edit')
+            </button>
             @endcan
         </div>
     </x-modal>
@@ -100,8 +100,7 @@
                             wire:model="shipbuildingTask.item_type"
                             label="{{ __('crud.shipbuilding_tasks.inputs.item_type') }}"
                         >
-                            <option value="work-item" {{ $selected == 'work-item' ? 'selected' : '' }} >Work item
-                            </option>
+                            <option value="work-item" {{ $selected == 'work-item' ? 'selected' : '' }} >Work item</option>
                             <option value="category" {{ $selected == 'category' ? 'selected' : '' }} >Category</option>
                         </x-inputs.select>
                     </x-inputs.group>
@@ -206,38 +205,94 @@
     <div class="block w-full overflow-auto scrolling-touch mt-4">
         <table class="w-full max-w-full mb-4 bg-transparent">
             <thead class="text-gray-700">
-            <tr>
-                <th class="px-4 py-3 text-left w-1">
-                    <input
-                        type="checkbox"
-                        wire:model="allSelected"
-                        wire:click="toggleFullSelection"
-                        title="{{ trans('crud.common.select_all') }}"
-                    />
-                </th>
-                <th class="px-4 py-3 text-left">
-                    @lang('crud.shipbuilding_shipbuilding_tasks.inputs.name')
-                </th>
-                <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_shipbuilding_tasks.inputs.weight')
-                </th>
-                <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_shipbuilding_tasks.inputs.progress')
-                </th>
-                <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_shipbuilding_tasks.inputs.target')
-                </th>
-                <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_shipbuilding_tasks.inputs.deviation')
-                </th>
-                <th></th>
-            </tr>
+                <tr>
+                    <th class="px-4 py-3 text-left w-1">
+                        <input
+                            type="checkbox"
+                            wire:model="allSelected"
+                            wire:click="toggleFullSelection"
+                            title="{{ trans('crud.common.select_all') }}"
+                        />
+                    </th>
+                    <th class="px-4 py-3 text-left">
+                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.name')
+                    </th>
+                    <th class="px-4 py-3 text-right">
+                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.weight')
+                    </th>
+                    <th class="px-4 py-3 text-right">
+                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.progress')
+                    </th>
+                    <th class="px-4 py-3 text-right">
+                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.target')
+                    </th>
+                    <th class="px-4 py-3 text-right">
+                        @lang('crud.shipbuilding_shipbuilding_tasks.inputs.deviation')
+                    </th>
+                    <th></th>
+                </tr>
             </thead>
             <tbody class="text-gray-600">
-            @foreach ($shipbuildingTasks as $shipbuildingTask)
-                @include('livewire.partials.shipbuilding-shipbuilding-tasks-row', ['task' => $shipbuildingTask])
-            @endforeach
+                @foreach ($shipbuildingTasks as $shipbuildingTask)
+                <tr class="hover:bg-gray-100">
+                    <td class="px-4 py-3 text-left">
+                        <input
+                            type="checkbox"
+                            value="{{ $shipbuildingTask->id }}"
+                            wire:model="selected"
+                        />
+                    </td>
+                    <td class="px-4 py-3 text-left">
+                        {{ $shipbuildingTask->name ?? '-' }}
+                    </td>
+                    <td class="px-4 py-3 text-right">
+                        {{ $shipbuildingTask->weight ?? '-' }}
+                    </td>
+                    <td class="px-4 py-3 text-right">
+                        {{ $shipbuildingTask->progress ?? '-' }}
+                    </td>
+                    <td class="px-4 py-3 text-right">
+                        {{ $shipbuildingTask->target ?? '-' }}
+                    </td>
+                    <td class="px-4 py-3 text-right">
+                        {{ $shipbuildingTask->deviation ?? '-' }}
+                    </td>
+                    <td class="px-4 py-3 text-right" style="width: 134px;">
+                        <div
+                            role="group"
+                            aria-label="Row Actions"
+                            class="relative inline-flex align-middle"
+                        >
+                            <button
+                                type="button"
+                                class="button mr-1"
+                                wire:click="viewShipbuildingTask('{{ $shipbuildingTask->id }}')"
+                            >
+                                <i class="icon ion-md-eye"></i>
+                            </button>
+                            @can('update', $shipbuildingTask)
+                            <button
+                                type="button"
+                                class="button mr-1"
+                                wire:click="editShipbuildingTask('{{ $shipbuildingTask->id }}')"
+                            >
+                                <i class="icon ion-md-create"></i>
+                            </button>
+                            @endcan
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6">
+                        <div class="mt-10 px-4">
+                            {{ $shipbuildingTasks->render() }}
+                        </div>
+                    </td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 </div>
