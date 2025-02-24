@@ -19,6 +19,7 @@ use Snippet\Helpers\JsonField;
  * @property string $name
  * @property string $description
  * @property float $weight
+ * @property string $enable_sub_progress
  * @property integer $lock_element_set
  * @property array $progress_options
  * @property float $progress
@@ -55,6 +56,7 @@ class ShipbuildingTask extends Model
         'name',
         'description',
         'weight',
+        'enable_sub_progress',
         'lock_element_set',
         'progress_options',
         'progress',

@@ -29,6 +29,7 @@ class ShipbuildingTaskFactory extends Factory
             'name' => $this->faker->name(),
             'description' => $this->faker->sentence(15),
             'weight' => $this->faker->randomNumber(1),
+            'enable_sub_progress' => 'work-item',
             'progress_options' => [],
             'sub_tasks_count' => $this->faker->randomNumber(0),
             'sub_tasks_weight_sum' => $this->faker->randomNumber(1),
