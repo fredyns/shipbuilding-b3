@@ -121,12 +121,12 @@ return [
     ],
 
     'shipbuilding_task_shipbuilding_tasks' => [
-        'name' => 'Shipbuilding Task Shipbuilding Tasks',
-        'index_title' => 'Shipbuilding Tasks List',
-        'new_title' => 'Add Shipbuilding Task',
-        'create_title' => 'Add Shipbuilding Task',
-        'edit_title' => 'Edit Shipbuilding Task',
-        'show_title' => 'Show Shipbuilding Task',
+        'name' => 'Sub Tasks',
+        'index_title' => 'Sub Tasks List',
+        'new_title' => 'Add Sub Task',
+        'create_title' => 'Add Sub Task',
+        'edit_title' => 'Edit Sub Task',
+        'show_title' => 'Show Sub Task',
         'inputs' => [
             'name' => 'Name',
             'description' => 'Description',
