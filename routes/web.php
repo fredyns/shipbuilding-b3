@@ -1,15 +1,16 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\ShipTypeController;
-use App\Http\Controllers\ShipyardController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ShipbuildingController;
 use App\Http\Controllers\ShipbuildingTaskController;
+use App\Http\Controllers\ShipTypeController;
+use App\Http\Controllers\ShipyardController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WeeklyReportController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,4 +72,5 @@ Route::prefix('/')
             'shipbuilding-tasks',
             ShipbuildingTaskController::class
         );
+        Route::resource('weekly-reports', WeeklyReportController::class);
     });

@@ -26,31 +26,31 @@
                 <div class="flex flex-wrap">
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.name')
+                            @lang('crud.sub_tasks.inputs.name')
                         </h5>
                         <span> {{ $shipbuildingTask->name ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.weight')
+                            @lang('crud.sub_tasks.inputs.weight')
                         </h5>
                         <span> {{ $shipbuildingTask->weight ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.progress')
+                            @lang('crud.sub_tasks.inputs.progress')
                         </h5>
                         <span> {{ $shipbuildingTask->progress ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.target')
+                            @lang('crud.sub_tasks.inputs.target')
                         </h5>
                         <span> {{ $shipbuildingTask->target ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.deviation')
+                            @lang('crud.sub_tasks.inputs.deviation')
                         </h5>
                         <span> {{ $shipbuildingTask->deviation ?? '-' }} </span>
                     </div>
@@ -94,18 +94,6 @@
                             placeholder="{{ __('crud.shipbuilding_tasks.inputs.name') }}"
                             maxlength="255"
                         ></x-inputs.text>
-                    </x-inputs.group>
-                    <x-inputs.group class="w-full">
-                        <x-inputs.textarea
-                            name="shipbuildingTask.description"
-                            wire:model="shipbuildingTask.description"
-                            label="{{ __('crud.shipbuilding_tasks.inputs.description') }}"
-                            placeholder="{{ __('crud.shipbuilding_tasks.inputs.description') }}"
-                            maxlength="255"
-                        >
-                            {{ old('description', ($editing ?
-                            $shipbuildingTask->description : '')) }}
-                        </x-inputs.textarea>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.slider
@@ -190,19 +178,19 @@
             <thead class="text-gray-700">
             <tr>
                 <th class="px-4 py-3 text-left">
-                    @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.name')
+                    @lang('crud.sub_tasks.inputs.name')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.weight')
+                    @lang('crud.sub_tasks.inputs.weight')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.progress')
+                    @lang('crud.sub_tasks.inputs.progress')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.target')
+                    @lang('crud.sub_tasks.inputs.target')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_task_shipbuilding_tasks.inputs.deviation')
+                    @lang('crud.sub_tasks.inputs.deviation')
                 </th>
                 <th></th>
             </tr>

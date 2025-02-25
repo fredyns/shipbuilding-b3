@@ -32,6 +32,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property ShipbuildingTask[] $shipbuildingTasks
  *
+ * @property WeeklyReport[] $weeklyReports
+ *
  *
  */
 class Shipbuilding extends Model
@@ -76,6 +78,11 @@ class Shipbuilding extends Model
     public function shipbuildingTasks()
     {
         return $this->hasMany(ShipbuildingTask::class);
+    }
+
+    public function weeklyReports()
+    {
+        return $this->hasMany(WeeklyReport::class);
     }
 
     protected $tasksFamily;

@@ -32,14 +32,6 @@
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.shipbuilding_shipbuilding_tasks.inputs.description')
-                        </h5>
-                        <span>
-                            {{ $shipbuildingTask->description ?? '-' }}
-                        </span>
-                    </div>
-                    <div class="mb-4 w-full">
-                        <h5 class="font-medium text-gray-700">
                             @lang('crud.shipbuilding_shipbuilding_tasks.inputs.weight')
                         </h5>
                         <span> {{ $shipbuildingTask->weight ?? '-' }} </span>
@@ -113,18 +105,6 @@
                             placeholder="{{ __('crud.shipbuilding_tasks.inputs.name') }}"
                             maxlength="255"
                         ></x-inputs.text>
-                    </x-inputs.group>
-                    <x-inputs.group class="w-full">
-                        <x-inputs.textarea
-                            name="shipbuildingTask.description"
-                            wire:model="shipbuildingTask.description"
-                            label="{{ __('crud.shipbuilding_tasks.inputs.description') }}"
-                            placeholder="{{ __('crud.shipbuilding_tasks.inputs.description') }}"
-                            maxlength="255"
-                        >
-                            {{ old('description', ($editing ?
-                            $shipbuildingTask->description : '')) }}
-                        </x-inputs.textarea>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.slider

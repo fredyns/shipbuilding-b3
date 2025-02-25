@@ -81,10 +81,10 @@ return [
     ],
 
     'shipbuilding_shipbuilding_tasks' => [
-        'name' => 'Shipbuilding Tasks',
+        'name' => 'Shipbuilding Shipbuilding Tasks',
         'index_title' => 'Shipbuilding Tasks List',
-        'new_title' => 'New Shipbuilding task',
-        'create_title' => 'Create Shipbuilding Task',
+        'new_title' => 'Add Shipbuilding Task',
+        'create_title' => 'Add Shipbuilding Task',
         'edit_title' => 'Edit Shipbuilding Task',
         'show_title' => 'Show Shipbuilding Task',
         'inputs' => [
@@ -120,7 +120,7 @@ return [
         ],
     ],
 
-    'shipbuilding_task_shipbuilding_tasks' => [
+    'sub_tasks' => [
         'name' => 'Sub Tasks',
         'index_title' => 'Sub Tasks List',
         'new_title' => 'Add Sub Task',
@@ -135,6 +135,37 @@ return [
             'progress' => 'Progress',
             'target' => 'Target',
             'deviation' => 'Deviation',
+        ],
+    ],
+
+    'weekly_reports' => [
+        'name' => 'Weekly Reports',
+        'index_title' => 'Weekly Reports List',
+        'new_title' => 'Add Weekly Report',
+        'create_title' => 'Add Weekly Report',
+        'edit_title' => 'Edit Weekly Report',
+        'show_title' => 'Show Weekly Report',
+        'inputs' => [
+            'shipbuilding_id' => 'Shipbuilding',
+            'week' => 'Week',
+            'month' => 'Month',
+            'planned_progress' => 'Planned Progress',
+            'actual_progress' => 'Actual Progress',
+            'summary' => 'Summary',
+            'report_file' => 'Report File',
+        ],
+    ],
+
+    'weekly_report_documentations' => [
+        'name' => 'Weekly Report Documentations',
+        'index_title' => 'Weekly Report Documentations List',
+        'new_title' => 'Add Weekly Report Documentations',
+        'create_title' => 'Add Weekly Report Documentation',
+        'edit_title' => 'Edit Weekly Report Documentation',
+        'show_title' => 'Show Weekly Report Documentation',
+        'inputs' => [
+            'file' => 'File',
+            'name' => 'Name',
         ],
     ],
 
