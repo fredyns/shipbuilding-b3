@@ -2,20 +2,17 @@
 
 namespace App\Models;
 
-use Datetime;
-use Snippet\Helpers\JsonField;
-use Laravel\Jetstream\HasTeams;
-use Laravel\Sanctum\HasApiTokens;
 use App\Models\Scopes\Searchable;
-use Spatie\Permission\Traits\HasRoles;
-use Laravel\Jetstream\HasProfilePhoto;
-use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasPermissions;
-use Laravel\Fortify\TwoFactorAuthenticatable;
+use Datetime;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Fortify\TwoFactorAuthenticatable;
+use Laravel\Jetstream\HasProfilePhoto;
+use Laravel\Jetstream\HasTeams;
+use Spatie\Permission\Traits\HasPermissions;
+use Spatie\Permission\Traits\HasRoles;
 
 /**
  * This is the model class for table "users".
@@ -64,7 +61,7 @@ class User extends Authenticatable implements MustVerifyEmail
     /**
      * Get the user's "personal" team.
      *
-     * @return \App\Models\Team
+     * @return Team
      */
     public function personalTeam()
     {

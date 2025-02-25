@@ -58,15 +58,15 @@
             </x-form>
 
             @can('view-any', App\Models\WeeklyDocumentation::class)
-            <x-partials.card class="mt-5">
-                <x-slot name="title">
-                    @lang('crud.weekly_report_documentations.name')
-                </x-slot>
+                <x-partials.card class="mt-5">
+                    <x-slot name="title">
+                        @lang('crud.weekly_report_documentations.name')
+                    </x-slot>
 
-                <livewire:weekly-report-weekly-documentations-detail
-                    :weeklyReport="$weeklyReport"
-                />
-            </x-partials.card>
+                    <livewire:weekly-report-weekly-documentations-detail
+                        :weeklyReport="$weeklyReport"
+                    />
+                </x-partials.card>
             @endcan
         </div>
     </div>

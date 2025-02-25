@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Str;
+use App\Models\Shipbuilding;
 use App\Models\WeeklyReport;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -28,7 +28,7 @@ class WeeklyReportFactory extends Factory
             'summary' => $this->faker->text(),
             'report_file' => $this->faker->text(),
             'metadata' => [],
-            'shipbuilding_id' => \App\Models\Shipbuilding::factory(),
+            'shipbuilding_id' => Shipbuilding::factory(),
         ];
     }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
-use Illuminate\View\View;
-use Livewire\WithPagination;
-use App\Models\WeeklyReport;
-use Livewire\WithFileUploads;
 use App\Models\WeeklyDocumentation;
-use Illuminate\Support\Facades\Storage;
+use App\Models\WeeklyReport;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
+use Livewire\Component;
+use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class WeeklyReportWeeklyDocumentationsDetail extends Component
 {
@@ -63,7 +63,8 @@ class WeeklyReportWeeklyDocumentationsDetail extends Component
 
     public function viewWeeklyDocumentation(
         WeeklyDocumentation $weeklyDocumentation
-    ): void {
+    ): void
+    {
         $this->editing = false;
         $this->modalTitle = trans(
             'crud.weekly_report_documentations.show_title'
@@ -77,7 +78,8 @@ class WeeklyReportWeeklyDocumentationsDetail extends Component
 
     public function editWeeklyDocumentation(
         WeeklyDocumentation $weeklyDocumentation
-    ): void {
+    ): void
+    {
         $this->editing = true;
         $this->modalTitle = trans(
             'crud.weekly_report_documentations.edit_title'

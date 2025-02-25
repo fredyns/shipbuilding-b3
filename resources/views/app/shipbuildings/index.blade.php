@@ -33,13 +33,13 @@
                         </div>
                         <div class="md:w-1/2 text-right">
                             @can('create', App\Models\Shipbuilding::class)
-                            <a
-                                href="{{ route('shipbuildings.create') }}"
-                                class="button button-primary"
-                            >
-                                <i class="mr-1 icon ion-md-add"></i>
-                                @lang('crud.common.create')
-                            </a>
+                                <a
+                                    href="{{ route('shipbuildings.create') }}"
+                                    class="button button-primary"
+                                >
+                                    <i class="mr-1 icon ion-md-add"></i>
+                                    @lang('crud.common.create')
+                                </a>
                             @endcan
                         </div>
                     </div>
@@ -48,30 +48,30 @@
                 <div class="block w-full overflow-auto scrolling-touch">
                     <table class="w-full max-w-full mb-4 bg-transparent">
                         <thead class="text-gray-700">
-                            <tr>
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.shipbuildings.inputs.number')
-                                </th>
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.shipbuildings.inputs.name')
-                                </th>
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.shipbuildings.inputs.description')
-                                </th>
-                                <th class="px-4 py-3 text-right">
-                                    @lang('crud.shipbuildings.inputs.progress')
-                                </th>
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.shipbuildings.inputs.ship_type_id')
-                                </th>
-                                <th class="px-4 py-3 text-left">
-                                    @lang('crud.shipbuildings.inputs.shipyard_id')
-                                </th>
-                                <th></th>
-                            </tr>
+                        <tr>
+                            <th class="px-4 py-3 text-left">
+                                @lang('crud.shipbuildings.inputs.number')
+                            </th>
+                            <th class="px-4 py-3 text-left">
+                                @lang('crud.shipbuildings.inputs.name')
+                            </th>
+                            <th class="px-4 py-3 text-left">
+                                @lang('crud.shipbuildings.inputs.description')
+                            </th>
+                            <th class="px-4 py-3 text-right">
+                                @lang('crud.shipbuildings.inputs.progress')
+                            </th>
+                            <th class="px-4 py-3 text-left">
+                                @lang('crud.shipbuildings.inputs.ship_type_id')
+                            </th>
+                            <th class="px-4 py-3 text-left">
+                                @lang('crud.shipbuildings.inputs.shipyard_id')
+                            </th>
+                            <th></th>
+                        </tr>
                         </thead>
                         <tbody class="text-gray-600">
-                            @forelse($shipbuildings as $shipbuilding)
+                        @forelse($shipbuildings as $shipbuilding)
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3 text-left">
                                     {{ $shipbuilding->number ?? '-' }}
@@ -107,51 +107,51 @@
                                         "
                                     >
                                         @can('update', $shipbuilding)
-                                        <a
-                                            href="{{ route('shipbuildings.edit', $shipbuilding) }}"
-                                            class="mr-1"
-                                        >
-                                            <button
-                                                type="button"
-                                                class="button"
+                                            <a
+                                                href="{{ route('shipbuildings.edit', $shipbuilding) }}"
+                                                class="mr-1"
                                             >
-                                                <i
-                                                    class="icon ion-md-create"
-                                                ></i>
-                                            </button>
-                                        </a>
+                                                <button
+                                                    type="button"
+                                                    class="button"
+                                                >
+                                                    <i
+                                                        class="icon ion-md-create"
+                                                    ></i>
+                                                </button>
+                                            </a>
                                         @endcan @can('view', $shipbuilding)
-                                        <a
-                                            href="{{ route('shipbuildings.show', $shipbuilding) }}"
-                                            class="mr-1"
-                                        >
-                                            <button
-                                                type="button"
-                                                class="button"
+                                            <a
+                                                href="{{ route('shipbuildings.show', $shipbuilding) }}"
+                                                class="mr-1"
                                             >
-                                                <i class="icon ion-md-eye"></i>
-                                            </button>
-                                        </a>
+                                                <button
+                                                    type="button"
+                                                    class="button"
+                                                >
+                                                    <i class="icon ion-md-eye"></i>
+                                                </button>
+                                            </a>
                                         @endcan
                                     </div>
                                 </td>
                             </tr>
-                            @empty
+                        @empty
                             <tr>
                                 <td colspan="7">
                                     @lang('crud.common.no_items_found')
                                 </td>
                             </tr>
-                            @endforelse
+                        @endforelse
                         </tbody>
                         <tfoot>
-                            <tr>
-                                <td colspan="7">
-                                    <div class="mt-10 px-4">
-                                        {!! $shipbuildings->render() !!}
-                                    </div>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td colspan="7">
+                                <div class="mt-10 px-4">
+                                    {!! $shipbuildings->render() !!}
+                                </div>
+                            </td>
+                        </tr>
                         </tfoot>
                     </table>
                 </div>

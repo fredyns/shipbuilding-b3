@@ -11,9 +11,10 @@ trait Searchable
      */
     public function scopeSearchLatestPaginated(
         Builder $query,
-        string $search,
-        int $paginationQuantity = 10
-    ): Builder {
+        string  $search,
+        int     $paginationQuantity = 10
+    ): Builder
+    {
         return $query
             ->search($search)
             ->orderBy('updated_at', 'desc')

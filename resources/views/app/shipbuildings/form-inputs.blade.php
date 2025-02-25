@@ -26,13 +26,13 @@
     <div class="flex flex-wrap">
         <x-inputs.group class="w-full">
             <div
-                x-data="imageViewer('{{ $editing && $shipbuilding->cover_image ? \Storage::url($shipbuilding->cover_image) : '' }}')"
+                x-data="imageViewer('{{ $editing && $shipbuilding->cover_image ? Storage::url($shipbuilding->cover_image) : '' }}')"
             >
                 <x-inputs.partials.label
                     name="cover_image"
                     label="{{ __('crud.shipbuildings.inputs.cover_image') }}"
                 ></x-inputs.partials.label>
-                <br />
+                <br/>
 
                 <!-- Show the image -->
                 <template x-if="imageUrl">
@@ -119,7 +119,7 @@
                 @php $selected = old('ship_type_id', ($editing ? $shipbuilding->ship_type_id : '')) @endphp
                 <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Ship Type</option>
                 @foreach($shipTypes as $value => $label)
-                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
+                    <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
                 @endforeach
             </x-inputs.tomselect>
         </x-inputs.group>
@@ -132,7 +132,7 @@
                 @php $selected = old('shipyard_id', ($editing ? $shipbuilding->shipyard_id : '')) @endphp
                 <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Shipyard</option>
                 @foreach($shipyards as $value => $label)
-                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
+                    <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
                 @endforeach
             </x-inputs.tomselect>
         </x-inputs.group>

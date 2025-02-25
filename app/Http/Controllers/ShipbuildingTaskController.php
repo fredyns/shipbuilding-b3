@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use App\Models\Shipbuilding;
-use App\Models\ShipbuildingTask;
-use Illuminate\Http\RedirectResponse;
-use fredyns\stringcleaner\StringCleaner;
 use App\Http\Requests\ShipbuildingTaskStoreRequest;
 use App\Http\Requests\ShipbuildingTaskUpdateRequest;
+use App\Models\Shipbuilding;
+use App\Models\ShipbuildingTask;
+use fredyns\stringcleaner\StringCleaner;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ShipbuildingTaskController extends Controller
 {
@@ -20,7 +20,7 @@ class ShipbuildingTaskController extends Controller
     {
         $this->authorize('view-any', ShipbuildingTask::class);
 
-        $search = (string) $request->get('search', '');
+        $search = (string)$request->get('search', '');
 
         if (!$search or $search == 'null') {
             $search = '';
@@ -58,7 +58,8 @@ class ShipbuildingTaskController extends Controller
      */
     public function store(
         ShipbuildingTaskStoreRequest $request
-    ): RedirectResponse {
+    ): RedirectResponse
+    {
         $this->authorize('create', ShipbuildingTask::class);
 
         $validated = $request->validated();
@@ -79,9 +80,10 @@ class ShipbuildingTaskController extends Controller
      * Display the specified resource.
      */
     public function show(
-        Request $request,
+        Request          $request,
         ShipbuildingTask $shipbuildingTask
-    ): View {
+    ): View
+    {
         $this->authorize('view', $shipbuildingTask);
 
         return view('app.shipbuilding_tasks.show', compact('shipbuildingTask'));
@@ -91,9 +93,10 @@ class ShipbuildingTaskController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(
-        Request $request,
+        Request          $request,
         ShipbuildingTask $shipbuildingTask
-    ): View {
+    ): View
+    {
         $this->authorize('update', $shipbuildingTask);
 
         $shipbuildings = Shipbuilding::pluck('name', 'id');
@@ -110,8 +113,9 @@ class ShipbuildingTaskController extends Controller
      */
     public function update(
         ShipbuildingTaskUpdateRequest $request,
-        ShipbuildingTask $shipbuildingTask
-    ): RedirectResponse {
+        ShipbuildingTask              $shipbuildingTask
+    ): RedirectResponse
+    {
         $this->authorize('update', $shipbuildingTask);
 
         $validated = $request->validated();
@@ -131,9 +135,10 @@ class ShipbuildingTaskController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(
-        Request $request,
+        Request          $request,
         ShipbuildingTask $shipbuildingTask
-    ): RedirectResponse {
+    ): RedirectResponse
+    {
         $this->authorize('delete', $shipbuildingTask);
 
         $shipbuildingTask->delete();

@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\WeeklyDocumentation;
+use Illuminate\Database\Seeder;
 
 class WeeklyDocumentationSeeder extends Seeder
 {

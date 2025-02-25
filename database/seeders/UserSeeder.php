@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use Hash;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
@@ -53,7 +54,7 @@ class UserSeeder extends Seeder
         $user = User::create([
             'name' => 'Admin',
             'email' => 'admin@admin.com',
-            'password' => \Hash::make('admin'),
+            'password' => Hash::make('admin'),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10),
         ]);

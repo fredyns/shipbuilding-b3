@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Scopes\Searchable;
 use Datetime;
+use Generator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -89,7 +90,7 @@ class Shipbuilding extends Model
 
     /**
      * @param ShipbuildingTask|null $parentTask
-     * @return \Generator
+     * @return Generator
      */
     public function breakdownTasks(ShipbuildingTask|null $parentTask = null)
     {

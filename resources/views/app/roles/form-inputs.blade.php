@@ -39,16 +39,16 @@
 
             <div class="py-2">
                 @foreach ($permissions as $permission)
-                <div>
-                    <x-inputs.checkbox
-                        id="permission{{ $permission->id }}"
-                        name="permissions[]"
-                        label="{{ ucfirst($permission->name) }}"
-                        value="{{ $permission->id }}"
-                        :checked="isset($role) ? $role->hasPermissionTo($permission) : false"
-                        :add-hidden-value="false"
-                    ></x-inputs.checkbox>
-                </div>
+                    <div>
+                        <x-inputs.checkbox
+                            id="permission{{ $permission->id }}"
+                            name="permissions[]"
+                            label="{{ ucfirst($permission->name) }}"
+                            value="{{ $permission->id }}"
+                            :checked="isset($role) ? $role->hasPermissionTo($permission) : false"
+                            :add-hidden-value="false"
+                        ></x-inputs.checkbox>
+                    </div>
                 @endforeach
             </div>
         </div>

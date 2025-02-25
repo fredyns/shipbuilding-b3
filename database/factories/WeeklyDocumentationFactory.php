@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Str;
 use App\Models\WeeklyDocumentation;
+use App\Models\WeeklyReport;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WeeklyDocumentationFactory extends Factory
@@ -28,7 +28,7 @@ class WeeklyDocumentationFactory extends Factory
             'type' => $this->faker->text(255),
             'metadata' => [],
             'thumbnail' => $this->faker->text(),
-            'weekly_report_id' => \App\Models\WeeklyReport::factory(),
+            'weekly_report_id' => WeeklyReport::factory(),
         ];
     }
 }

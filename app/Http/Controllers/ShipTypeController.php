@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ShipType;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use fredyns\stringcleaner\StringCleaner;
 use App\Http\Requests\ShipTypeStoreRequest;
 use App\Http\Requests\ShipTypeUpdateRequest;
+use App\Models\ShipType;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ShipTypeController extends Controller
 {
@@ -19,7 +18,7 @@ class ShipTypeController extends Controller
     {
         $this->authorize('view-any', ShipType::class);
 
-        $search = (string) $request->get('search', '');
+        $search = (string)$request->get('search', '');
 
         if (!$search or $search == 'null') {
             $search = '';
@@ -84,8 +83,9 @@ class ShipTypeController extends Controller
      */
     public function update(
         ShipTypeUpdateRequest $request,
-        ShipType $shipType
-    ): RedirectResponse {
+        ShipType              $shipType
+    ): RedirectResponse
+    {
         $this->authorize('update', $shipType);
 
         $validated = $request->validated();
@@ -101,9 +101,10 @@ class ShipTypeController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(
-        Request $request,
+        Request  $request,
         ShipType $shipType
-    ): RedirectResponse {
+    ): RedirectResponse
+    {
         $this->authorize('delete', $shipType);
 
         $shipType->delete();

@@ -69,14 +69,16 @@
                             @lang('crud.weekly_reports.inputs.report_file')
                         </h5>
                         @if($weeklyReport->report_file)
-                        <a
-                            href="{{ \Storage::url($weeklyReport->report_file) }}"
-                            target="blank"
-                        >
-                            <i class="mr-1 icon ion-md-download"></i>
-                            Download
-                        </a>
-                        @else - @endif
+                            <a
+                                href="{{ Storage::url($weeklyReport->report_file) }}"
+                                target="blank"
+                            >
+                                <i class="mr-1 icon ion-md-download"></i>
+                                Download
+                            </a>
+                        @else
+                            -
+                        @endif
                     </div>
                 </div>
             </x-partials.card>
@@ -95,44 +97,44 @@
                     </a>
 
                     @can('update', $weeklyReport)
-                    <a
-                        href="{{ route('weekly-reports.edit', $weeklyReport) }}"
-                        class="button"
-                    >
-                        <i class="mr-1 icon ion-md-create"></i>
-                        @lang('crud.common.edit')
-                    </a>
-                    @endcan @can('delete', $weeklyReport)
-                    <div class="float-right">
-                        <form
-                            action="{{ route('weekly-reports.destroy', $weeklyReport) }}"
-                            method="POST"
-                            onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
+                        <a
+                            href="{{ route('weekly-reports.edit', $weeklyReport) }}"
+                            class="button"
                         >
-                            @csrf @method('DELETE')
-                            <button type="submit" class="button">
-                                <i class="mr-1 icon ion-md-trash text-red-600">
-                                </i>
-                                <span class="text-red-600">
+                            <i class="mr-1 icon ion-md-create"></i>
+                            @lang('crud.common.edit')
+                        </a>
+                    @endcan @can('delete', $weeklyReport)
+                        <div class="float-right">
+                            <form
+                                action="{{ route('weekly-reports.destroy', $weeklyReport) }}"
+                                method="POST"
+                                onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
+                            >
+                                @csrf @method('DELETE')
+                                <button type="submit" class="button">
+                                    <i class="mr-1 icon ion-md-trash text-red-600">
+                                    </i>
+                                    <span class="text-red-600">
                                     @lang('crud.common.delete')
                                 </span>
-                            </button>
-                        </form>
-                    </div>
+                                </button>
+                            </form>
+                        </div>
                     @endcan
                 </div>
             </x-partials.card>
 
             @can('view-any', App\Models\WeeklyDocumentation::class)
-            <x-partials.card class="mt-5">
-                <x-slot name="title">
-                    @lang('crud.weekly_report_documentations.name')
-                </x-slot>
+                <x-partials.card class="mt-5">
+                    <x-slot name="title">
+                        @lang('crud.weekly_report_documentations.name')
+                    </x-slot>
 
-                <livewire:weekly-report-weekly-documentations-detail
-                    :weeklyReport="$weeklyReport"
-                />
-            </x-partials.card>
+                    <livewire:weekly-report-weekly-documentations-detail
+                        :weeklyReport="$weeklyReport"
+                    />
+                </x-partials.card>
             @endcan
         </div>
     </div>

@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Spatie\Permission\Models\Role;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\Models\User;
 use fredyns\stringcleaner\StringCleaner;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\View\View;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -21,7 +21,7 @@ class UserController extends Controller
     {
         $this->authorize('view-any', User::class);
 
-        $search = (string) $request->get('search', '');
+        $search = (string)$request->get('search', '');
 
         if (!$search or $search == 'null') {
             $search = '';
@@ -103,8 +103,9 @@ class UserController extends Controller
      */
     public function update(
         UserUpdateRequest $request,
-        User $user
-    ): RedirectResponse {
+        User              $user
+    ): RedirectResponse
+    {
         $this->authorize('update', $user);
 
         $validated = $request->validated();

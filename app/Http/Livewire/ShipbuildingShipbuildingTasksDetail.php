@@ -2,12 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
-use Illuminate\View\View;
-use Livewire\WithPagination;
 use App\Models\Shipbuilding;
 use App\Models\ShipbuildingTask;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\View\View;
+use Livewire\Component;
+use Livewire\WithPagination;
 
 class ShipbuildingShipbuildingTasksDetail extends Component
 {
@@ -64,7 +64,8 @@ class ShipbuildingShipbuildingTasksDetail extends Component
 
     public function viewShipbuildingTask(
         ShipbuildingTask $shipbuildingTask
-    ): void {
+    ): void
+    {
         $this->editing = false;
         $this->modalTitle = trans(
             'crud.shipbuilding_shipbuilding_tasks.show_title'
@@ -78,7 +79,8 @@ class ShipbuildingShipbuildingTasksDetail extends Component
 
     public function editShipbuildingTask(
         ShipbuildingTask $shipbuildingTask
-    ): void {
+    ): void
+    {
         $this->editing = true;
         $this->modalTitle = trans(
             'crud.shipbuilding_shipbuilding_tasks.edit_title'

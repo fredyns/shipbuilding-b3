@@ -33,7 +33,7 @@
                 @php $selected = old('shipbuilding_id', ($editing ? $weeklyReport->shipbuilding_id : '')) @endphp
                 <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Shipbuilding</option>
                 @foreach($shipbuildings as $value => $label)
-                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
+                    <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
                 @endforeach
             </x-inputs.tomselect>
         </x-inputs.group>
@@ -95,7 +95,7 @@
                 name="report_file"
                 label="{{ __('crud.weekly_reports.inputs.report_file') }}"
             ></x-inputs.partials.label>
-            <br />
+            <br/>
 
             <input
                 type="file"
@@ -105,15 +105,15 @@
             />
 
             @if($editing && $weeklyReport->report_file)
-            <div class="mt-2">
-                <a
-                    href="{{ \Storage::url($weeklyReport->report_file) }}"
-                    target="_blank"
-                >
-                    <i class="icon ion-md-download"></i>
-                    Download
-                </a>
-            </div>
+                <div class="mt-2">
+                    <a
+                        href="{{ Storage::url($weeklyReport->report_file) }}"
+                        target="_blank"
+                    >
+                        <i class="icon ion-md-download"></i>
+                        Download
+                    </a>
+                </div>
             @endif @error('report_file')
             @include('components.inputs.partials.error') @enderror
         </x-inputs.group>

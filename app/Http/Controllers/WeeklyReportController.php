@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
-use App\Models\WeeklyReport;
-use Illuminate\Http\Request;
-use App\Models\Shipbuilding;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
-use fredyns\stringcleaner\StringCleaner;
 use App\Http\Requests\WeeklyReportStoreRequest;
 use App\Http\Requests\WeeklyReportUpdateRequest;
+use App\Models\Shipbuilding;
+use App\Models\WeeklyReport;
+use fredyns\stringcleaner\StringCleaner;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class WeeklyReportController extends Controller
 {
@@ -21,7 +21,7 @@ class WeeklyReportController extends Controller
     {
         $this->authorize('view-any', WeeklyReport::class);
 
-        $search = (string) $request->get('search', '');
+        $search = (string)$request->get('search', '');
 
         if (!$search or $search == 'null') {
             $search = '';
@@ -113,8 +113,9 @@ class WeeklyReportController extends Controller
      */
     public function update(
         WeeklyReportUpdateRequest $request,
-        WeeklyReport $weeklyReport
-    ): RedirectResponse {
+        WeeklyReport              $weeklyReport
+    ): RedirectResponse
+    {
         $this->authorize('update', $weeklyReport);
 
         $validated = $request->validated();
@@ -146,9 +147,10 @@ class WeeklyReportController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(
-        Request $request,
+        Request      $request,
         WeeklyReport $weeklyReport
-    ): RedirectResponse {
+    ): RedirectResponse
+    {
         $this->authorize('delete', $weeklyReport);
 
         if ($weeklyReport->report_file) {

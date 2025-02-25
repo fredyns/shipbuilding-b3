@@ -63,16 +63,16 @@
 
             <div class="py-2">
                 @foreach ($roles as $role)
-                <div>
-                    <x-inputs.checkbox
-                        id="role{{ $role->id }}"
-                        name="roles[]"
-                        label="{{ ucfirst($role->name) }}"
-                        value="{{ $role->id }}"
-                        :checked="isset($user) ? $user->hasRole($role) : false"
-                        :add-hidden-value="false"
-                    ></x-inputs.checkbox>
-                </div>
+                    <div>
+                        <x-inputs.checkbox
+                            id="role{{ $role->id }}"
+                            name="roles[]"
+                            label="{{ ucfirst($role->name) }}"
+                            value="{{ $role->id }}"
+                            :checked="isset($user) ? $user->hasRole($role) : false"
+                            :add-hidden-value="false"
+                        ></x-inputs.checkbox>
+                    </div>
                 @endforeach
             </div>
         </div>

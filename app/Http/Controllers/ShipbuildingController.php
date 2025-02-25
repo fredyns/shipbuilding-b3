@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ShipType;
-use App\Models\Shipyard;
-use Illuminate\View\View;
-use App\Models\Shipbuilding;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
-use fredyns\stringcleaner\StringCleaner;
 use App\Http\Requests\ShipbuildingStoreRequest;
 use App\Http\Requests\ShipbuildingUpdateRequest;
+use App\Models\Shipbuilding;
+use App\Models\ShipType;
+use App\Models\Shipyard;
+use fredyns\stringcleaner\StringCleaner;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
 
 class ShipbuildingController extends Controller
 {
@@ -22,7 +22,7 @@ class ShipbuildingController extends Controller
     {
         $this->authorize('view-any', Shipbuilding::class);
 
-        $search = (string) $request->get('search', '');
+        $search = (string)$request->get('search', '');
 
         if (!$search or $search == 'null') {
             $search = '';
@@ -112,8 +112,9 @@ class ShipbuildingController extends Controller
      */
     public function update(
         ShipbuildingUpdateRequest $request,
-        Shipbuilding $shipbuilding
-    ): RedirectResponse {
+        Shipbuilding              $shipbuilding
+    ): RedirectResponse
+    {
         $this->authorize('update', $shipbuilding);
 
         $validated = $request->validated();
@@ -144,9 +145,10 @@ class ShipbuildingController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(
-        Request $request,
+        Request      $request,
         Shipbuilding $shipbuilding
-    ): RedirectResponse {
+    ): RedirectResponse
+    {
         $this->authorize('delete', $shipbuilding);
 
         if ($shipbuilding->cover_image) {

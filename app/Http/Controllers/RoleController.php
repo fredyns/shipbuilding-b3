@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Laravel\Sanctum\Sanctum;
-use Spatie\Permission\Models\Role;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Laravel\Sanctum\Sanctum;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
-class RoleController extends Controller {
+class RoleController extends Controller
+{
 
     /**
      * Display a listing of the resource.
@@ -94,10 +95,10 @@ class RoleController extends Controller {
         $this->authorize('update', $role);
 
         $data = $this->validate($request, [
-            'name' => 'required|max:32|unique:roles,name,'.$role->id,
+            'name' => 'required|max:32|unique:roles,name,' . $role->id,
             'permissions' => 'array',
         ]);
-        
+
         $role->update($data);
 
         $permissions = Permission::find($request->permissions);

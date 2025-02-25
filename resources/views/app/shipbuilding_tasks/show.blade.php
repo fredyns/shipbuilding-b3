@@ -98,44 +98,44 @@
                     </a>
 
                     @can('update', $shipbuildingTask)
-                    <a
-                        href="{{ route('shipbuilding-tasks.edit', $shipbuildingTask) }}"
-                        class="button"
-                    >
-                        <i class="mr-1 icon ion-md-create"></i>
-                        @lang('crud.common.edit')
-                    </a>
-                    @endcan @can('delete', $shipbuildingTask)
-                    <div class="float-right">
-                        <form
-                            action="{{ route('shipbuilding-tasks.destroy', $shipbuildingTask) }}"
-                            method="POST"
-                            onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
+                        <a
+                            href="{{ route('shipbuilding-tasks.edit', $shipbuildingTask) }}"
+                            class="button"
                         >
-                            @csrf @method('DELETE')
-                            <button type="submit" class="button">
-                                <i class="mr-1 icon ion-md-trash text-red-600">
-                                </i>
-                                <span class="text-red-600">
+                            <i class="mr-1 icon ion-md-create"></i>
+                            @lang('crud.common.edit')
+                        </a>
+                    @endcan @can('delete', $shipbuildingTask)
+                        <div class="float-right">
+                            <form
+                                action="{{ route('shipbuilding-tasks.destroy', $shipbuildingTask) }}"
+                                method="POST"
+                                onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
+                            >
+                                @csrf @method('DELETE')
+                                <button type="submit" class="button">
+                                    <i class="mr-1 icon ion-md-trash text-red-600">
+                                    </i>
+                                    <span class="text-red-600">
                                     @lang('crud.common.delete')
                                 </span>
-                            </button>
-                        </form>
-                    </div>
+                                </button>
+                            </form>
+                        </div>
                     @endcan
                 </div>
             </x-partials.card>
 
             @can('view-any', App\Models\ShipbuildingTask::class)
-            <x-partials.card class="mt-5">
-                <x-slot name="title">
-                    @lang('crud.shipbuilding_task_shipbuilding_tasks.name')
-                </x-slot>
+                <x-partials.card class="mt-5">
+                    <x-slot name="title">
+                        @lang('crud.shipbuilding_task_shipbuilding_tasks.name')
+                    </x-slot>
 
-                <livewire:shipbuilding-task-shipbuilding-tasks-detail
-                    :parentTask="$shipbuildingTask"
-                />
-            </x-partials.card>
+                    <livewire:shipbuilding-task-shipbuilding-tasks-detail
+                        :parentTask="$shipbuildingTask"
+                    />
+                </x-partials.card>
             @endcan
         </div>
     </div>

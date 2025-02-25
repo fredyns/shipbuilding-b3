@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Shipyard;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use fredyns\stringcleaner\StringCleaner;
 use App\Http\Requests\ShipyardStoreRequest;
 use App\Http\Requests\ShipyardUpdateRequest;
+use App\Models\Shipyard;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ShipyardController extends Controller
 {
@@ -19,7 +18,7 @@ class ShipyardController extends Controller
     {
         $this->authorize('view-any', Shipyard::class);
 
-        $search = (string) $request->get('search', '');
+        $search = (string)$request->get('search', '');
 
         if (!$search or $search == 'null') {
             $search = '';
@@ -84,8 +83,9 @@ class ShipyardController extends Controller
      */
     public function update(
         ShipyardUpdateRequest $request,
-        Shipyard $shipyard
-    ): RedirectResponse {
+        Shipyard              $shipyard
+    ): RedirectResponse
+    {
         $this->authorize('update', $shipyard);
 
         $validated = $request->validated();
@@ -101,9 +101,10 @@ class ShipyardController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(
-        Request $request,
+        Request  $request,
         Shipyard $shipyard
-    ): RedirectResponse {
+    ): RedirectResponse
+    {
         $this->authorize('delete', $shipyard);
 
         $shipyard->delete();

@@ -58,15 +58,15 @@
             </x-form>
 
             @can('view-any', App\Models\ShipbuildingTask::class)
-            <x-partials.card class="mt-5">
-                <x-slot name="title">
-                    @lang('crud.shipbuilding_shipbuilding_tasks.name')
-                </x-slot>
+                <x-partials.card class="mt-5">
+                    <x-slot name="title">
+                        @lang('crud.shipbuilding_shipbuilding_tasks.name')
+                    </x-slot>
 
-                <livewire:shipbuilding-shipbuilding-tasks-detail
-                    :shipbuilding="$shipbuilding"
-                />
-            </x-partials.card>
+                    <livewire:shipbuilding-shipbuilding-tasks-detail
+                        :shipbuilding="$shipbuilding"
+                    />
+                </x-partials.card>
             @endcan
         </div>
     </div>

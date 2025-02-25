@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Str;
 use App\Models\Shipbuilding;
+use App\Models\ShipType;
+use App\Models\Shipyard;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ShipbuildingFactory extends Factory
@@ -31,8 +32,8 @@ class ShipbuildingFactory extends Factory
             'end_date' => $this->faker->date(),
             'tasks_count' => $this->faker->randomNumber(0),
             'tasks_weight_sum' => $this->faker->randomNumber(1),
-            'ship_type_id' => \App\Models\ShipType::factory(),
-            'shipyard_id' => \App\Models\Shipyard::factory(),
+            'ship_type_id' => ShipType::factory(),
+            'shipyard_id' => Shipyard::factory(),
         ];
     }
 }

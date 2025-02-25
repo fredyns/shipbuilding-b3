@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use Illuminate\Support\Str;
+use App\Models\Shipbuilding;
 use App\Models\ShipbuildingTask;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -34,9 +34,9 @@ class ShipbuildingTaskFactory extends Factory
             'sub_tasks_count' => $this->faker->randomNumber(0),
             'sub_tasks_weight_sum' => $this->faker->randomNumber(1),
             'metadata' => [],
-            'shipbuilding_id' => \App\Models\Shipbuilding::factory(),
+            'shipbuilding_id' => Shipbuilding::factory(),
             'parent_task_id' => function () {
-                return \App\Models\ShipbuildingTask::factory()->create([
+                return ShipbuildingTask::factory()->create([
                     'parent_task_id' => null,
                 ])->id;
             },

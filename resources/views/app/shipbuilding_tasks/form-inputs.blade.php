@@ -33,7 +33,7 @@
                 @php $selected = old('shipbuilding_id', ($editing ? $shipbuildingTask->shipbuilding_id : '')) @endphp
                 <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Shipbuilding</option>
                 @foreach($shipbuildings as $value => $label)
-                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
+                    <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
                 @endforeach
             </x-inputs.tomselect>
         </x-inputs.group>
@@ -46,7 +46,7 @@
                 @php $selected = old('parent_task_id', ($editing ? $shipbuildingTask->parent_task_id : '')) @endphp
                 <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Shipbuilding Task</option>
                 @foreach($shipbuildingTasks as $value => $label)
-                <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
+                    <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
                 @endforeach
             </x-inputs.tomselect>
         </x-inputs.group>

@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('shipbuilding_tasks', function (Blueprint $table) {
-            $table->index(['parent_task_id', 'sort_order'],'child_order');
+            $table->index(['parent_task_id', 'sort_order'], 'child_order');
         });
     }
 

@@ -1,15 +1,14 @@
 <?php
 
 
-use App\Models\User;
-use DateTime;
-use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Gate;
 use App\Actions\Fortify\CreateNewUser;
-use Laravel\Sanctum\PersonalAccessToken;
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\ValidationException;
+use Laravel\Sanctum\PersonalAccessToken;
 
 class AuthController extends Controller
 {

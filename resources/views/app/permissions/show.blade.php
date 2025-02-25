@@ -38,30 +38,30 @@
                     </a>
 
                     @can('update', $permission)
-                    <a
-                        href="{{ route('permissions.edit', $permission) }}"
-                        class="button"
-                    >
-                        <i class="mr-1 icon ion-md-create"></i>
-                        @lang('crud.common.edit')
-                    </a>
-                    @endcan @can('delete', $permission)
-                    <div class="float-right">
-                        <form
-                            action="{{ route('permissions.destroy', $permission) }}"
-                            method="POST"
-                            onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
+                        <a
+                            href="{{ route('permissions.edit', $permission) }}"
+                            class="button"
                         >
-                            @csrf @method('DELETE')
-                            <button type="submit" class="button">
-                                <i class="mr-1 icon ion-md-trash text-red-600">
-                                </i>
-                                <span class="text-red-600">
+                            <i class="mr-1 icon ion-md-create"></i>
+                            @lang('crud.common.edit')
+                        </a>
+                    @endcan @can('delete', $permission)
+                        <div class="float-right">
+                            <form
+                                action="{{ route('permissions.destroy', $permission) }}"
+                                method="POST"
+                                onsubmit="return confirm('{{ __('crud.common.are_you_sure') }}')"
+                            >
+                                @csrf @method('DELETE')
+                                <button type="submit" class="button">
+                                    <i class="mr-1 icon ion-md-trash text-red-600">
+                                    </i>
+                                    <span class="text-red-600">
                                     @lang('crud.common.delete')
                                 </span>
-                            </button>
-                        </form>
-                    </div>
+                                </button>
+                            </form>
+                        </div>
                     @endcan
                 </div>
             </x-partials.card>
