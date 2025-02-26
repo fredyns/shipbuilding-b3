@@ -25,5 +25,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(ShipbuildingSeeder::class);
         $this->call(ShipbuildingTaskSeeder::class);
+
+        $this->call(WeeklyReportSeeder::class);
     }
 }
