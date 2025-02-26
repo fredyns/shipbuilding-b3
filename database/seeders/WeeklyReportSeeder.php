@@ -13,17 +13,25 @@ class WeeklyReportSeeder extends Seeder
      */
     public function run(): void
     {
-        $tugData = include __DIR__ . '/data/TugWeeklyReportSeeder.php';
+        $keywords = [
+            //tug boats
+            '1889', '1890', '1894', '1895',
+        ];
+    }
 
-        if (!is_array($tugData)) {
-            $this->command->warn('TugWeeklyReportSeeder empty.');
+    public function execute($keyword): void
+    {
+        $data = include __DIR__ . "/WeeklyReport/{$keyword}.php";
+
+        if (!is_array($data)) {
+            $this->command->warn("WeeklyReport/{$keyword} not found.");
             return;
         }
 
-        $tugboats = Shipbuilding::where('name', 'like', '%Tug%')->get();
+        $ships = Shipbuilding::where('name', 'like', "%{$keyword}%")->get();
 
-        foreach ($tugboats as $tugboat) {
-            $this->prepareWeeklyReport($tugboat, $tugData);
+        foreach ($ships as $ship) {
+            $this->prepareWeeklyReport($ship, $data);
         }
 
     }

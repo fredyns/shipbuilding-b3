@@ -40,5 +40,5 @@ return [
     ["week" => "35", "date" => "2025-10-06", "planned_progress" => "99.12"],
     ["week" => "36", "date" => "2025-10-13", "planned_progress" => "99.41"],
     ["week" => "37", "date" => "2025-10-20", "planned_progress" => "99.76"],
-    ["week" => "38", "date" => "2025-10-27", "planned_progress" => "100.00"]
+    ["week" => "38", "date" => "2025-10-27", "planned_progress" => "100.00"],
 ];
