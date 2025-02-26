@@ -120,6 +120,16 @@
 
             <x-partials.card class="mt-5">
                 <x-slot name="title">
+                    Weekly Reports
+                </x-slot>
+
+                <livewire:shipbuilding-weekly-reports-detail
+                    :shipbuilding="$shipbuilding"
+                />
+            </x-partials.card>
+
+            <x-partials.card class="mt-5">
+                <x-slot name="title">
                     @lang('crud.shipbuilding_shipbuilding_tasks.name')
                 </x-slot>
                 <div>
