@@ -35,11 +35,11 @@
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.weekly_reports.inputs.month')
+                            @lang('crud.weekly_reports.inputs.date')
                         </h5>
                         <span>
-                            {{ optional($weeklyReport->month)->format('l, d F
-                            Y') }}
+                            {{ optional($weeklyReport->date)->format('l, d F Y')
+                            }}
                         </span>
                     </div>
                     <div class="mb-4 w-full">
@@ -70,7 +70,7 @@
                         </h5>
                         @if($weeklyReport->report_file)
                             <a
-                                href="{{ Storage::url($weeklyReport->report_file) }}"
+                                href="{{ \Storage::url($weeklyReport->report_file) }}"
                                 target="blank"
                             >
                                 <i class="mr-1 icon ion-md-download"></i>

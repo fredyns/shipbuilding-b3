@@ -30,7 +30,7 @@
                         </h5>
                         @if($weeklyDocumentation->file)
                             <a
-                                href="{{ Storage::url($weeklyDocumentation->file)}}"
+                                href="{{ \Storage::url($weeklyDocumentation->file) }}"
                                 target="blank"
                             >
                                 <i class="mr-1 icon ion-md-download"></i>
@@ -42,9 +42,9 @@
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang(('crud.weekly_report_documentations.inputs.name)
+                            @lang('crud.weekly_report_documentations.inputs.name')
                         </h5>
-                        <span> {{( $weeklyDocumentation->name ?? '-'}} </span>
+                        <span> {{ $weeklyDocumentation->name ?? '-' }} </span>
                     </div>
                 </div>
             </div>
@@ -57,16 +57,16 @@
                 wire:click="$toggle('showingModalView')"
             >
                 <i class="mr-1 icon ion-md-close"></i>
-                @lang(('text.close)
+                @lang('text.close')
             </button>
-            @can(('update', $weeklyDocumentatio)
+            @can('update', $weeklyDocumentation)
                 <button
                     type="button"
                     class="button mr-1"
-                    wire:click="editWeeklyDocumentation('{{( $weeklyDocumentation->id}}')"
+                    wire:click="editWeeklyDocumentation('{{ $weeklyDocumentation->id }}')"
                 >
                     <i class="mr-1 icon ion-md-create"></i>
-                    @lang(('crud.common.edit)
+                    @lang('crud.common.edit')
                 </button>
             @endcan
         </div>
@@ -74,44 +74,44 @@
 
     <x-modal wire:model="showingModalForm">
         <div class="px-6 py-4">
-            <div class="text-lg font-bold">{{( $modalTitle}}</div>
+            <div class="text-lg font-bold">{{ $modalTitle }}</div>
 
             <div class="mt-5">
                 <div class="flex flex-wrap">
                     <x-inputs.group class="w-full">
                         <x-inputs.partials.label
                             name="weeklyDocumentationFile"
-                            label="{{( __('crud.weekly_documentations.inputs.file')}}"
+                            label="{{ __('crud.weekly_documentations.inputs.file') }}"
                         ></x-inputs.partials.label>
                         <br/>
 
                         <input
                             type="file"
                             name="weeklyDocumentationFile"
-                            id="weeklyDocumentationFile{{( $uploadIteration}}"
+                            id="weeklyDocumentationFile{{ $uploadIteration }}"
                             wire:model="weeklyDocumentationFile"
                             class="form-control-file"
                         />
 
-                        @if(($editing && $weeklyDocumentation->fil)
+                        @if($editing && $weeklyDocumentation->file)
                             <div class="mt-2">
                                 <a
-                                    href="{{( Storage::url($weeklyDocumentation->file}}"
+                                    href="{{ \Storage::url($weeklyDocumentation->file) }}"
                                     target="_blank"
                                 >
                                     <i class="icon ion-md-download"></i>
                                     Download
                                 </a>
                             </div>
-                        @endif @error( ['weeklyDocumentationFil)
-                        @include(e('components.inputs.partials.erro) @enderror
+                        @endif @error('weeklyDocumentationFile')
+                        @include('components.inputs.partials.error') @enderror
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.text
                             name="weeklyDocumentation.name"
                             wire:model="weeklyDocumentation.name"
-                            label="{{e( __('crud.weekly_documentations.inputs.name'}}"
-                            placeholder="{{e( __('crud.weekly_documentations.inputs.name'}}"
+                            label="{{ __('crud.weekly_documentations.inputs.name') }}"
+                            placeholder="{{ __('crud.weekly_documentations.inputs.name') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>
@@ -126,7 +126,7 @@
                 wire:click="$toggle('showingModalForm')"
             >
                 <i class="mr-1 icon ion-md-close"></i>
-                @lang(t('crud.common.cance)
+                @lang('crud.common.cancel')
             </button>
 
             <button
@@ -135,7 +135,7 @@
                 wire:click="save"
             >
                 <i class="mr-1 icon ion-md-save"></i>
-                @lang(t('crud.common.sav)
+                @lang('crud.common.save')
             </button>
         </div>
     </x-modal>
@@ -149,27 +149,27 @@
                         type="checkbox"
                         wire:model="allSelected"
                         wire:click="toggleFullSelection"
-                        title="{{e( trans('crud.common.select_all'}}"
+                        title="{{ trans('crud.common.select_all') }}"
                     />
                 </th>
                 <th class="px-4 py-3 text-left">
-                    @lang(t('crud.weekly_report_documentations.inputs.nam)
+                    @lang('crud.weekly_report_documentations.inputs.name')
                 </th>
                 <th></th>
             </tr>
             </thead>
             <tbody class="text-gray-600">
-            @foreach (h($weeklyDocumentations as $weeklyDocumentati)
+            @foreach ($weeklyDocumentations as $weeklyDocumentation)
                 <tr class="hover:bg-gray-100">
                     <td class="px-4 py-3 text-left">
                         <input
                             type="checkbox"
-                            value="{{e( $weeklyDocumentation->i}}"
+                            value="{{ $weeklyDocumentation->id }}"
                             wire:model="selected"
                         />
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{e( $weeklyDocumentation->name ?? '-}}
+                        {{ $weeklyDocumentation->name ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-right" style="width: 134px;">
                         <div
@@ -180,15 +180,15 @@
                             <button
                                 type="button"
                                 class="button mr-1"
-                                wire:click="viewWeeklyDocumentation('{{e( $weeklyDocumentation->i}}')"
+                                wire:click="viewWeeklyDocumentation('{{ $weeklyDocumentation->id }}')"
                             >
                                 <i class="icon ion-md-eye"></i>
                             </button>
-                            @can(k('update', $weeklyDocumentati)
+                            @can('update', $weeklyDocumentation)
                                 <button
                                     type="button"
                                     class="button mr-1"
-                                    wire:click="editWeeklyDocumentation('{{e( $weeklyDocumentation->i}}')"
+                                    wire:click="editWeeklyDocumentation('{{ $weeklyDocumentation->id }}')"
                                 >
                                     <i class="icon ion-md-create"></i>
                                 </button>
@@ -202,7 +202,7 @@
             <tr>
                 <td colspan="2">
                     <div class="mt-10 px-4">
-                        {{e( $weeklyDocumentations->render(}}
+                        {{ $weeklyDocumentations->render() }}
                     </div>
                 </td>
             </tr>

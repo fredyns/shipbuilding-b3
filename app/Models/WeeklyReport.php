@@ -14,7 +14,7 @@ use Snippet\Helpers\JsonField;
  * @property string $id
  * @property string $shipbuilding_id
  * @property string $week
- * @property Datetime $month
+ * @property Datetime $date
  * @property float $planned_progress
  * @property float $actual_progress
  * @property string $summary
@@ -35,7 +35,7 @@ class WeeklyReport extends Model
     protected $fillable = [
         'shipbuilding_id',
         'week',
-        'month',
+        'date',
         'planned_progress',
         'actual_progress',
         'summary',
@@ -48,7 +48,7 @@ class WeeklyReport extends Model
     protected $table = 'weekly_reports';
 
     protected $casts = [
-        'month' => 'date',
+        'date' => 'date',
         'metadata' => 'array',
     ];
 

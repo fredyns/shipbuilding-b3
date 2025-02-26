@@ -24,7 +24,7 @@ class WeeklyReportFactory extends Factory
     {
         return [
             'week' => $this->faker->randomNumber(0),
-            'month' => $this->faker->date(),
+            'date' => $this->faker->date(),
             'summary' => $this->faker->text(),
             'report_file' => $this->faker->text(),
             'metadata' => [],

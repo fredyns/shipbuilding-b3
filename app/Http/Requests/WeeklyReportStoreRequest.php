@@ -22,7 +22,7 @@ class WeeklyReportStoreRequest extends FormRequest
         return [
             'shipbuilding_id' => ['required', 'exists:shipbuildings,id'],
             'week' => ['required', 'numeric'],
-            'month' => ['nullable', 'date'],
+            'date' => ['nullable', 'date'],
             'planned_progress' => ['nullable', 'numeric'],
             'actual_progress' => ['nullable', 'numeric'],
             'summary' => ['nullable', 'max:255', 'string'],

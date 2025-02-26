@@ -148,7 +148,7 @@ return [
         'inputs' => [
             'shipbuilding_id' => 'Shipbuilding',
             'week' => 'Week',
-            'month' => 'Month',
+            'date' => 'Date',
             'planned_progress' => 'Planned Progress',
             'actual_progress' => 'Actual Progress',
             'summary' => 'Summary',

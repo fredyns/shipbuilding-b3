@@ -56,7 +56,7 @@
                                 @lang('crud.weekly_reports.inputs.week')
                             </th>
                             <th class="px-4 py-3 text-left">
-                                @lang('crud.weekly_reports.inputs.month')
+                                @lang('crud.weekly_reports.inputs.date')
                             </th>
                             <th class="px-4 py-3 text-right">
                                 @lang('crud.weekly_reports.inputs.planned_progress')
@@ -85,9 +85,8 @@
                                     {{ $weeklyReport->week ?? '-' }}
                                 </td>
                                 <td class="px-4 py-3 text-left">
-                                    {{
-                                    optional($weeklyReport->month)->format('D, d
-                                    M Y') }}
+                                    {{ optional($weeklyReport->date)->format('D,
+                                    d M Y') }}
                                 </td>
                                 <td class="px-4 py-3 text-right">
                                     {{ $weeklyReport->planned_progress ?? '-' }}
@@ -101,7 +100,7 @@
                                 <td class="px-4 py-3 text-left">
                                     @if($weeklyReport->report_file)
                                         <a
-                                            href="{{ Storage::url($weeklyReport->report_file) }}"
+                                            href="{{ \Storage::url($weeklyReport->report_file) }}"
                                             target="blank"
                                         ><i
                                                 class="mr-1 icon ion-md-download"

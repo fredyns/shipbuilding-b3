@@ -50,10 +50,10 @@
 
         <x-inputs.group class="w-full">
             <x-inputs.date
-                name="month"
-                value="{{ old('month', ($editing ? optional($weeklyReport->month)->format('Y-m-d') : '')) }}"
-                label="{{ __('crud.weekly_reports.inputs.month') }}"
-                placeholder="{{ __('crud.weekly_reports.inputs.month') }}"
+                name="date"
+                value="{{ old('date', ($editing ? optional($weeklyReport->date)->format('Y-m-d') : '')) }}"
+                label="{{ __('crud.weekly_reports.inputs.date') }}"
+                placeholder="{{ __('crud.weekly_reports.inputs.date') }}"
             ></x-inputs.date>
         </x-inputs.group>
 
@@ -107,7 +107,7 @@
             @if($editing && $weeklyReport->report_file)
                 <div class="mt-2">
                     <a
-                        href="{{ Storage::url($weeklyReport->report_file) }}"
+                        href="{{ \Storage::url($weeklyReport->report_file) }}"
                         target="_blank"
                     >
                         <i class="icon ion-md-download"></i>

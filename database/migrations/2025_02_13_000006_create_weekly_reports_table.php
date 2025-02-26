@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->bigIncrements('id');
             $table->foreignId('shipbuilding_id');
             $table->integer('week');
-            $table->date('month')->nullable();
+            $table->date('date')->nullable();
             $table->decimal('planned_progress', 6, 3)->nullable();
             $table->decimal('actual_progress', 6, 3)->nullable();
             $table->text('summary')->nullable();
