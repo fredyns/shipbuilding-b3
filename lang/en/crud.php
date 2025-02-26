@@ -80,6 +80,24 @@ return [
         ],
     ],
 
+    'shipbuilding_weekly_reports' => [
+        'name' => 'Weekly Reports',
+        'index_title' => 'Weekly Reports List',
+        'new_title' => 'Add Weekly Report',
+        'create_title' => 'Add Weekly Report',
+        'edit_title' => 'Edit Weekly Report',
+        'show_title' => 'Show Weekly Report',
+        'inputs' => [
+            'shipbuilding_id' => 'Shipbuilding',
+            'week' => 'Week',
+            'date' => 'Date',
+            'planned_progress' => 'Planned Progress',
+            'actual_progress' => 'Actual Progress',
+            'summary' => 'Summary',
+            'report_file' => 'Report File',
+        ],
+    ],
+
     'shipbuilding_shipbuilding_tasks' => [
         'name' => 'Shipbuilding Shipbuilding Tasks',
         'index_title' => 'Shipbuilding Tasks List',
