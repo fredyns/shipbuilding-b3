@@ -21,6 +21,12 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'update shipbuildings']);
         Permission::create(['name' => 'delete shipbuildings']);
 
+        Permission::create(['name' => 'list weeklyreports']);
+        Permission::create(['name' => 'view weeklyreports']);
+        Permission::create(['name' => 'create weeklyreports']);
+        Permission::create(['name' => 'update weeklyreports']);
+        Permission::create(['name' => 'delete weeklyreports']);
+
         Permission::create(['name' => 'list shipbuildingtasks']);
         Permission::create(['name' => 'view shipbuildingtasks']);
         Permission::create(['name' => 'create shipbuildingtasks']);
