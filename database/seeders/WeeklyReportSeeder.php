@@ -19,6 +19,9 @@ class WeeklyReportSeeder extends Seeder
             //barge
             '2020', '2021', '2022', '2023',
         ];
+        foreach ($keywords as $keyword) {
+            $this->execute($keyword);
+        }
     }
 
     public function execute($keyword): void
@@ -30,7 +33,7 @@ class WeeklyReportSeeder extends Seeder
             return;
         }
 
-        $ships = Shipbuilding::where('name', 'like', "%{$keyword}%")->get();
+        $ships = Shipbuilding::where('name', 'ilike', "%{$keyword}%")->get();
 
         foreach ($ships as $ship) {
             $this->prepareWeeklyReport($ship, $data);
