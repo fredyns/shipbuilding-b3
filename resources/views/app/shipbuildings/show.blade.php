@@ -120,6 +120,16 @@
 
             <x-partials.card class="mt-5">
                 <x-slot name="title">
+                    S-Curve
+                </x-slot>
+
+                <div class="block w-full overflow-auto scrolling-touch mt-4">
+                    <canvas id="scurve" width="900" height="400"></canvas>
+                </div>
+            </x-partials.card>
+
+            <x-partials.card class="mt-5">
+                <x-slot name="title">
                     Weekly Reports
                 </x-slot>
 
@@ -186,4 +196,29 @@
             </x-partials.card>
         </div>
     </div>
+    @php
+        $sCurve = new \App\Lib\SCurve($shipbuilding);
+    @endphp
+    @push('scripts')
+        <script>
+            const sCurve = new Chart(
+                document.getElementById('scurve'),
+                {
+                    type: 'line',
+                    data: {
+                        labels: {!! $sCurve->getLabels() !!},
+                        datasets: [
+                            {
+                                label: 'Plan',
+                                data: {!! $sCurve->getDatasetPlan() !!},
+                                fill: false,
+                                borderColor: 'rgb(75, 192, 192)',
+                                tension: 0.1,
+                            },
+                        ]
+                    },
+                }
+            );
+        </script>
+    @endpush
 </x-app-layout>
