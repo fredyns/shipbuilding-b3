@@ -16,6 +16,8 @@ class WeeklyReportSeeder extends Seeder
         $keywords = [
             //tug boats
             '1889', '1890', '1894', '1895',
+            //barge
+            '2020', '2021', '2022', '2023',
         ];
     }
 
