@@ -13,17 +13,27 @@ class ShipbuildingTaskSeeder extends Seeder
      */
     public function run(): void
     {
-        $tugData = include __DIR__ . '/data/ShipbuildingTaskSeeder.php';
+        $tugData = include __DIR__ . '/ShipbuildingTask/Tugboat.php';
+        $bargeData = include __DIR__ . '/ShipbuildingTask/Barge.php';
 
         if (!is_array($tugData)) {
-            $this->command->warn('ShipbuildingTaskSeeder empty.');
+            $this->command->warn('ShipbuildingTask/Tugboat not found.');
+            return;
+        }
+
+        if (!is_array($bargeData)) {
+            $this->command->warn('ShipbuildingTask/Barge not found.');
             return;
         }
 
         $lastID = (int)ShipbuildingTask::max('id');
         $shipbuildings = Shipbuilding::all();
         foreach ($shipbuildings as $shipbuilding) {
-            $taskSeeds = $this->adjustID($tugData, $shipbuilding, $lastID);
+            if (str_contains($shipbuilding->name, "Tug")) {
+                $taskSeeds = $this->adjustID($tugData, $shipbuilding, $lastID);
+            } else {
+                $taskSeeds = $this->adjustID($bargeData, $shipbuilding, $lastID);
+            }
             ShipbuildingTask::insert($taskSeeds);
 
             $lastID += count($taskSeeds);
