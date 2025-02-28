@@ -15,9 +15,9 @@ class WeeklyReportSeeder extends Seeder
     {
         $keywords = [
             //tug boats
-            '1889', '1890', '1894', '1895',
+            'tug',
             //barge
-            '2020', '2021', '2022', '2023',
+            '300', '330',
         ];
         foreach ($keywords as $keyword) {
             $this->execute($keyword);

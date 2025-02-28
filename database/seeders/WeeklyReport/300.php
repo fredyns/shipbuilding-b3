@@ -1,5 +1,6 @@
 <?php return [
-    ["week" => "1", "date" => "2025-02-15", "planned_progress" => "2"],
+    ["week" => "0", "date" => "2025-02-08", "planned_progress" => "0"],
+    ["week" => "1", "date" => "2025-02-15", "planned_progress" => "2.00"],
     ["week" => "2", "date" => "2025-02-22", "planned_progress" => "4.06"],
     ["week" => "3", "date" => "2025-03-01", "planned_progress" => "5.89"],
     ["week" => "4", "date" => "2025-03-08", "planned_progress" => "7.72"],
@@ -29,7 +30,7 @@
     ["week" => "28", "date" => "2025-08-23", "planned_progress" => "64.8"],
     ["week" => "29", "date" => "2025-08-30", "planned_progress" => "68.7"],
     ["week" => "30", "date" => "2025-09-06", "planned_progress" => "72.7"],
-    ["week" => "31", "date" => "2025-09-13", "planned_progress" => "77"],
+    ["week" => "31", "date" => "2025-09-13", "planned_progress" => "77.00"],
     ["week" => "32", "date" => "2025-09-20", "planned_progress" => "80.9"],
     ["week" => "33", "date" => "2025-09-27", "planned_progress" => "85.25"],
     ["week" => "34", "date" => "2025-10-04", "planned_progress" => "89.4"],
