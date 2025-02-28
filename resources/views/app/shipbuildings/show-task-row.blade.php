@@ -1,3 +1,8 @@
+<?php
+
+use App\Helpers\Format;
+
+?>
 <tr class="hover:bg-gray-100">
     <td class="px-4 py-3 text-left">
         <a href="{{ route('shipbuilding-tasks.show', $task) }}" class="text-blue-900 font-bold" target="_blank">
@@ -9,16 +14,16 @@
         </a>
     </td>
     <td class="px-4 py-3 text-right">
-        {{ $task->weight ?? '-' }}
+        {{ Format::percent($task->weight,"-") }}
     </td>
     <td class="px-4 py-3 text-right">
-        {{ $task->progress ?? '-' }}
+        {{ Format::percent($task->progress,"-") }}
     </td>
     <td class="px-4 py-3 text-right">
-        {{ $task->target ?? '-' }}
+        {{ Format::percent($task->target,"-") }}
     </td>
     <td class="px-4 py-3 text-right">
-        {{ $task->deviation ?? '-' }}
+        {{ Format::percent($task->deviation,"-") }}
     </td>
     <td class="px-4 py-3 text-right" style="width: 134px;">
         <div

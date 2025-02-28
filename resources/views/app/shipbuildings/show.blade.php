@@ -1,3 +1,8 @@
+<?php
+
+use App\Helpers\Format;
+
+?>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -30,6 +35,8 @@
                         </button>
                     </form>
                 </div>
+
+
 
                     @endcan
                     -->
@@ -72,7 +79,9 @@
                                 <h5 class="font-medium text-gray-700">
                                     @lang('crud.shipbuildings.inputs.progress')
                                 </h5>
-                                <span> {{ $shipbuilding->progress ?? '-' }} </span>
+                                <span>
+                                    {{ Format::percent($shipbuilding->progress,"-") }}
+                                </span>
                             </div>
 
                             <div class="mb-4 w-full">
