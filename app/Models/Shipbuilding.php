@@ -83,7 +83,7 @@ class Shipbuilding extends Model
 
     public function weeklyReports()
     {
-        return $this->hasMany(WeeklyReport::class)->orderBy('week');
+        return $this->hasMany(WeeklyReport::class);
     }
 
     protected $tasksFamily;

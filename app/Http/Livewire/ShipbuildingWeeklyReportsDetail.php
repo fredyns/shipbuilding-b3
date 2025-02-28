@@ -186,6 +186,8 @@ class ShipbuildingWeeklyReportsDetail extends Component
         return view('livewire.shipbuilding-weekly-reports-detail', [
             'weeklyReports' => $this->shipbuilding
                 ->weeklyReports()
+                ->where('date', '<=', date('Y-m-d'))
+                ->orderBy('date', 'desc')
                 ->paginate(100),
         ]);
     }
