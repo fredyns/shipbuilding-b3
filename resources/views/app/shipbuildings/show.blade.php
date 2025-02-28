@@ -228,6 +228,25 @@ use App\Helpers\Format;
                             },
                         ]
                     },
+                    options: {
+                        scales: {
+                            x: {
+                                display: true,
+                                title: {
+                                    display: true,
+                                    text: 'Week'
+                                },
+                            },
+                            y: {
+                                type: 'linear',
+                                display: true,
+                                title: {
+                                    display: true,
+                                    text: 'Progress'
+                                },
+                            },
+                        },
+                    },
                 }
             );
         </script>
