@@ -1,10 +1,12 @@
 <tr class="hover:bg-gray-100">
     <td class="px-4 py-3 text-left">
-        @if($task->level > 1)
-            @php $tab = ($task->level - 1) * 2 @endphp
-            <span style="font-family: monospace;">{!! str_repeat("&nbsp;", $tab) !!}Ͱ&nbsp;</span>
-        @endif
-        <span>{{ $task->name ?? '-' }}</span>
+        <a href="{{ route('shipbuilding-tasks.show', $task) }}" class="text-blue-900 font-bold" target="_blank">
+            @if($task->level > 1)
+                @php $tab = ($task->level - 1) * 2 @endphp
+                <span style="font-family: monospace;">{!! str_repeat("&nbsp;", $tab) !!}Ͱ&nbsp;</span>
+            @endif
+            <span>{{ $task->name ?? '-' }}</span>
+        </a>
     </td>
     <td class="px-4 py-3 text-right">
         {{ $task->weight ?? '-' }}
@@ -26,7 +28,7 @@
         >
             <a
                 href="{{ route('shipbuilding-tasks.show', $task) }}"
-                class="mr-1" target="shipbuilding-tasks"
+                class="mr-1" target="_blank"
             >
                 <button
                     type="button"
