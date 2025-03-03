@@ -1,11 +1,24 @@
 <div>
     <div>
-        @can('create', App\Models\WeeklyReport::class)
-            <button class="button" wire:click="newWeeklyReport">
-                <i class="mr-1 icon ion-md-add text-primary"></i>
-                @lang('crud.common.new')
-            </button>
-        @endcan
+        @if($adminMode)
+            @can('create', App\Models\WeeklyReport::class)
+                <button class="button" wire:click="newWeeklyReport">
+                    <i class="mr-1 icon ion-md-add text-primary"></i>
+                    @lang('crud.common.new')
+                </button>
+            @endcan
+            @can('delete-any', App\Models\WeeklyReport::class)
+                <button
+                    class="button button-danger"
+                    {{ empty($selected) ? 'disabled' : '' }}
+                    onclick="confirm('{{ __('crud.common.are_you_sure') }}') || event.stopImmediatePropagation()"
+                    wire:click="destroySelected"
+                >
+                    <i class="mr-1 icon ion-md-trash text-primary"></i>
+                    @lang('crud.common.delete_selected')
+                </button>
+            @endcan
+        @endif
     </div>
 
     <x-modal wire:model="showingModalView">
@@ -98,32 +111,32 @@
 
             <div class="mt-5">
                 <div class="flex flex-wrap">
-                    @role('super-admin')
-                    <x-inputs.group class="w-full">
-                        <x-inputs.slider
-                            name="weeklyReport.week"
-                            wire:model="weeklyReport.week"
-                            label="{{ __('crud.weekly_reports.inputs.week') }}"
-                            placeholder="{{ __('crud.weekly_reports.inputs.week') }}"
-                        ></x-inputs.slider>
-                    </x-inputs.group>
-                    <x-inputs.group class="w-full">
-                        <x-inputs.date
-                            name="weeklyReportDate"
-                            wire:model="weeklyReportDate"
-                            label="{{ __('crud.weekly_reports.inputs.date') }}"
-                            placeholder="{{ __('crud.weekly_reports.inputs.date') }}"
-                        ></x-inputs.date>
-                    </x-inputs.group>
-                    <x-inputs.group class="w-full">
-                        <x-inputs.slider
-                            name="weeklyReport.planned_progress"
-                            wire:model="weeklyReport.planned_progress"
-                            label="{{ __('crud.weekly_reports.inputs.planned_progress') }}"
-                            placeholder="{{ __('crud.weekly_reports.inputs.planned_progress') }}"
-                            step="0.01"
-                        ></x-inputs.slider>
-                    </x-inputs.group>
+                    @if($adminMode)
+                        <x-inputs.group class="w-full">
+                            <x-inputs.slider
+                                name="weeklyReport.week"
+                                wire:model="weeklyReport.week"
+                                label="{{ __('crud.weekly_reports.inputs.week') }}"
+                                placeholder="{{ __('crud.weekly_reports.inputs.week') }}"
+                            ></x-inputs.slider>
+                        </x-inputs.group>
+                        <x-inputs.group class="w-full">
+                            <x-inputs.date
+                                name="weeklyReportDate"
+                                wire:model="weeklyReportDate"
+                                label="{{ __('crud.weekly_reports.inputs.date') }}"
+                                placeholder="{{ __('crud.weekly_reports.inputs.date') }}"
+                            ></x-inputs.date>
+                        </x-inputs.group>
+                        <x-inputs.group class="w-full">
+                            <x-inputs.slider
+                                name="weeklyReport.planned_progress"
+                                wire:model="weeklyReport.planned_progress"
+                                label="{{ __('crud.weekly_reports.inputs.planned_progress') }}"
+                                placeholder="{{ __('crud.weekly_reports.inputs.planned_progress') }}"
+                                step="0.01"
+                            ></x-inputs.slider>
+                        </x-inputs.group>
                     @else
                         <div class="mb-4 px-4 w-full">
                             <h5 class="font-medium text-gray-700">
@@ -147,56 +160,56 @@
                                 {{ \App\Helpers\Format::percent($weeklyReport->planned_progress, '-') }}
                             </span>
                         </div>
-                        @endrole
-                        <x-inputs.group class="w-full">
-                            <x-inputs.number
-                                name="weeklyReport.actual_progress"
-                                wire:model="weeklyReport.actual_progress"
-                                label="{{ __('crud.weekly_reports.inputs.actual_progress') }}"
-                                placeholder="{{ __('crud.weekly_reports.inputs.actual_progress') }}"
-                                step="0.01"
-                                min="0"
-                                max="100"
-                            ></x-inputs.number>
-                        </x-inputs.group>
-                        <x-inputs.group class="w-full">
-                            <x-inputs.textarea
-                                name="weeklyReport.summary"
-                                wire:model="weeklyReport.summary"
-                                label="{{ __('crud.weekly_reports.inputs.summary') }}"
-                                placeholder="{{ __('crud.weekly_reports.inputs.summary') }}"
-                            >
-                                {{ old('summary', ($editing ? $weeklyReport->summary : '')) }}
-                            </x-inputs.textarea>
-                        </x-inputs.group>
-                        <x-inputs.group class="w-full">
-                            <x-inputs.partials.label
-                                name="weeklyReportReportFile"
-                                label="{{ __('crud.weekly_reports.inputs.report_file') }}"
-                            ></x-inputs.partials.label>
-                            <br/>
+                    @endif
+                    <x-inputs.group class="w-full">
+                        <x-inputs.number
+                            name="weeklyReport.actual_progress"
+                            wire:model="weeklyReport.actual_progress"
+                            label="{{ __('crud.weekly_reports.inputs.actual_progress') }}"
+                            placeholder="{{ __('crud.weekly_reports.inputs.actual_progress') }}"
+                            step="0.01"
+                            min="0"
+                            max="100"
+                        ></x-inputs.number>
+                    </x-inputs.group>
+                    <x-inputs.group class="w-full">
+                        <x-inputs.textarea
+                            name="weeklyReport.summary"
+                            wire:model="weeklyReport.summary"
+                            label="{{ __('crud.weekly_reports.inputs.summary') }}"
+                            placeholder="{{ __('crud.weekly_reports.inputs.summary') }}"
+                        >
+                            {{ old('summary', ($editing ? $weeklyReport->summary : '')) }}
+                        </x-inputs.textarea>
+                    </x-inputs.group>
+                    <x-inputs.group class="w-full">
+                        <x-inputs.partials.label
+                            name="weeklyReportReportFile"
+                            label="{{ __('crud.weekly_reports.inputs.report_file') }}"
+                        ></x-inputs.partials.label>
+                        <br/>
 
-                            <input
-                                type="file"
-                                name="weeklyReportReportFile"
-                                id="weeklyReportReportFile{{ $uploadIteration }}"
-                                wire:model="weeklyReportReportFile"
-                                class="form-control-file"
-                            />
+                        <input
+                            type="file"
+                            name="weeklyReportReportFile"
+                            id="weeklyReportReportFile{{ $uploadIteration }}"
+                            wire:model="weeklyReportReportFile"
+                            class="form-control-file"
+                        />
 
-                            @if($editing && $weeklyReport->report_file)
-                                <div class="mt-2">
-                                    <a
-                                        href="{{ \Storage::url($weeklyReport->report_file) }}"
-                                        target="_blank"
-                                    >
-                                        <i class="icon ion-md-download"></i>
-                                        Download
-                                    </a>
-                                </div>
-                            @endif @error('weeklyReportReportFile')
-                            @include('components.inputs.partials.error') @enderror
-                        </x-inputs.group>
+                        @if($editing && $weeklyReport->report_file)
+                            <div class="mt-2">
+                                <a
+                                    href="{{ \Storage::url($weeklyReport->report_file) }}"
+                                    target="_blank"
+                                >
+                                    <i class="icon ion-md-download"></i>
+                                    Download
+                                </a>
+                            </div>
+                        @endif @error('weeklyReportReportFile')
+                        @include('components.inputs.partials.error') @enderror
+                    </x-inputs.group>
                 </div>
             </div>
         </div>
@@ -226,6 +239,16 @@
         <table class="w-full max-w-full mb-4 bg-transparent">
             <thead class="text-gray-700">
             <tr>
+                @if($adminMode)
+                    <th class="px-4 py-3 text-left w-1">
+                        <input
+                            type="checkbox"
+                            wire:model="allSelected"
+                            wire:click="toggleFullSelection"
+                            title="{{ trans('crud.common.select_all') }}"
+                        />
+                    </th>
+                @endif
                 <th class="px-4 py-3 text-center">
                     @lang('crud.shipbuilding_weekly_reports.inputs.week')
                 </th>
@@ -244,6 +267,15 @@
             <tbody class="text-gray-600">
             @foreach ($weeklyReports as $weeklyReport)
                 <tr class="hover:bg-gray-100">
+                    @if($adminMode)
+                        <td class="px-4 py-3 text-left">
+                            <input
+                                type="checkbox"
+                                value="{{ $weeklyReport->id }}"
+                                wire:model="selected"
+                            />
+                        </td>
+                    @endif
                     <td class="px-4 py-3 text-center">
                         {{ $weeklyReport->week ?? '-' }}
                     </td>
@@ -283,15 +315,17 @@
                 </tr>
             @endforeach
             </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="5">
-                    <div class="mt-10 px-4">
-                        {{ $weeklyReports->render() }}
-                    </div>
-                </td>
-            </tr>
-            </tfoot>
+            @if($allWeek)
+                <tfoot>
+                <tr>
+                    <td colspan="{{ $adminMode ? 6 : 5 }}">
+                        <div class="mt-10 px-4">
+                            {{ $weeklyReports->render() }}
+                        </div>
+                    </td>
+                </tr>
+                </tfoot>
+            @endif
         </table>
     </div>
 </div>

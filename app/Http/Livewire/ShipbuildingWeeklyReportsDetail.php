@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Shipbuilding;
 use App\Models\WeeklyReport;
 use Carbon\Carbon;
+use DateTime;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
@@ -17,6 +18,9 @@ class ShipbuildingWeeklyReportsDetail extends Component
     use WithPagination;
     use WithFileUploads;
     use AuthorizesRequests;
+
+    public bool $adminMode = false;
+    public bool $allWeek = false;
 
     public Shipbuilding $shipbuilding;
     public WeeklyReport $weeklyReport;
@@ -41,9 +45,11 @@ class ShipbuildingWeeklyReportsDetail extends Component
         'weeklyReportReportFile' => ['file', 'max:1024', 'nullable'],
     ];
 
-    public function mount(Shipbuilding $shipbuilding): void
+    public function mount(Shipbuilding $shipbuilding, $allWeek = false): void
     {
         $this->shipbuilding = $shipbuilding;
+        $this->allWeek = (bool)$allWeek;
+        $this->adminMode = auth()->user()->hasRole('super-admin');
         $this->resetWeeklyReportData();
     }
 
@@ -51,19 +57,41 @@ class ShipbuildingWeeklyReportsDetail extends Component
     {
         $this->weeklyReport = new WeeklyReport();
 
+        $this->weeklyReport->week = 0;
+        $this->weeklyReport->date = date('Y-m-d');
         $this->weeklyReportReportFile = null;
-        $this->weeklyReportDate = null;
+        $this->weeklyReportDate = new DateTime();
 
         $this->dispatchBrowserEvent('refresh');
     }
 
     public function newWeeklyReport(): void
     {
+        if (!$this->adminMode) {
+            $this->dispatchBrowserEvent('livewire-alert', ['message' => 'Fitur terkunci / tidak tersedia.']);
+            return;
+        }
+
         $this->editing = false;
         $this->modalTitle = trans('crud.shipbuilding_weekly_reports.new_title');
         $this->resetWeeklyReportData();
+        $this->adjustWeek();
 
         $this->showModalForm();
+    }
+
+    protected function adjustWeek(): void
+    {
+        $last = $this->shipbuilding->weeklyReports()->orderBy('week', 'desc')->first();
+        if ($last) {
+            $this->weeklyReport->week = $last->week + 1;
+
+            if ($last->date) {
+                $this->weeklyReport->date = $last->date->add('7 days')->format('Y-m-d');
+            }
+        } else if ($this->shipbuilding->start_date) {
+            $this->weeklyReport->date = $this->shipbuilding->start_date->format('Y-m-d');
+        }
     }
 
     public function viewWeeklyReport(WeeklyReport $weeklyReport): void
@@ -184,11 +212,21 @@ class ShipbuildingWeeklyReportsDetail extends Component
     public function render(): View
     {
         return view('livewire.shipbuilding-weekly-reports-detail', [
-            'weeklyReports' => $this->shipbuilding
-                ->weeklyReports()
-                ->where('date', '<=', date('Y-m-d'))
-                ->orderBy('date', 'desc')
-                ->paginate(100),
+            'weeklyReports' => $this->reportsQuery(),
         ]);
+    }
+
+    public function reportsQuery()
+    {
+        $perPage = $this->allWeek ? 10000 : 5;
+        $query = $this->shipbuilding
+            ->weeklyReports()
+            ->orderBy('week', 'desc');
+
+        if (!$this->adminMode) {
+            $query->where('date', '<=', date('Y-m-d'));
+        }
+
+        return $query->paginate($perPage);
     }
 }

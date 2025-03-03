@@ -61,6 +61,9 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::prefix('/')
     ->middleware(['auth:sanctum', 'verified'])
     ->group(function () {
+        Route::get('shipbuildings/{shipbuilding}/weeks', [ShipbuildingController::class, 'weeks'])
+            ->name('shipbuildings.weeks');
+
         Route::resource('roles', RoleController::class);
         Route::resource('permissions', PermissionController::class);
 

@@ -92,7 +92,11 @@
                 },
             }
         })
-    })
+    });
+
+    window.addEventListener('livewire-alert', event => {
+        alert(event.detail.message);
+    });
 </script>
 </body>
 </html>

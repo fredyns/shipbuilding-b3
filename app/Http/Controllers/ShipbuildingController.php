@@ -16,6 +16,16 @@ use Illuminate\View\View;
 class ShipbuildingController extends Controller
 {
     /**
+     * Display the specified resource.
+     */
+    public function weeks(Request $request, Shipbuilding $shipbuilding): View
+    {
+        $this->authorize('view', $shipbuilding);
+
+        return view('app.shipbuildings.weeks', compact('shipbuilding'));
+    }
+
+    /**
      * Display a listing of the resource.
      */
     public function index(Request $request): View
