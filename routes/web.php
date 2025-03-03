@@ -53,9 +53,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::any('/home', fn() => redirect('/dashboard'));
 
 Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/dashboard', function () {
-        return view('dashboard');
-    })
+    ->get('/dashboard', [ShipbuildingController::class, 'summary'])
     ->name('dashboard');
 
 Route::prefix('/')

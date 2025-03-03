@@ -16,6 +16,25 @@ use Illuminate\View\View;
 class ShipbuildingController extends Controller
 {
     /**
+     * Display a listing of the resource.
+     */
+    public function summary(Request $request): View
+    {
+        $search = (string)$request->get('search', '');
+
+        if (!$search or $search == 'null') {
+            $search = '';
+        }
+
+        $shipbuildings = Shipbuilding::search($search)
+            ->latest()
+            ->paginate(100)
+            ->withQueryString();
+
+        return view('summary', compact('shipbuildings', 'search'));
+    }
+
+    /**
      * Display the specified resource.
      */
     public function weeks(Request $request, Shipbuilding $shipbuilding): View

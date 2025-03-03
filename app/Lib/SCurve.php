@@ -18,7 +18,7 @@ class SCurve
 
     protected function generateData()
     {
-        foreach ($this->shipBuilding->weeklyReports as $weeklyReport) {
+        foreach ($this->shipBuilding->weeklyReports()->orderBy('week')->get() as $weeklyReport) {
             $this->labels[] = $weeklyReport->week;
             $this->datasetPlan[] = $weeklyReport->planned_progress;
             $this->datasetProgress[] = $weeklyReport->actual_progress;

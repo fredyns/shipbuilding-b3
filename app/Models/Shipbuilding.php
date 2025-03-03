@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Lib\SCurve;
 use App\Models\Scopes\Searchable;
 use Datetime;
 use Generator;
@@ -65,6 +66,30 @@ class Shipbuilding extends Model
         'start_date' => 'date',
         'end_date' => 'date',
     ];
+
+    public function week()
+    {
+        if (empty($this->start_date)) {
+            return null;
+        }
+
+        $now = new DateTime();
+
+        $diff = $now->diff($this->start_date);
+
+        return ceil($diff->days / 7);
+    }
+
+    protected $_sCurve;
+
+    public function getSCurve(): SCurve
+    {
+        if (is_null($this->_sCurve)) {
+            $this->_sCurve = new SCurve($this);
+        }
+
+        return $this->_sCurve;
+    }
 
     public function shipType()
     {
