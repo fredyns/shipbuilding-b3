@@ -100,6 +100,7 @@
                                                 data: {!! $shipbuilding->getSCurve()->getDatasetPlan() !!},
                                                 fill: false,
                                                 borderColor: 'gray',
+                                                borderWidth: 1,
                                                 tension: 0.1,
                                             },
                                             {

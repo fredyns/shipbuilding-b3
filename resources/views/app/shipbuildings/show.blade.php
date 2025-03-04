@@ -233,6 +233,7 @@ use App\Helpers\Format;
                                 data: {!! $sCurve->getDatasetPlan() !!},
                                 fill: false,
                                 borderColor: 'gray',
+                                borderWidth: 1,
                                 tension: 0.1,
                             },
                             {
