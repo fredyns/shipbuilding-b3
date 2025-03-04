@@ -107,7 +107,7 @@
                                                 label: 'Progress',
                                                 data: {!! $shipbuilding->getSCurve()->getDatasetProgress() !!},
                                                 fill: false,
-                                                borderColor: 'rgb(135, 206, 235)',
+                                                borderColor: 'rgb(75, 192, 192)',
                                                 tension: 0.1,
                                             },
                                         ]
