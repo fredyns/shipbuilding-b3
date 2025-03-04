@@ -113,12 +113,12 @@
                 <div class="flex flex-wrap">
                     @if($adminMode)
                         <x-inputs.group class="w-full">
-                            <x-inputs.slider
+                            <x-inputs.number
                                 name="weeklyReport.week"
                                 wire:model="weeklyReport.week"
                                 label="{{ __('crud.weekly_reports.inputs.week') }}"
                                 placeholder="{{ __('crud.weekly_reports.inputs.week') }}"
-                            ></x-inputs.slider>
+                            ></x-inputs.number>
                         </x-inputs.group>
                         <x-inputs.group class="w-full">
                             <x-inputs.date
@@ -129,13 +129,13 @@
                             ></x-inputs.date>
                         </x-inputs.group>
                         <x-inputs.group class="w-full">
-                            <x-inputs.slider
+                            <x-inputs.number
                                 name="weeklyReport.planned_progress"
                                 wire:model="weeklyReport.planned_progress"
                                 label="{{ __('crud.weekly_reports.inputs.planned_progress') }}"
                                 placeholder="{{ __('crud.weekly_reports.inputs.planned_progress') }}"
                                 step="0.01"
-                            ></x-inputs.slider>
+                            ></x-inputs.number>
                         </x-inputs.group>
                     @else
                         <div class="mb-4 px-4 w-full">
