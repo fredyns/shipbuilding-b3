@@ -67,8 +67,12 @@ class Shipbuilding extends Model
         'end_date' => 'date',
     ];
 
+    protected $_week;
+
     public function week()
     {
+        if ($this->_week !== null) return $this->_week;
+
         if (empty($this->start_date)) {
             return null;
         }
@@ -77,7 +81,7 @@ class Shipbuilding extends Model
 
         $diff = $now->diff($this->start_date);
 
-        return ceil($diff->days / 7);
+        return $this->_week = ceil($diff->days / 7);
     }
 
     protected $_sCurve;
