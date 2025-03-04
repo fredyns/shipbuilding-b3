@@ -241,6 +241,7 @@ use App\Helpers\Format;
                                 data: {!! $shipbuilding->getSCurve()->getDatasetProgress() !!},
                                 fill: false,
                                 borderColor: 'rgb(75, 192, 192)',
+                                backgroundColor: 'rgba(75, 192, 192, 0.5)',
                                 tension: 0.1,
                             },
                         ]
