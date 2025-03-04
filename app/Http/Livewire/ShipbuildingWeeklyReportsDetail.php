@@ -223,7 +223,7 @@ class ShipbuildingWeeklyReportsDetail extends Component
             ->weeklyReports()
             ->orderBy('week', 'desc');
 
-        if (!$this->adminMode) {
+        if (!$this->allWeek) {
             $query->where('date', '<=', date('Y-m-d'));
         }
 
