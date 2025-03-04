@@ -57,10 +57,12 @@ class WeeklyReport extends Model
         $buildingWeek = (int)$this->shipbuilding->week();
         $taskWeek = (int)$this->week;
 
-        if (empty($this->actual_progress) or ($taskWeek < $buildingWeek)) return;
+        if (empty($this->actual_progress) or ($taskWeek < $buildingWeek)) return false;
 
         $this->shipbuilding->progress = $this->actual_progress;
         $this->shipbuilding->save();
+
+        return true;
     }
 
     public function metadata($key = null, $default = null)

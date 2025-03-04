@@ -110,6 +110,9 @@
     window.addEventListener('livewire-alert', event => {
         alert(event.detail.message);
     });
+    window.addEventListener('reload-all', event => {
+        window.location.reload();
+    });
 </script>
 </body>
 </html>

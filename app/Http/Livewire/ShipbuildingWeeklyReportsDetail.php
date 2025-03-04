@@ -171,11 +171,15 @@ class ShipbuildingWeeklyReportsDetail extends Component
         );
 
         $this->weeklyReport->save();
-        $this->weeklyReport->topupProgress();
+        $topped = $this->weeklyReport->topupProgress();
 
         $this->uploadIteration++;
 
         $this->hideModal();
+
+        if ($topped) {
+            $this->dispatchBrowserEvent('reload-all');
+        }
     }
 
     public function destroySelected(): void
