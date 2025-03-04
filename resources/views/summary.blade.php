@@ -134,6 +134,19 @@
                         </x-partials.card>
                     </div>
                 @endforelse
+
+                <div class="w-full p-2 mb-10">
+                    <x-partials.card>
+                        <div class="my-2">
+                            <div class="flex flex-wrap justify-between">
+                                <div class="w-full">
+                                    {!! $shipbuildings->render() !!}
+                                </div>
+                            </div>
+                        </div>
+                    </x-partials.card>
+
+                </div>
             </div>
 
         </div>

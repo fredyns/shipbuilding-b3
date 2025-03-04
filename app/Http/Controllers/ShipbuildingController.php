@@ -28,7 +28,7 @@ class ShipbuildingController extends Controller
 
         $shipbuildings = Shipbuilding::search($search)
             ->latest()
-            ->paginate(100)
+            ->paginate(10)
             ->withQueryString();
 
         return view('summary', compact('shipbuildings', 'search'));
