@@ -99,7 +99,14 @@
                                                 label: 'Plan',
                                                 data: {!! $shipbuilding->getSCurve()->getDatasetPlan() !!},
                                                 fill: false,
-                                                borderColor: 'rgb(75, 192, 192)',
+                                                borderColor: 'gray',
+                                                tension: 0.1,
+                                            },
+                                            {
+                                                label: 'Progress',
+                                                data: {!! $shipbuilding->getSCurve()->getDatasetProgress() !!},
+                                                fill: false,
+                                                borderColor: 'rgb(135, 206, 235)',
                                                 tension: 0.1,
                                             },
                                         ]
