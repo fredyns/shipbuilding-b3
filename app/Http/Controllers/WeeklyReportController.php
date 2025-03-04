@@ -76,7 +76,10 @@ class WeeklyReportController extends Controller
                 ->store($uploadPath);
         }
 
+        /* @var $weeklyReport WeeklyReport */
         $weeklyReport = WeeklyReport::create($validated);
+
+        $weeklyReport->topupProgress();
 
         return redirect()
             ->route('weekly-reports.show', $weeklyReport)
@@ -137,6 +140,7 @@ class WeeklyReportController extends Controller
         }
 
         $weeklyReport->update($validated);
+        $weeklyReport->topupProgress();
 
         return redirect()
             ->route('weekly-reports.show', $weeklyReport)

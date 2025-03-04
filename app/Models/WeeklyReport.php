@@ -52,6 +52,17 @@ class WeeklyReport extends Model
         'metadata' => 'array',
     ];
 
+    public function topupProgress()
+    {
+        $buildingWeek = (int)$this->shipbuilding->week();
+        $taskWeek = (int)$this->week;
+
+        if (empty($this->actual_progress) or ($taskWeek < $buildingWeek)) return;
+
+        $this->shipbuilding->progress = $this->actual_progress;
+        $this->shipbuilding->save();
+    }
+
     public function metadata($key = null, $default = null)
     {
         return JsonField::getField($this, 'metadata', $key, $default);

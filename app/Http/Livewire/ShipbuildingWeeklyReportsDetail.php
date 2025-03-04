@@ -171,6 +171,7 @@ class ShipbuildingWeeklyReportsDetail extends Component
         );
 
         $this->weeklyReport->save();
+        $this->weeklyReport->topupProgress();
 
         $this->uploadIteration++;
 
@@ -224,7 +225,7 @@ class ShipbuildingWeeklyReportsDetail extends Component
             ->orderBy('week', 'desc');
 
         if (!$this->allWeek) {
-            $query->where('date', '<=', date('Y-m-d'));
+            $query->where('week', '<=', $this->shipbuilding->week());
         }
 
         return $query->paginate($perPage);
