@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>shipbuilding_3</title>
+    <title>{{ env('APP_NAME', 'SIMPRO') }}</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -22,6 +22,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
 
     @livewireStyles
+
+    <!-- Third Parties -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/trix@2.0.0-alpha.1/dist/trix.css"></link>
+    <script src="https://unpkg.com/trix@2.0.0-alpha.1/dist/trix.umd.js"></script>
+    <style>
+        [data-trix-button-group="file-tools"] {
+            display: none !important;
+        }
+    </style>
+
 </head>
 <body class="font-sans antialiased">
 <x-banner/>
