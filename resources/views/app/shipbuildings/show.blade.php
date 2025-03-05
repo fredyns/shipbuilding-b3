@@ -1,6 +1,7 @@
 <?php
 
 use App\Helpers\Format;
+use App\Lib\SCurve;
 
 ?>
 <x-app-layout>
@@ -35,6 +36,8 @@ use App\Helpers\Format;
                         </button>
                     </form>
                 </div>
+
+
 
 
 
@@ -217,7 +220,7 @@ use App\Helpers\Format;
         </div>
     </div>
     @php
-        $sCurve = new \App\Lib\SCurve($shipbuilding);
+        $sCurve = new SCurve($shipbuilding);
     @endphp
     @push('scripts')
         <script>

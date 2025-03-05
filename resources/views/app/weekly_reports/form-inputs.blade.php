@@ -107,7 +107,7 @@
             @if($editing && $weeklyReport->report_file)
                 <div class="mt-2">
                     <a
-                        href="{{ \Storage::url($weeklyReport->report_file) }}"
+                        href="{{ Storage::url($weeklyReport->report_file) }}"
                         target="_blank"
                     >
                         <i class="icon ion-md-download"></i>

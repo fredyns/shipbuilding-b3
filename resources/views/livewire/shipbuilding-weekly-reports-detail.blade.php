@@ -1,3 +1,4 @@
+@php use App\Helpers\Format; @endphp
 <div>
     <div>
         @if($adminMode)
@@ -46,7 +47,7 @@
                             @lang('crud.shipbuilding_weekly_reports.inputs.planned_progress')
                         </h5>
                         <span>
-                            {{ \App\Helpers\Format::percent($weeklyReport->planned_progress, '-') }}
+                            {{ Format::percent($weeklyReport->planned_progress, '-') }}
                         </span>
                     </div>
                     <div class="mb-4 w-full">
@@ -54,7 +55,7 @@
                             @lang('crud.shipbuilding_weekly_reports.inputs.actual_progress')
                         </h5>
                         <span>
-                            {{ \App\Helpers\Format::percent($weeklyReport->actual_progress, '-') }}
+                            {{ Format::percent($weeklyReport->actual_progress, '-') }}
                         </span>
                     </div>
                     <div class="mb-4 w-full">
@@ -157,7 +158,7 @@
                                 @lang('crud.shipbuilding_weekly_reports.inputs.planned_progress')
                             </h5>
                             <span>
-                                {{ \App\Helpers\Format::percent($weeklyReport->planned_progress, '-') }}
+                                {{ Format::percent($weeklyReport->planned_progress, '-') }}
                             </span>
                         </div>
                     @endif
@@ -283,10 +284,10 @@
                         {{ optional($weeklyReport->date)->format('D, d M Y') }}
                     </td>
                     <td class="px-4 py-3 text-right">
-                        {{ \App\Helpers\Format::percent($weeklyReport->planned_progress, '-') }}
+                        {{ Format::percent($weeklyReport->planned_progress, '-') }}
                     </td>
                     <td class="px-4 py-3 text-right">
-                        {{ \App\Helpers\Format::percent($weeklyReport->actual_progress, '-') }}
+                        {{ Format::percent($weeklyReport->actual_progress, '-') }}
                     </td>
                     <td class="px-4 py-3 text-right" style="width: 134px;">
                         <div
