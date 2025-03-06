@@ -88,7 +88,6 @@ return [
         'edit_title' => 'Edit Weekly Report',
         'show_title' => 'Show Weekly Report',
         'inputs' => [
-            'shipbuilding_id' => 'Shipbuilding',
             'week' => 'Week',
             'date' => 'Date',
             'planned_progress' => 'Planned Progress',
@@ -184,6 +183,143 @@ return [
         'inputs' => [
             'file' => 'File',
             'name' => 'Name',
+        ],
+    ],
+
+    'shipbuilding_daily_reports' => [
+        'name' => 'Shipbuilding Daily Reports',
+        'index_title' => 'Daily Reports List',
+        'new_title' => 'Add Daily Report',
+        'create_title' => 'Add Daily Report',
+        'edit_title' => 'Edit Daily Report',
+        'show_title' => 'Show Daily Report',
+        'inputs' => [
+            'date' => 'Date',
+            'week' => 'Week',
+            'actual_progress' => 'Actual Progress',
+            'morning_weather_id' => 'Morning Weather',
+            'morning_humidity_id' => 'Morning Humidity',
+            'midday_weather_id' => 'Midday Weather',
+            'midday_humidity_id' => 'Midday Humidity',
+            'afternoon_weather_id' => 'Afternoon Weather',
+            'afternoon_humidity_id' => 'Afternoon Humidity',
+            'temperature' => 'Temperature',
+            'summary' => 'Summary',
+        ],
+    ],
+
+    'weathers' => [
+        'name' => 'Weathers',
+        'index_title' => 'Weathers List',
+        'new_title' => 'Add Weather',
+        'create_title' => 'Add Weather',
+        'edit_title' => 'Edit Weather',
+        'show_title' => 'Show Weather',
+        'inputs' => [
+            'name' => 'Name',
+        ],
+    ],
+
+    'humidities' => [
+        'name' => 'Humidities',
+        'index_title' => 'Humidities List',
+        'new_title' => 'Add Humidity',
+        'create_title' => 'Add Humidity',
+        'edit_title' => 'Edit Humidity',
+        'show_title' => 'Show Humidity',
+        'inputs' => [
+            'name' => 'Name',
+        ],
+    ],
+
+    'daily_reports' => [
+        'name' => 'Daily Reports',
+        'index_title' => 'DailyReports List',
+        'new_title' => 'New Daily report',
+        'create_title' => 'Create DailyReport',
+        'edit_title' => 'Edit DailyReport',
+        'show_title' => 'Show DailyReport',
+        'inputs' => [
+            'shipbuilding_id' => 'Shipbuilding',
+            'date' => 'Date',
+            'week' => 'Week',
+            'actual_progress' => 'Actual Progress',
+            'morning_weather_id' => 'Morning Weather',
+            'morning_humidity_id' => 'Morning Humidity',
+            'midday_weather_id' => 'Midday Weather',
+            'midday_humidity_id' => 'Midday Humidity',
+            'afternoon_weather_id' => 'Afternoon Weather',
+            'afternoon_humidity_id' => 'Afternoon Humidity',
+            'temperature' => 'Temperature',
+            'summary' => 'Summary',
+        ],
+    ],
+
+    'daily_report_personnels' => [
+        'name' => 'Daily Report Personnels',
+        'index_title' => 'Personnels List',
+        'new_title' => 'Add Personnel',
+        'create_title' => 'Add Personnel',
+        'edit_title' => 'Edit Personnel',
+        'show_title' => 'Show Personnel',
+        'inputs' => [
+            'role' => 'Role',
+            'present' => 'Present',
+            'description' => 'Description',
+        ],
+    ],
+
+    'daily_report_equipments' => [
+        'name' => 'Daily Report Equipments',
+        'index_title' => 'Equipments List',
+        'new_title' => 'Add Equipment',
+        'create_title' => 'Add Equipment',
+        'edit_title' => 'Edit Equipment',
+        'show_title' => 'Show Equipment',
+        'inputs' => [
+            'name' => 'Name',
+            'quantity' => 'Quantity',
+            'remark' => 'Remark',
+        ],
+    ],
+
+    'daily_report_materials' => [
+        'name' => 'Daily Report Materials',
+        'index_title' => 'Materials List',
+        'new_title' => 'Add Material',
+        'create_title' => 'Add Material',
+        'edit_title' => 'Edit Material',
+        'show_title' => 'Show Material',
+        'inputs' => [
+            'name' => 'Name',
+            'quantity' => 'Quantity',
+            'remark' => 'Remark',
+        ],
+    ],
+
+    'daily_report_activities' => [
+        'name' => 'Daily Report Activities',
+        'index_title' => 'Activities List',
+        'new_title' => 'Add Activity',
+        'create_title' => 'Add Activity',
+        'edit_title' => 'Edit Activity',
+        'show_title' => 'Show Activity',
+        'inputs' => [
+            'name' => 'Name',
+            'pic' => 'PIC',
+        ],
+    ],
+
+    'daily_report_documetations' => [
+        'name' => 'Daily Report Documetations',
+        'index_title' => 'Documetations List',
+        'new_title' => 'Add Documetation',
+        'create_title' => 'Add Documetation',
+        'edit_title' => 'Edit Documetation',
+        'show_title' => 'Show Documetation',
+        'inputs' => [
+            'image' => 'Image',
+            'remark' => 'Remark',
         ],
     ],
 

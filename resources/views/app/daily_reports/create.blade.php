@@ -4,18 +4,14 @@
             <a href="javascript: history.go(-1)" class="mr-4">
                 <i class="mr-1 icon ion-md-arrow-back"></i>
             </a>
-            @lang('crud.shipbuildings.edit_title')
+            @lang('crud.daily_reports.create_title')
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <x-form
-                method="PUT"
-                action="{{ route('shipbuildings.update', $shipbuilding) }}"
-                has-files
-            >
-                @include('app.shipbuildings.form-inputs')
+            <x-form method="POST" action="{{ route('daily-reports.store') }}">
+                @include('app.daily_reports.form-inputs')
 
                 <x-partials.card class="mt-5">
                     <x-slot name="title">
@@ -23,7 +19,7 @@
                     </x-slot>
                     <div class="mt-4 px-4">
                         <a
-                            href="{{ route('shipbuildings.index') }}"
+                            href="{{ route('daily-reports.index') }}"
                             class="button"
                         >
                             <i
@@ -33,17 +29,9 @@
                                     ion-md-return-left
                                     text-primary
                                 "
-                            ></i>
-                            @lang('crud.common.back')
-                        </a>
-
-                        <a
-                            href="{{ route('shipbuildings.show', $shipbuilding) }}"
-                            class="button"
-                        >
-                            <i class="mr-1 icon ion-md-backspace text-primary">
+                            >
                             </i>
-                            @lang('crud.common.cancel')
+                            @lang('crud.common.back')
                         </a>
 
                         <button
@@ -51,12 +39,11 @@
                             class="button button-primary float-right"
                         >
                             <i class="mr-1 icon ion-md-save"></i>
-                            @lang('crud.common.update')
+                            @lang('crud.common.create')
                         </button>
                     </div>
                 </x-partials.card>
             </x-form>
-
         </div>
     </div>
 </x-app-layout>

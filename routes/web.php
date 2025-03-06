@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DailyReportController;
+use App\Http\Controllers\HumidityController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ShipbuildingController;
@@ -7,6 +9,7 @@ use App\Http\Controllers\ShipbuildingTaskController;
 use App\Http\Controllers\ShipTypeController;
 use App\Http\Controllers\ShipyardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\WeeklyReportController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
@@ -74,4 +77,7 @@ Route::prefix('/')
             ShipbuildingTaskController::class
         );
         Route::resource('weekly-reports', WeeklyReportController::class);
+        Route::resource('weathers', WeatherController::class);
+        Route::resource('humidities', HumidityController::class);
+        Route::resource('daily-reports', DailyReportController::class);
     });

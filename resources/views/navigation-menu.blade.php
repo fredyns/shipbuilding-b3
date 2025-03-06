@@ -48,6 +48,21 @@
                             Weekly Reports
                         </x-dropdown-link>
                     @endcan
+                    @can('view-any', App\Models\Weather::class)
+                        <x-dropdown-link href="{{ route('weathers.index') }}">
+                            Weathers
+                        </x-dropdown-link>
+                    @endcan
+                    @can('view-any', App\Models\Humidity::class)
+                        <x-dropdown-link href="{{ route('humidities.index') }}">
+                            Humidities
+                        </x-dropdown-link>
+                    @endcan
+                    @can('view-any', App\Models\DailyReport::class)
+                        <x-dropdown-link href="{{ route('daily-reports.index') }}">
+                            Daily Reports
+                        </x-dropdown-link>
+                    @endcan
                 </x-nav-dropdown>
 
                 @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) ||
@@ -232,6 +247,21 @@
             @can('view-any', App\Models\WeeklyReport::class)
                 <x-responsive-nav-link href="{{ route('weekly-reports.index') }}">
                     Weekly Reports
+                </x-responsive-nav-link>
+            @endcan
+            @can('view-any', App\Models\Weather::class)
+                <x-responsive-nav-link href="{{ route('weathers.index') }}">
+                    Weathers
+                </x-responsive-nav-link>
+            @endcan
+            @can('view-any', App\Models\Humidity::class)
+                <x-responsive-nav-link href="{{ route('humidities.index') }}">
+                    Humidities
+                </x-responsive-nav-link>
+            @endcan
+            @can('view-any', App\Models\DailyReport::class)
+                <x-responsive-nav-link href="{{ route('daily-reports.index') }}">
+                    Daily Reports
                 </x-responsive-nav-link>
             @endcan
 

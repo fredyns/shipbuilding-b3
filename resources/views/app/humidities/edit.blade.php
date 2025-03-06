@@ -4,7 +4,7 @@
             <a href="javascript: history.go(-1)" class="mr-4">
                 <i class="mr-1 icon ion-md-arrow-back"></i>
             </a>
-            @lang('crud.shipbuildings.edit_title')
+            @lang('crud.humidities.edit_title')
         </h2>
     </x-slot>
 
@@ -12,10 +12,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-form
                 method="PUT"
-                action="{{ route('shipbuildings.update', $shipbuilding) }}"
-                has-files
+                action="{{ route('humidities.update', $humidity) }}"
             >
-                @include('app.shipbuildings.form-inputs')
+                @include('app.humidities.form-inputs')
 
                 <x-partials.card class="mt-5">
                     <x-slot name="title">
@@ -23,7 +22,7 @@
                     </x-slot>
                     <div class="mt-4 px-4">
                         <a
-                            href="{{ route('shipbuildings.index') }}"
+                            href="{{ route('humidities.index') }}"
                             class="button"
                         >
                             <i
@@ -38,7 +37,7 @@
                         </a>
 
                         <a
-                            href="{{ route('shipbuildings.show', $shipbuilding) }}"
+                            href="{{ route('humidities.show', $humidity) }}"
                             class="button"
                         >
                             <i class="mr-1 icon ion-md-backspace text-primary">
@@ -56,7 +55,6 @@
                     </div>
                 </x-partials.card>
             </x-form>
-
         </div>
     </div>
 </x-app-layout>

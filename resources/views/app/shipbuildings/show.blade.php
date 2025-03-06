@@ -41,6 +41,8 @@ use App\Lib\SCurve;
 
 
 
+
+
                     @endcan
                     -->
                     @can('update', $shipbuilding)
@@ -214,6 +216,16 @@ use App\Lib\SCurve;
                 <livewire:shipbuilding-weekly-reports-detail
                     :shipbuilding="$shipbuilding"
                     :allWeek="false"
+                />
+            </x-partials.card>
+
+            <x-partials.card class="mt-5">
+                <x-slot name="title">
+                    @lang('crud.shipbuilding_daily_reports.name')
+                </x-slot>
+
+                <livewire:shipbuilding-daily-reports-detail
+                    :shipbuilding="$shipbuilding"
                 />
             </x-partials.card>
 

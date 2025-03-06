@@ -36,6 +36,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property WeeklyReport[] $weeklyReports
  *
+ * @property DailyReport[] $dailyReports
+ *
  *
  */
 class Shipbuilding extends Model
@@ -132,5 +134,10 @@ class Shipbuilding extends Model
 
         $parentID = (int)optional($parentTask)->id;
         return $this->tasksFamily[$parentID] ?? [];
+    }
+
+    public function dailyReports()
+    {
+        return $this->hasMany(DailyReport::class);
     }
 }
