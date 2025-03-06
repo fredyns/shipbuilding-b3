@@ -27,9 +27,11 @@ trait Searchable
      */
     public function scopeSearch(Builder $query, string $search): Builder
     {
-        $query->where(function ($query) use ($search) {
+        $dbConnection = env('DB_CONNECTION', 'mysql');
+        $searchOperator = $dbConnection == 'pgsql' ? 'ilike' : 'like';
+        $query->where(function ($query) use ($search, $searchOperator) {
             foreach ($this->getSearchableFields() as $field) {
-                $query->orWhere($field, 'like', "%{$search}%");
+                $query->orWhere($field, $searchOperator, "%{$search}%");
             }
         });
 
