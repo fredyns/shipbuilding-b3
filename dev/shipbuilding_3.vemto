@@ -2,8 +2,8 @@
     "tables": {
         "basicrelationships": {
             "basicrelationships": {
-                "count": 376,
-                "lastPrimaryKey": 836,
+                "count": 392,
+                "lastPrimaryKey": 854,
                 "index": {
                     "1": {
                         "hasMany": {
@@ -4293,6 +4293,166 @@
                         "hasOne": {},
                         "belongsTo": {},
                         "belongsToMany": {}
+                    },
+                    "837": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                838
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "838": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                837
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "839": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                840
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "840": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                839
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "841": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                842
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "842": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                841
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "843": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                844
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "844": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                843
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "845": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                846
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "846": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                845
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "847": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                848
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "848": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                847
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "851": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                852
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "852": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                851
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "853": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                854
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "854": {
+                        "hasMany": {
+                            "basicrelationships.inverseId": [
+                                853
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
                     }
                 },
                 "additionalIndexes": {},
@@ -8542,8 +8702,8 @@
         },
         "entities": {
             "entities": {
-                "count": 183,
-                "lastPrimaryKey": 414,
+                "count": 188,
+                "lastPrimaryKey": 419,
                 "index": {
                     "1": {
                         "hasMany": {
@@ -8565,6 +8725,18 @@
                             ],
                             "cruds.modelId": [
                                 1
+                            ],
+                            "foreigns.relatedEntityId": [
+                                448,
+                                451
+                            ],
+                            "basicrelationships.localModelId": [
+                                845,
+                                851
+                            ],
+                            "basicrelationships.modelId": [
+                                846,
+                                852
                             ]
                         },
                         "hasOne": {},
@@ -8611,11 +8783,16 @@
                             ],
                             "basicrelationships.modelId": [
                                 797,
-                                836
+                                836,
+                                842
                             ],
                             "basicrelationships.localModelId": [
                                 798,
-                                835
+                                835,
+                                841
+                            ],
+                            "foreigns.relatedEntityId": [
+                                446
                             ]
                         },
                         "hasOne": {},
@@ -13616,11 +13793,11 @@
                         "hasMany": {
                             "fields.entityId": [
                                 3845,
-                                3849,
                                 3846,
                                 3848,
                                 3862,
-                                3847
+                                3847,
+                                3849
                             ],
                             "foreigns.relatedEntityId": [
                                 424,
@@ -13628,7 +13805,9 @@
                                 426,
                                 427,
                                 440,
-                                441
+                                441,
+                                447,
+                                452
                             ],
                             "basicrelationships.localModelId": [
                                 797,
@@ -13636,7 +13815,9 @@
                                 799,
                                 803,
                                 829,
-                                831
+                                831,
+                                843,
+                                853
                             ],
                             "basicrelationships.modelId": [
                                 798,
@@ -13644,7 +13825,9 @@
                                 802,
                                 804,
                                 830,
-                                832
+                                832,
+                                844,
+                                854
                             ]
                         },
                         "hasOne": {},
@@ -13967,9 +14150,9 @@
                                 3921,
                                 3929,
                                 3930,
+                                3923,
                                 3924,
-                                3926,
-                                3923
+                                3926
                             ],
                             "basicrelationships.modelId": [
                                 831,
@@ -13991,7 +14174,134 @@
                         "hasMany": {
                             "fields.entityId": [
                                 3932,
-                                3933
+                                3933,
+                                3937,
+                                3935,
+                                3936
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "415": {
+                        "hasMany": {
+                            "fields.entityId": [
+                                3938,
+                                3948,
+                                3939,
+                                3949,
+                                3943,
+                                3951,
+                                3950,
+                                3960,
+                                3962,
+                                3952,
+                                3961
+                            ],
+                            "basicrelationships.localModelId": [
+                                837,
+                                839,
+                                844,
+                                846,
+                                847
+                            ],
+                            "basicrelationships.modelId": [
+                                838,
+                                840,
+                                843,
+                                845,
+                                848
+                            ],
+                            "foreigns.relatedEntityId": [
+                                445,
+                                449
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "416": {
+                        "hasMany": {
+                            "fields.entityId": [
+                                3941,
+                                3942
+                            ],
+                            "foreigns.relatedEntityId": [
+                                444
+                            ],
+                            "basicrelationships.modelId": [
+                                837
+                            ],
+                            "basicrelationships.localModelId": [
+                                838
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "417": {
+                        "hasMany": {
+                            "fields.entityId": [
+                                3944,
+                                3945,
+                                3946,
+                                3947,
+                                3953,
+                                3954,
+                                3955
+                            ],
+                            "basicrelationships.modelId": [
+                                839,
+                                841
+                            ],
+                            "basicrelationships.localModelId": [
+                                840,
+                                842
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "418": {
+                        "hasMany": {
+                            "fields.entityId": [
+                                3956,
+                                3957,
+                                3958,
+                                3959
+                            ],
+                            "basicrelationships.modelId": [
+                                847
+                            ],
+                            "basicrelationships.localModelId": [
+                                848
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "419": {
+                        "hasMany": {
+                            "fields.entityId": [
+                                3963,
+                                3966,
+                                3967,
+                                3968,
+                                3969,
+                                3970
+                            ],
+                            "basicrelationships.modelId": [
+                                851,
+                                853
+                            ],
+                            "basicrelationships.localModelId": [
+                                852,
+                                854
                             ]
                         },
                         "hasOne": {},
@@ -14397,11 +14707,22 @@
         },
         "fields": {
             "fields": {
-                "count": 1741,
-                "lastPrimaryKey": 3933,
+                "count": 1774,
+                "lastPrimaryKey": 3970,
                 "index": {
                     "1": {
-                        "hasMany": {},
+                        "hasMany": {
+                            "foreigns.relatedFieldId": [
+                                448,
+                                451
+                            ],
+                            "basicrelationships.parentKeyId": [
+                                846,
+                                845,
+                                852,
+                                851
+                            ]
+                        },
                         "hasOne": {},
                         "belongsTo": {},
                         "belongsToMany": {}
@@ -14479,7 +14800,15 @@
                         "belongsToMany": {}
                     },
                     "12": {
-                        "hasMany": {},
+                        "hasMany": {
+                            "foreigns.relatedFieldId": [
+                                446
+                            ],
+                            "basicrelationships.parentKeyId": [
+                                841,
+                                842
+                            ]
+                        },
                         "hasOne": {},
                         "belongsTo": {},
                         "belongsToMany": {}
@@ -30348,7 +30677,9 @@
                                 426,
                                 427,
                                 440,
-                                441
+                                441,
+                                447,
+                                452
                             ],
                             "basicrelationships.parentKeyId": [
                                 798,
@@ -30362,7 +30693,11 @@
                                 830,
                                 829,
                                 832,
-                                831
+                                831,
+                                844,
+                                843,
+                                854,
+                                853
                             ]
                         },
                         "hasOne": {},
@@ -31209,6 +31544,289 @@
                         "belongsToMany": {}
                     },
                     "3933": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3935": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3936": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3937": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3938": {
+                        "hasMany": {
+                            "foreigns.relatedFieldId": [
+                                445,
+                                449
+                            ],
+                            "basicrelationships.parentKeyId": [
+                                840,
+                                839,
+                                848,
+                                847
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3939": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3941": {
+                        "hasMany": {
+                            "foreigns.relatedFieldId": [
+                                444
+                            ],
+                            "basicrelationships.parentKeyId": [
+                                838,
+                                837
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3942": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3943": {
+                        "hasMany": {
+                            "foreigns.fieldId": [
+                                444
+                            ],
+                            "basicrelationships.foreignKeyId": [
+                                838,
+                                837
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3944": {
+                        "hasMany": {
+                            "basicrelationships.parentKeyId": []
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3945": {
+                        "hasMany": {
+                            "foreigns.fieldId": [
+                                445
+                            ],
+                            "basicrelationships.foreignKeyId": [
+                                840,
+                                839
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3946": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3947": {
+                        "hasMany": {
+                            "foreigns.fieldId": [
+                                446
+                            ],
+                            "basicrelationships.foreignKeyId": [
+                                841,
+                                842
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3948": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3949": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3950": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3951": {
+                        "hasMany": {
+                            "foreigns.fieldId": [
+                                447
+                            ],
+                            "basicrelationships.foreignKeyId": [
+                                844,
+                                843
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3952": {
+                        "hasMany": {
+                            "foreigns.fieldId": [
+                                448
+                            ],
+                            "basicrelationships.foreignKeyId": [
+                                846,
+                                845
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3953": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3954": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3955": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3956": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3957": {
+                        "hasMany": {
+                            "foreigns.fieldId": [
+                                449
+                            ],
+                            "basicrelationships.foreignKeyId": [
+                                848,
+                                847
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3958": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3959": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3960": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3961": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3962": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3963": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3966": {
+                        "hasMany": {
+                            "foreigns.fieldId": [
+                                451
+                            ],
+                            "basicrelationships.foreignKeyId": [
+                                852,
+                                851
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3967": {
+                        "hasMany": {
+                            "foreigns.fieldId": [
+                                452
+                            ],
+                            "basicrelationships.foreignKeyId": [
+                                854,
+                                853
+                            ]
+                        },
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3968": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3969": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "3970": {
                         "hasMany": {},
                         "hasOne": {},
                         "belongsTo": {},
@@ -33996,8 +34614,8 @@
         },
         "foreigns": {
             "foreigns": {
-                "count": 212,
-                "lastPrimaryKey": 443,
+                "count": 220,
+                "lastPrimaryKey": 452,
                 "index": {
                     "1": {
                         "hasMany": {},
@@ -35266,6 +35884,54 @@
                         "belongsToMany": {}
                     },
                     "443": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "444": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "445": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "446": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "447": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "448": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "449": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "451": {
+                        "hasMany": {},
+                        "hasOne": {},
+                        "belongsTo": {},
+                        "belongsToMany": {}
+                    },
+                    "452": {
                         "hasMany": {},
                         "hasOne": {},
                         "belongsTo": {},
@@ -48788,11 +49454,16 @@
                                 402,
                                 401,
                                 400,
-                                2,
                                 412,
                                 403,
                                 413,
-                                414
+                                414,
+                                415,
+                                2,
+                                418,
+                                417,
+                                416,
+                                419
                             ],
                             "cruds.projectId": [
                                 1,
@@ -49348,8 +50019,8 @@
                     "viewsFolder": "/resources/views/app",
                     "controllerNameMode": "singular",
                     "schemaZoom": 0.8,
-                    "schemaScrollTop": 4306,
-                    "schemaScrollLeft": 4076,
+                    "schemaScrollTop": 4185,
+                    "schemaScrollLeft": 4513,
                     "turbolinks": false,
                     "modules": []
                 },
@@ -49410,7 +50081,7 @@
                             "name": "Shipbuildings",
                             "requests": false,
                             "controller": false,
-                            "views": true,
+                            "views": false,
                             "tests": false,
                             "api": false
                         },
@@ -49462,82 +50133,82 @@
                         "397": {
                             "crudId": 397,
                             "name": "Shipbuilding Daily Reports",
-                            "requests": true,
-                            "controller": true,
-                            "views": true,
-                            "tests": true,
+                            "requests": false,
+                            "controller": false,
+                            "views": false,
+                            "tests": false,
                             "api": false
                         },
                         "398": {
                             "crudId": 398,
                             "name": "Weathers",
-                            "requests": true,
-                            "controller": true,
-                            "views": true,
-                            "tests": true,
+                            "requests": false,
+                            "controller": false,
+                            "views": false,
+                            "tests": false,
                             "api": false
                         },
                         "399": {
                             "crudId": 399,
                             "name": "Humidities",
-                            "requests": true,
-                            "controller": true,
-                            "views": true,
-                            "tests": true,
+                            "requests": false,
+                            "controller": false,
+                            "views": false,
+                            "tests": false,
                             "api": false
                         },
                         "400": {
                             "crudId": 400,
                             "name": "Daily Reports",
-                            "requests": true,
-                            "controller": true,
+                            "requests": false,
+                            "controller": false,
                             "views": true,
-                            "tests": true,
+                            "tests": false,
                             "api": false
                         },
                         "401": {
                             "crudId": 401,
                             "name": "Daily Report Personnels",
-                            "requests": true,
-                            "controller": true,
+                            "requests": false,
+                            "controller": false,
                             "views": true,
-                            "tests": true,
+                            "tests": false,
                             "api": false
                         },
                         "402": {
                             "crudId": 402,
                             "name": "Daily Report Equipments",
-                            "requests": true,
-                            "controller": true,
+                            "requests": false,
+                            "controller": false,
                             "views": true,
-                            "tests": true,
+                            "tests": false,
                             "api": false
                         },
                         "403": {
                             "crudId": 403,
                             "name": "Daily Report Materials",
-                            "requests": true,
-                            "controller": true,
+                            "requests": false,
+                            "controller": false,
                             "views": true,
-                            "tests": true,
+                            "tests": false,
                             "api": false
                         },
                         "404": {
                             "crudId": 404,
                             "name": "Daily Report Activities",
-                            "requests": true,
-                            "controller": true,
+                            "requests": false,
+                            "controller": false,
                             "views": true,
-                            "tests": true,
+                            "tests": false,
                             "api": false
                         },
                         "405": {
                             "crudId": 405,
                             "name": "Daily Report Documetations",
-                            "requests": true,
-                            "controller": true,
+                            "requests": false,
+                            "controller": false,
                             "views": true,
-                            "tests": true,
+                            "tests": false,
                             "api": false
                         }
                     },
@@ -51298,7 +51969,7 @@
                 "usesVite": true,
                 "id": 34,
                 "createdAt": "2025-02-10 16:31:15",
-                "updatedAt": "2025-03-06 15:03:13"
+                "updatedAt": "2025-03-07 14:30:35"
             }
         },
         "manytomanycomponents": {},
