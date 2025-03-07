@@ -82,11 +82,7 @@ class ShipbuildingDailyReportsDetail extends Component
 
     public function newDailyReport(): void
     {
-        $this->editing = false;
-        $this->modalTitle = trans('crud.shipbuilding_daily_reports.new_title');
-        $this->resetDailyReportData();
-
-        $this->showModalForm();
+        $this->dispatchBrowserEvent('redirect', ['url' => route('daily-reports.create')]);
     }
 
     public function viewDailyReport(DailyReport $dailyReport): void
@@ -187,7 +183,7 @@ class ShipbuildingDailyReportsDetail extends Component
         return view('livewire.shipbuilding-daily-reports-detail', [
             'dailyReports' => $this->shipbuilding
                 ->dailyReports()
-                ->paginate(100),
+                ->paginate(10),
         ]);
     }
 }

@@ -113,6 +113,9 @@
     window.addEventListener('reload-all', event => {
         window.location.reload();
     });
+    window.addEventListener('redirect', event => {
+        window.location.href = event.detail.url;
+    });
 </script>
 </body>
 </html>
