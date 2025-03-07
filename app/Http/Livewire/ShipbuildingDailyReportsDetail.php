@@ -82,7 +82,10 @@ class ShipbuildingDailyReportsDetail extends Component
 
     public function newDailyReport(): void
     {
-        $this->dispatchBrowserEvent('redirect', ['url' => route('daily-reports.create')]);
+        $this->dispatchBrowserEvent(
+            'redirect',
+            ['url' => route('daily-reports.create', ['shipbuilding_id' => $this->shipbuilding->id])]
+        );
     }
 
     public function viewDailyReport(DailyReport $dailyReport): void
