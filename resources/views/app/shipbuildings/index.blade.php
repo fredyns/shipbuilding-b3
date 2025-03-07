@@ -55,14 +55,8 @@
                             <th class="px-4 py-3 text-left">
                                 @lang('crud.shipbuildings.inputs.name')
                             </th>
-                            <th class="px-4 py-3 text-left">
-                                @lang('crud.shipbuildings.inputs.description')
-                            </th>
                             <th class="px-4 py-3 text-right">
                                 @lang('crud.shipbuildings.inputs.progress')
-                            </th>
-                            <th class="px-4 py-3 text-left">
-                                @lang('crud.shipbuildings.inputs.ship_type_id')
                             </th>
                             <th class="px-4 py-3 text-left">
                                 @lang('crud.shipbuildings.inputs.shipyard_id')
@@ -79,15 +73,8 @@
                                 <td class="px-4 py-3 text-left">
                                     {{ $shipbuilding->name ?? '-' }}
                                 </td>
-                                <td class="px-4 py-3 text-left">
-                                    {{ $shipbuilding->description ?? '-' }}
-                                </td>
                                 <td class="px-4 py-3 text-right">
-                                    {{ $shipbuilding->progress ?? '-' }}
-                                </td>
-                                <td class="px-4 py-3 text-left">
-                                    {{ optional($shipbuilding->shipType)->name
-                                    ?? '-' }}
+                                    {{ \App\Helpers\Format::percent($shipbuilding->progress, '-') }}
                                 </td>
                                 <td class="px-4 py-3 text-left">
                                     {{ optional($shipbuilding->shipyard)->name
@@ -138,7 +125,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7">
+                                <td colspan="5">
                                     @lang('crud.common.no_items_found')
                                 </td>
                             </tr>
@@ -146,7 +133,7 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                            <td colspan="7">
+                            <td colspan="5">
                                 <div class="mt-10 px-4">
                                     {!! $shipbuildings->render() !!}
                                 </div>
