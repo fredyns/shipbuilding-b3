@@ -39,7 +39,7 @@
                             @lang('crud.shipbuilding_weekly_reports.inputs.date')
                         </h5>
                         <span>
-                            {{ optional($weeklyReport->date)->format('l, d F Y') }}
+                            {{ optional($weeklyReport->date)->translatedFormat('l, d F Y') }}
                         </span>
                     </div>
                     <div class="mb-4 w-full">
