@@ -155,14 +155,6 @@
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.slider
-                            name="dailyReport.week"
-                            wire:model="dailyReport.week"
-                            label="{{ __('crud.daily_reports.inputs.week') }}"
-                            placeholder="{{ __('crud.daily_reports.inputs.week') }}"
-                        ></x-inputs.slider>
-                    </x-inputs.group>
-                    <x-inputs.group class="w-full">
-                        <x-inputs.slider
                             name="dailyReport.actual_progress"
                             wire:model="dailyReport.actual_progress"
                             label="{{ __('crud.daily_reports.inputs.actual_progress') }}"

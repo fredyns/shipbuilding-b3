@@ -82,6 +82,16 @@ class DailyReport extends Model
         'metadata' => 'array',
     ];
 
+    public function week()
+    {
+        if (empty($this->date)) return null;
+        if (empty($this->shipbuilding->start_date)) return null;
+
+        $diff = $this->date->diff($this->shipbuilding->start_date);
+
+        return ceil($diff->days / 7);
+    }
+
     public function metadata($key = null, $default = null)
     {
         return JsonField::getField($this, 'metadata', $key, $default);

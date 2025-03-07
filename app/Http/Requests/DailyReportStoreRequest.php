@@ -22,7 +22,6 @@ class DailyReportStoreRequest extends FormRequest
         return [
             'shipbuilding_id' => ['required', 'exists:shipbuildings,id'],
             'date' => ['required', 'date'],
-            'week' => ['required', 'numeric'],
             'actual_progress' => ['nullable', 'numeric'],
             'morning_weather_id' => ['nullable', 'exists:weathers,id'],
             'morning_humidity_id' => ['nullable', 'exists:humidities,id'],

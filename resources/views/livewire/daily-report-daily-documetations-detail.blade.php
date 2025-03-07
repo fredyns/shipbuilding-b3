@@ -35,9 +35,9 @@
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang(('crud.daily_report_documetations.inputs.remark)
+                            @lang('crud.daily_report_documetations.inputs.remark')
                         </h5>
-                        <span> {{( $dailyDocumetation->remark ?? '-'}} </span>
+                        <span> {{ $dailyDocumetation->remark ?? '-'}} </span>
                     </div>
                 </div>
             </div>
@@ -50,16 +50,16 @@
                 wire:click="$toggle('showingModalView')"
             >
                 <i class="mr-1 icon ion-md-close"></i>
-                @lang(('text.close)
+                @lang('text.close')
             </button>
-            @can(('update', $dailyDocumetatio)
+            @can('update', $dailyDocumetatio)
                 <button
                     type="button"
                     class="button mr-1"
                     wire:click="editDailyDocumetation('{{( $dailyDocumetation->id}}')"
                 >
                     <i class="mr-1 icon ion-md-create"></i>
-                    @lang(('crud.common.edit)
+                    @lang('crud.common.edit')
                 </button>
             @endcan
         </div>

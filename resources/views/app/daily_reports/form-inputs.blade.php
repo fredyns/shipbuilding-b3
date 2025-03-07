@@ -41,7 +41,7 @@
         <x-inputs.group class="w-full">
             <x-inputs.date
                 name="date"
-                value="{{ old('date', ($editing ? optional($dailyReport->date)->format('Y-m-d') : '')) }}"
+                value="{{ old('date', ($editing ? optional($dailyReport->date)->format('Y-m-d') : date('Y-m-d'))) }}"
                 label="{{ __('crud.daily_reports.inputs.date') }}"
                 placeholder="{{ __('crud.daily_reports.inputs.date') }}"
                 required

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Date;
 use App\Http\Requests\DailyReportStoreRequest;
 use App\Http\Requests\DailyReportUpdateRequest;
 use App\Models\DailyReport;
@@ -56,10 +57,6 @@ class DailyReportController extends Controller
                 'shipbuildings',
                 'weathers',
                 'humidities',
-                'weathers',
-                'humidities',
-                'weathers',
-                'humidities'
             )
         );
     }
@@ -78,6 +75,8 @@ class DailyReportController extends Controller
             );
         }
 
+        $shipbuilding = Shipbuilding::where('id', $validated['shipbuilding_id'])->firstOrFail();
+        $validated['week'] = Date::weekDiff($shipbuilding->start_date, $validated['date']);
         $dailyReport = DailyReport::create($validated);
 
         return redirect()
@@ -113,10 +112,6 @@ class DailyReportController extends Controller
                 'shipbuildings',
                 'weathers',
                 'humidities',
-                'weathers',
-                'humidities',
-                'weathers',
-                'humidities'
             )
         );
     }
@@ -135,6 +130,8 @@ class DailyReportController extends Controller
 
         $validated['summary'] = StringCleaner::forRTF($validated['summary']);
 
+        $shipbuilding = Shipbuilding::where('id', $validated['shipbuilding_id'])->firstOrFail();
+        $validated['week'] = Date::weekDiff($shipbuilding->start_date, $validated['date']);
         $dailyReport->update($validated);
 
         return redirect()
