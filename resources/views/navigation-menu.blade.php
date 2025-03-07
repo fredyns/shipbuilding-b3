@@ -17,7 +17,7 @@
                     </x-nav-link>
                 </div>
 
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-2 sm:-my-px sm:ml-4 sm:flex">
                     <x-nav-link href="{{ route('shipbuildings.index') }}" :active="request()->routeIs('shipbuildings.index')">
                         Shipbuildings
                     </x-nav-link>
