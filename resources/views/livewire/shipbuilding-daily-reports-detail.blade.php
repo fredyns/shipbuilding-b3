@@ -29,7 +29,7 @@
                             @lang('crud.shipbuilding_daily_reports.inputs.date')
                         </h5>
                         <span>
-                            {{ optional($dailyReport->date)->format('l, d F Y')
+                            {{ optional($dailyReport->date)->translatedFormat('l, d F Y')
                             }}
                         </span>
                     </div>
@@ -44,7 +44,7 @@
                             @lang('crud.shipbuilding_daily_reports.inputs.actual_progress')
                         </h5>
                         <span>
-                            {{ $dailyReport->actual_progress ?? '-' }}
+                            {{ \App\Helpers\Format::percent($dailyReport->actual_progress, '-') }}
                         </span>
                     </div>
                     <div class="mb-4 w-full">
@@ -308,34 +308,32 @@
                     />
                 </th>
                 <th class="px-4 py-3 text-left">
-                    @lang('crud.shipbuilding_daily_reports.inputs.date')
+                    Tanggal
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_daily_reports.inputs.week')
+                    Mgg
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_daily_reports.inputs.actual_progress')
+                    Progres
                 </th>
                 <th class="px-4 py-3 text-left">
-                    @lang('crud.shipbuilding_daily_reports.inputs.morning_weather_id')
+                    Pagi
                 </th>
                 <th class="px-4 py-3 text-left">
-                    @lang('crud.shipbuilding_daily_reports.inputs.midday_weather_id')
+                    Siang
                 </th>
                 <th class="px-4 py-3 text-left">
-                    @lang('crud.shipbuilding_daily_reports.inputs.afternoon_weather_id')
+                    Sore
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_daily_reports.inputs.temperature')
-                </th>
-                <th class="px-4 py-3 text-left">
-                    @lang('crud.shipbuilding_daily_reports.inputs.summary')
+                    Suhu
                 </th>
                 <th></th>
             </tr>
             </thead>
             <tbody class="text-gray-600">
             @foreach ($dailyReports as $dailyReport)
+                @php /* @var $dailyReport \App\Models\DailyReport */ @endphp
                 <tr class="hover:bg-gray-100">
                     <td class="px-4 py-3 text-left">
                         <input
@@ -345,30 +343,28 @@
                         />
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{ optional($dailyReport->date)->format('D, d M Y') }}
+                        {{ optional($dailyReport->date)->translatedFormat("D, d M'y") }}
                     </td>
                     <td class="px-4 py-3 text-right">
                         {{ $dailyReport->week ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-right">
-                        {{ $dailyReport->actual_progress ?? '-' }}
+                        {{ \App\Helpers\Format::percent($dailyReport->actual_progress, '-') }}
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{ optional($dailyReport->morningWeather)->name ?? '-'
-                        }}
+                        {{ optional($dailyReport->morningWeather)->name ?? '-' }} /
+                        {{ optional($dailyReport->morningHumidity)->name ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{ optional($dailyReport->middayWeather)->name ?? '-' }}
+                        {{ optional($dailyReport->middayWeather)->name ?? '-' }} /
+                        {{ optional($dailyReport->middayHumidity)->name ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{ optional($dailyReport->afternoonWeather)->name ?? '-'
-                        }}
+                        {{ optional($dailyReport->afternoonWeather)->name ?? '-' }} /
+                        {{ optional($dailyReport->afternoonHumidity)->name ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-right">
                         {{ $dailyReport->temperature ?? '-' }}
-                    </td>
-                    <td class="px-4 py-3 text-left">
-                        {{ $dailyReport->summary ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-right" style="width: 134px;">
                         <div

@@ -186,6 +186,10 @@ class ShipbuildingDailyReportsDetail extends Component
         return view('livewire.shipbuilding-daily-reports-detail', [
             'dailyReports' => $this->shipbuilding
                 ->dailyReports()
+                ->with([
+                    'morningWeather', 'middayWeather', 'afternoonWeather',
+                    'morningHumidity', 'middayHumidity', 'afternoonHumidity',
+                ])
                 ->paginate(10),
         ]);
     }
