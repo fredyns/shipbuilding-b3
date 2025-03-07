@@ -17,6 +17,53 @@
                     </x-nav-link>
                 </div>
 
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link href="{{ route('shipbuildings.index') }}" :active="request()->routeIs('shipbuildings.index')">
+                        Shipbuildings
+                    </x-nav-link>
+                </div>
+
+                <x-nav-dropdown title="Data" align="right" width="48">
+                    @can('view-any', App\Models\ShipbuildingTask::class)
+                        <x-dropdown-link href="{{ route('shipbuilding-tasks.index') }}">
+                            Shipbuilding Tasks
+                        </x-dropdown-link>
+                    @endcan
+                    @can('view-any', App\Models\WeeklyReport::class)
+                        <x-dropdown-link href="{{ route('weekly-reports.index') }}">
+                            Weekly Reports
+                        </x-dropdown-link>
+                    @endcan
+                    @can('view-any', App\Models\DailyReport::class)
+                        <x-dropdown-link href="{{ route('daily-reports.index') }}">
+                            Daily Reports
+                        </x-dropdown-link>
+                    @endcan
+                </x-nav-dropdown>
+
+                <x-nav-dropdown title="Master" align="right" width="48">
+                    @can('view-any', App\Models\ShipType::class)
+                        <x-dropdown-link href="{{ route('ship-types.index') }}">
+                            Ship Types
+                        </x-dropdown-link>
+                    @endcan
+                    @can('view-any', App\Models\Shipyard::class)
+                        <x-dropdown-link href="{{ route('shipyards.index') }}">
+                            Shipyards
+                        </x-dropdown-link>
+                    @endcan
+                    @can('view-any', App\Models\Weather::class)
+                        <x-dropdown-link href="{{ route('weathers.index') }}">
+                            Weathers
+                        </x-dropdown-link>
+                    @endcan
+                    @can('view-any', App\Models\Humidity::class)
+                        <x-dropdown-link href="{{ route('humidities.index') }}">
+                            Humidities
+                        </x-dropdown-link>
+                    @endcan
+                </x-nav-dropdown>
+
                 <x-nav-dropdown title="Apps" align="right" width="48">
                     @can('view-any', App\Models\User::class)
                         <x-dropdown-link href="{{ route('users.index') }}">
