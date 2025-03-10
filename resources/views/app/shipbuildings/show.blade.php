@@ -221,7 +221,7 @@ use App\Lib\SCurve;
 
             <x-partials.card class="mt-5">
                 <x-slot name="title">
-                    @lang('crud.shipbuilding_daily_reports.name')
+                    Daily Reports
                 </x-slot>
 
                 <livewire:shipbuilding-daily-reports-detail
