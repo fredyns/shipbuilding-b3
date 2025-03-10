@@ -4,7 +4,7 @@ use App\Helpers\Format;
 
 ?>
 <tr class="hover:bg-gray-100">
-    <td class="px-4 py-3 text-left">
+    <td class="px-4 text-left">
         <a href="{{ route('shipbuilding-tasks.show', $task) }}" class="text-blue-900 font-bold" target="_blank">
             @if($task->level > 1)
                 @php $tab = ($task->level - 1) * 2 @endphp
@@ -13,19 +13,19 @@ use App\Helpers\Format;
             <span>{{ $task->name ?? '-' }}</span>
         </a>
     </td>
-    <td class="px-4 py-3 text-right">
+    <td class="px-4 text-right">
         {{ Format::percent($task->weight,"-") }}
     </td>
-    <td class="px-4 py-3 text-right">
+    <td class="px-4 text-right">
         {{ Format::percent($task->progress,"-") }}
     </td>
-    <td class="px-4 py-3 text-right">
+    <td class="px-4 text-right">
         {{ Format::percent($task->target,"-") }}
     </td>
-    <td class="px-4 py-3 text-right">
+    <td class="px-4 text-right">
         {{ Format::percent($task->deviation,"-") }}
     </td>
-    <td class="px-4 py-3 text-right" style="width: 134px;">
+    <td class="px-4 text-right" style="width: 134px;">
         <div
             role="group"
             aria-label="Row Actions"
