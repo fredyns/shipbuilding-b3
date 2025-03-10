@@ -189,16 +189,16 @@
                         :dailyReport="$dailyReport"
                     />
                 </x-partials.card>
-            @endcan @can('view-any', App\Models\DailyDocumetation::class)
+            @endcan @can('view-any', App\Models\DailyDocumentation::class)
                 <x-partials.card class="mt-5">
                     <x-slot name="title">
-                        @lang('crud.daily_report_documetations.name')
-                    </x-slot>
+                        @lang('crud.daily_report_documentations.name')
+                </x-slot>
 
-                    <livewire:daily-report-daily-documetations-detail
-                        :dailyReport="$dailyReport"
-                    />
-                </x-partials.card>
+                <livewire:daily-report-daily-documentations-detail
+                    :dailyReport="$dailyReport"
+                />
+            </x-partials.card>
             @endcan
         </div>
     </div>

@@ -234,11 +234,11 @@ return [
 
     'daily_reports' => [
         'name' => 'Daily Reports',
-        'index_title' => 'DailyReports List',
-        'new_title' => 'New Daily report',
-        'create_title' => 'Create DailyReport',
-        'edit_title' => 'Edit DailyReport',
-        'show_title' => 'Show DailyReport',
+        'index_title' => 'Daily Reports List',
+        'new_title' => 'Add Daily Report',
+        'create_title' => 'Add Daily Report',
+        'edit_title' => 'Edit Daily Report',
+        'show_title' => 'Show Daily Report',
         'inputs' => [
             'shipbuilding_id' => 'Shipbuilding',
             'date' => 'Date',
@@ -310,13 +310,13 @@ return [
         ],
     ],
 
-    'daily_report_documetations' => [
-        'name' => 'Daily Report Documetations',
-        'index_title' => 'Documetations List',
-        'new_title' => 'Add Documetation',
-        'create_title' => 'Add Documetation',
-        'edit_title' => 'Edit Documetation',
-        'show_title' => 'Show Documetation',
+    'daily_report_documentations' => [
+        'name' => 'Daily Report Documentations',
+        'index_title' => 'Documentations List',
+        'new_title' => 'Add Documentation',
+        'create_title' => 'Add Documentation',
+        'edit_title' => 'Edit Documentation',
+        'show_title' => 'Show Documentation',
         'inputs' => [
             'image' => 'Image',
             'remark' => 'Remark',

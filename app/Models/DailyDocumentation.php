@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * This is the model class for table "daily_documetations".
+ * This is the model class for table "daily_documentations".
  *
  * @property string $id
  * @property string $daily_report_id
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  *
  */
-class DailyDocumetation extends Model
+class DailyDocumentation extends Model
 {
     use HasFactory;
     use Searchable;
@@ -27,7 +27,7 @@ class DailyDocumetation extends Model
 
     protected $searchableFields = ['*'];
 
-    protected $table = 'daily_documetations';
+    protected $table = 'daily_documentations';
 
     public function dailyReport()
     {

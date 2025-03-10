@@ -152,8 +152,8 @@ class DailyReport extends Model
         return $this->hasMany(DailyActivity::class);
     }
 
-    public function dailyDocumetations()
+    public function dailyDocumentations()
     {
-        return $this->hasMany(DailyDocumetation::class);
+        return $this->hasMany(DailyDocumentation::class);
     }
 }

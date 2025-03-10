@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\DailyDocumetation;
+use App\Models\DailyDocumentation;
 use App\Models\DailyReport;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class DailyDocumetationFactory extends Factory
+class DailyDocumentationFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = DailyDocumetation::class;
+    protected $model = DailyDocumentation::class;
 
     /**
      * Define the model's default state.

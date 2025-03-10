@@ -1,11 +1,11 @@
 <div>
     <div>
-        @can('create', App\Models\DailyDocumetation::class)
-            <button class="button" wire:click="newDailyDocumetation">
+        @can('create', App\Models\DailyDocumentation::class)
+            <button class="button" wire:click="newDailyDocumentation">
                 <i class="mr-1 icon ion-md-add text-primary"></i>
                 @lang('crud.common.new')
             </button>
-        @endcan @can('delete-any', App\Models\DailyDocumetation::class)
+        @endcan @can('delete-any', App\Models\DailyDocumentation::class)
             <button
                 class="button button-danger"
                 {{ empty($selected) ? 'disabled' : '' }}
@@ -26,18 +26,18 @@
                 <div class="flex flex-wrap">
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.daily_report_documetations.inputs.image')
+                            @lang('crud.daily_report_documentations.inputs.image')
                         </h5>
                         <x-partials.thumbnail
-                            src="{{ $dailyDocumetation->image ? \Storage::url($dailyDocumetation->image) : '' }}"
+                            src="{{ $dailyDocumentation->image ? \Storage::url($dailyDocumentation->image) : '' }}"
                             size="150"
                         />
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.daily_report_documetations.inputs.remark')
+                            @lang('crud.daily_report_documentations.inputs.remark')
                         </h5>
-                        <span> {{ $dailyDocumetation->remark ?? '-' }} </span>
+                        <span> {{ $dailyDocumentation->remark ?? '-' }} </span>
                     </div>
                 </div>
             </div>
@@ -52,11 +52,11 @@
                 <i class="mr-1 icon ion-md-close"></i>
                 @lang('text.close')
             </button>
-            @can('update', $dailyDocumetation)
+            @can('update', $dailyDocumentation)
                 <button
                     type="button"
                     class="button mr-1"
-                    wire:click="editDailyDocumetation('{{ $dailyDocumetation->id }}')"
+                    wire:click="editDailyDocumentation('{{ $dailyDocumentation->id }}')"
                 >
                     <i class="mr-1 icon ion-md-create"></i>
                     @lang('crud.common.edit')
@@ -73,13 +73,13 @@
                 <div class="flex flex-wrap">
                     <x-inputs.group class="w-full">
                         <div
-                            image-url="{{ $editing && $dailyDocumetation->image ? \Storage::url($dailyDocumetation->image) : '' }}"
+                            image-url="{{ $editing && $dailyDocumentation->image ? \Storage::url($dailyDocumentation->image) : '' }}"
                             x-data="imageViewer()"
                             @refresh.window="refreshUrl()"
                         >
                             <x-inputs.partials.label
-                                name="dailyDocumetationImage"
-                                label="{{ __('crud.daily_documetations.inputs.image') }}"
+                                name="dailyDocumentationImage"
+                                label="{{ __('crud.daily_documentations.inputs.image') }}"
                             ></x-inputs.partials.label>
                             <br/>
 
@@ -112,24 +112,24 @@
                             <div class="mt-2">
                                 <input
                                     type="file"
-                                    name="dailyDocumetationImage"
-                                    id="dailyDocumetationImage{{ $uploadIteration }}"
-                                    wire:model="dailyDocumetationImage"
+                                    name="dailyDocumentationImage"
+                                    id="dailyDocumentationImage{{ $uploadIteration }}"
+                                    wire:model="dailyDocumentationImage"
                                     @change="fileChosen"
                                 />
                             </div>
 
-                            @error('dailyDocumetationImage')
+                            @error('dailyDocumentationImage')
                             @include('components.inputs.partials.error')
                             @enderror
                         </div>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.text
-                            name="dailyDocumetation.remark"
-                            wire:model="dailyDocumetation.remark"
-                            label="{{ __('crud.daily_documetations.inputs.remark') }}"
-                            placeholder="{{ __('crud.daily_documetations.inputs.remark') }}"
+                            name="dailyDocumentation.remark"
+                            wire:model="dailyDocumentation.remark"
+                            label="{{ __('crud.daily_documentations.inputs.remark') }}"
+                            placeholder="{{ __('crud.daily_documentations.inputs.remark') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>
@@ -171,23 +171,23 @@
                     />
                 </th>
                 <th class="px-4 py-3 text-left">
-                    @lang('crud.daily_report_documetations.inputs.remark')
+                    @lang('crud.daily_report_documentations.inputs.remark')
                 </th>
                 <th></th>
             </tr>
             </thead>
             <tbody class="text-gray-600">
-            @foreach ($dailyDocumetations as $dailyDocumetation)
+            @foreach ($dailyDocumentations as $dailyDocumentation)
                 <tr class="hover:bg-gray-100">
                     <td class="px-4 py-3 text-left">
                         <input
                             type="checkbox"
-                            value="{{ $dailyDocumetation->id }}"
+                            value="{{ $dailyDocumentation->id }}"
                             wire:model="selected"
                         />
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{ $dailyDocumetation->remark ?? '-' }}
+                        {{ $dailyDocumentation->remark ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-right" style="width: 134px;">
                         <div
@@ -198,15 +198,15 @@
                             <button
                                 type="button"
                                 class="button mr-1"
-                                wire:click="viewDailyDocumetation('{{ $dailyDocumetation->id }}')"
+                                wire:click="viewDailyDocumentation('{{ $dailyDocumentation->id }}')"
                             >
                                 <i class="icon ion-md-eye"></i>
                             </button>
-                            @can('update', $dailyDocumetation)
+                            @can('update', $dailyDocumentation)
                                 <button
                                     type="button"
                                     class="button mr-1"
-                                    wire:click="editDailyDocumetation('{{ $dailyDocumetation->id }}')"
+                                    wire:click="editDailyDocumentation('{{ $dailyDocumentation->id }}')"
                                 >
                                     <i class="icon ion-md-create"></i>
                                 </button>
@@ -218,9 +218,9 @@
             </tbody>
             <tfoot>
             <tr>
-                <td colspan="2">
+                <td colspan="3">
                     <div class="mt-10 px-4">
-                        {{ $dailyDocumetations->render() }}
+                        {{ $dailyDocumentations->render() }}
                     </div>
                 </td>
             </tr>
