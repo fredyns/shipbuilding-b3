@@ -151,7 +151,7 @@ class ShipbuildingDailyReportsDetail extends Component
         }
 
         $this->dailyReport->date = Carbon::make($this->dailyReportDate);
-        $this->dailyReport->week = $this->dailyReport->week();
+        $this->dailyReport->week = $this->dailyReport->weekDifference();
 
         $this->dailyReport->save();
 

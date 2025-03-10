@@ -82,7 +82,7 @@ class DailyReport extends Model
         'metadata' => 'array',
     ];
 
-    public function week()
+    public function weekDifference()
     {
         if (empty($this->date)) return null;
         if (empty($this->shipbuilding->start_date)) return null;
