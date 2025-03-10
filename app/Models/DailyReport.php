@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helpers\Date;
 use App\Models\Scopes\Searchable;
 use Datetime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -84,12 +85,7 @@ class DailyReport extends Model
 
     public function weekDifference()
     {
-        if (empty($this->date)) return null;
-        if (empty($this->shipbuilding->start_date)) return null;
-
-        $diff = $this->date->diff($this->shipbuilding->start_date);
-
-        return ceil($diff->days / 7);
+        return Date::weekDiff($this->shipbuilding->start_date, $this->date);
     }
 
     public function metadata($key = null, $default = null)
