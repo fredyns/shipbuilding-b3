@@ -88,6 +88,7 @@ class ShipbuildingWeeklyReportsDetail extends Component
 
             if ($last->date) {
                 $this->weeklyReport->date = $last->date->add('7 days')->format('Y-m-d');
+                $this->weeklyReportDate = new Carbon($this->weeklyReport->date);
             }
         } else if ($this->shipbuilding->start_date) {
             $this->weeklyReport->date = $this->shipbuilding->start_date->format('Y-m-d');
