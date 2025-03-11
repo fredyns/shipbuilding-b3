@@ -5,7 +5,6 @@
  * @var $weathers string[]
  * @var $humidities string[]
  */
-$editing = false;
 ?>
 
 <style>
