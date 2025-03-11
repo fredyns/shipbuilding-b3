@@ -1,0 +1,347 @@
+<?php
+
+return [
+    'common' => [
+        'actions' => 'Tindakan',
+        'create' => 'Tambah',
+        'edit' => 'Edit',
+        'update' => 'Ubah',
+        'new' => 'Baru',
+        'cancel' => 'Cancel',
+        'attach' => 'Attach',
+        'detach' => 'Detach',
+        'save' => 'Save',
+        'delete' => 'Delete',
+        'delete_selected' => 'Delete',
+        'search' => 'Pencarian...',
+        'back' => 'Kembali ke Index',
+        'are_you_sure' => 'Apa Anda yakin?',
+        'no_items_found' => 'Tidak ada item ditemukan',
+        'created' => 'Berhasil ditambahkan',
+        'saved' => 'Berhasil disimpan',
+        'removed' => 'Berhasil dihapus',
+    ],
+
+    'users' => [
+        'name' => 'Users',
+        'index_title' => 'User',
+        'new_title' => 'New User',
+        'create_title' => 'Create User',
+        'edit_title' => 'Edit User',
+        'show_title' => 'Tampilkan User',
+        'inputs' => [
+            'name' => 'Nama',
+            'email' => 'Email',
+            'password' => 'Password',
+        ],
+    ],
+
+    'ship_types' => [
+        'name' => 'Tipe Kapal',
+        'index_title' => 'Daftar Tipe Kapal',
+        'new_title' => 'Tambah Tipe Kapal',
+        'create_title' => 'Tambah Tipe Kapal',
+        'edit_title' => 'Edit Tipe Kapal',
+        'show_title' => 'Tampilkan Tipe Kapal',
+        'inputs' => [
+            'name' => 'Nama',
+        ],
+    ],
+
+    'shipyards' => [
+        'name' => 'Galangan',
+        'index_title' => 'Daftar Galangan',
+        'new_title' => 'Tambah Galangan',
+        'create_title' => 'Tambah Galangan',
+        'edit_title' => 'Edit Galangan',
+        'show_title' => 'Tampilkan Galangan',
+        'inputs' => [
+            'name' => 'Nama',
+        ],
+    ],
+
+    'shipbuildings' => [
+        'name' => 'Pembangunan Kapal',
+        'index_title' => 'Daftar Pembangunan Kapal',
+        'new_title' => 'Tambah Pembangunan Kapal',
+        'create_title' => 'Tambah Pembangunan Kapal',
+        'edit_title' => 'Edit Pembangunan Kapal',
+        'show_title' => 'Tampilkan Pembangunan Kapal',
+        'inputs' => [
+            'cover_image' => 'Gambar Cover',
+            'number' => 'Nomor',
+            'name' => 'Nama',
+            'description' => 'Deskripsi',
+            'progress' => 'Progres',
+            'ship_type_id' => 'Tipe Kapal',
+            'shipyard_id' => 'Galangan',
+            'start_date' => 'Tanggal Mulai',
+            'end_date' => 'Tanggal Selesai',
+        ],
+    ],
+
+    'shipbuilding_weekly_reports' => [
+        'name' => 'Laporan Mingguan',
+        'index_title' => 'Laporan Mingguan',
+        'new_title' => 'Tambah Laporan Mingguan',
+        'create_title' => 'Tambah Laporan Mingguan',
+        'edit_title' => 'Edit Laporan Mingguan',
+        'show_title' => 'Tampilkan Laporan Mingguan',
+        'inputs' => [
+            'week' => 'Minggu',
+            'date' => 'Tangal',
+            'planned_progress' => 'Planned Progres',
+            'actual_progress' => 'Actual Progres',
+            'summary' => 'Ringkasan',
+            'report_file' => 'File Laporan',
+        ],
+    ],
+
+    'shipbuilding_shipbuilding_tasks' => [
+        'name' => 'Pekerjaan Pembangunan Kapal',
+        'index_title' => 'Pekerjaan',
+        'new_title' => 'Tambah Pekerjaan',
+        'create_title' => 'Tambah Pekerjaan',
+        'edit_title' => 'Edit Pekerjaan',
+        'show_title' => 'Tampilkan Pekerjaan',
+        'inputs' => [
+            'item_type' => 'Item Type',
+            'name' => 'Nama',
+            'description' => 'Deskripsi',
+            'weight' => 'Bobot',
+            'progress_options' => 'Progress Options',
+            'progress' => 'Progres',
+            'target' => 'Target',
+            'deviation' => 'Deviasi',
+        ],
+    ],
+
+    'shipbuilding_tasks' => [
+        'name' => 'Pekerjaan',
+        'index_title' => 'Pekerjaan',
+        'new_title' => 'Tambah Pekerjaan',
+        'create_title' => 'Tambah Pekerjaan',
+        'edit_title' => 'Edit Pekerjaan',
+        'show_title' => 'Tampilkan Pekerjaan',
+        'inputs' => [
+            'shipbuilding_id' => 'Pembangunan Kapal',
+            'parent_task_id' => 'Pekerjaan Induk',
+            'item_type' => 'Item Type',
+            'name' => 'Nama',
+            'description' => 'Deskripsi',
+            'weight' => 'Bobot',
+            'enable_sub_progress' => 'Enable Sub Progress',
+            'progress' => 'Progres',
+            'target' => 'Target',
+            'deviation' => 'Deviasi',
+        ],
+    ],
+
+    'sub_tasks' => [
+        'name' => 'Sub Pekerjaan',
+        'index_title' => 'Sub Pekerjaan',
+        'new_title' => 'Tambah Sub Pekerjaan',
+        'create_title' => 'Tambah Sub Pekerjaan',
+        'edit_title' => 'Edit Sub Pekerjaan',
+        'show_title' => 'Tampilkan Sub Pekerjaan',
+        'inputs' => [
+            'name' => 'Nama',
+            'description' => 'Deskripsi',
+            'weight' => 'Bobot',
+            'enable_sub_progress' => 'Enable Sub Progress',
+            'progress' => 'Progres',
+            'target' => 'Target',
+            'deviation' => 'Deviasi',
+        ],
+    ],
+
+    'weekly_reports' => [
+        'name' => 'Laporan Mingguan',
+        'index_title' => 'Daftar Laporan Mingguan',
+        'new_title' => 'Tambah Laporan Mingguan',
+        'create_title' => 'Tambah Laporan Mingguan',
+        'edit_title' => 'Edit Laporan Mingguan',
+        'show_title' => 'Tampilkan Laporan Mingguan',
+        'inputs' => [
+            'shipbuilding_id' => 'Pembangunan Kapal',
+            'week' => 'Minggu',
+            'date' => 'Tanggal',
+            'planned_progress' => 'Planned Progres',
+            'actual_progress' => 'Actual Progres',
+            'summary' => 'Ringkasan',
+            'report_file' => 'File Laporan',
+        ],
+    ],
+
+    'weekly_report_documentations' => [
+        'name' => 'Dokumentasi Laporan Mingguan',
+        'index_title' => 'Dokumentasi Laporan Mingguan',
+        'new_title' => 'Tambah Dokumentasi',
+        'create_title' => 'Tambah Dokumentasi',
+        'edit_title' => 'Edit Dokumentasi',
+        'show_title' => 'Tampilkan Dokumentasi',
+        'inputs' => [
+            'file' => 'File',
+            'name' => 'Nama',
+        ],
+    ],
+
+    'shipbuilding_daily_reports' => [
+        'name' => 'Laporan Harian Kapal',
+        'index_title' => 'Laporan Harian',
+        'new_title' => 'Tambah Laporan Harian',
+        'create_title' => 'Tambah Laporan Harian',
+        'edit_title' => 'Edit Laporan Harian',
+        'show_title' => 'Tampilkan Laporan Harian',
+        'inputs' => [
+            'date' => 'Tanggal',
+            'week' => 'Minggu',
+            'actual_progress' => 'Actual Progres',
+            'morning_weather_id' => 'Cuaca Pagi',
+            'morning_humidity_id' => 'Kelembaban Pagi',
+            'midday_weather_id' => 'Cuaca Siang',
+            'midday_humidity_id' => 'Kelembaban Siang',
+            'afternoon_weather_id' => 'Cuaca Sore',
+            'afternoon_humidity_id' => 'Kelembaban Sore',
+            'temperature' => 'Suhu',
+            'summary' => 'Ringkasan',
+        ],
+    ],
+
+    'weathers' => [
+        'name' => 'Cuaca',
+        'index_title' => 'Cuaca',
+        'new_title' => 'Tambah Cuaca',
+        'create_title' => 'Tambah Cuaca',
+        'edit_title' => 'Edit Cuaca',
+        'show_title' => 'Tampilkan Cuaca',
+        'inputs' => [
+            'name' => 'Nama',
+        ],
+    ],
+
+    'humidities' => [
+        'name' => 'Kelembaban',
+        'index_title' => 'Kelembaban',
+        'new_title' => 'Tambah Kelembaban',
+        'create_title' => 'Tambah Kelembaban',
+        'edit_title' => 'Edit Kelembaban',
+        'show_title' => 'Tampilkan Kelembaban',
+        'inputs' => [
+            'name' => 'Nama',
+        ],
+    ],
+
+    'daily_reports' => [
+        'name' => 'Laporan Harian',
+        'index_title' => 'Laporan Harian',
+        'new_title' => 'Tambah Laporan Harian',
+        'create_title' => 'Tambah Laporan Harian',
+        'edit_title' => 'Edit Laporan Harian',
+        'show_title' => 'Tampilkan Laporan Harian',
+        'inputs' => [
+            'shipbuilding_id' => 'Shipbuilding',
+            'date' => 'Tanggal',
+            'week' => 'Minggu',
+            'actual_progress' => 'Actual Progres',
+            'morning_weather_id' => 'Cuaca Pagi',
+            'morning_humidity_id' => 'Kelembaban Pagi',
+            'midday_weather_id' => 'Cuaca Siang',
+            'midday_humidity_id' => 'Kelembaban Siang',
+            'afternoon_weather_id' => 'Cuaca Sore',
+            'afternoon_humidity_id' => 'Kelembaban Sore',
+            'temperature' => 'Suhu',
+            'summary' => 'Ringkasan',
+        ],
+    ],
+
+    'daily_report_personnels' => [
+        'name' => 'Laporan Harian Personil',
+        'index_title' => 'Personil',
+        'new_title' => 'Tambah Personil',
+        'create_title' => 'Tambah Personil',
+        'edit_title' => 'Edit Personil',
+        'show_title' => 'Tampilkan Personil',
+        'inputs' => [
+            'role' => 'Jabatan',
+            'present' => 'Hadir',
+            'description' => 'Deskripsi',
+        ],
+    ],
+
+    'daily_report_equipments' => [
+        'name' => 'Laporan Harian Peralatan',
+        'index_title' => 'Peralatan',
+        'new_title' => 'Tambah Peralatan',
+        'create_title' => 'Tambah Peralatan',
+        'edit_title' => 'Edit Peralatan',
+        'show_title' => 'Tampilkan Peralatan',
+        'inputs' => [
+            'name' => 'Nama',
+            'quantity' => 'Jumlah',
+            'remark' => 'Catatan',
+        ],
+    ],
+
+    'daily_report_materials' => [
+        'name' => 'Material & Konsumabel',
+        'index_title' => 'Material',
+        'new_title' => 'Tambah Material',
+        'create_title' => 'Tambah Material',
+        'edit_title' => 'Edit Material',
+        'show_title' => 'Tampilkan Material',
+        'inputs' => [
+            'name' => 'Nama',
+            'quantity' => 'Jumlah',
+            'remark' => 'Catatan',
+        ],
+    ],
+
+    'daily_report_activities' => [
+        'name' => 'Aktifitas Harian',
+        'index_title' => 'Aktifitas',
+        'new_title' => 'Tambah Aktifitas',
+        'create_title' => 'Tambah Aktifitas',
+        'edit_title' => 'Edit Aktifitas',
+        'show_title' => 'Tampilkan Aktifitas',
+        'inputs' => [
+            'name' => 'Nama',
+            'pic' => 'PIC',
+        ],
+    ],
+
+    'daily_report_documentations' => [
+        'name' => 'Dokumentasi Laporan Harian',
+        'index_title' => 'Dokumentasi',
+        'new_title' => 'Tambah Dokumentasi',
+        'create_title' => 'Tambah Dokumentasi',
+        'edit_title' => 'Edit Dokumentasi',
+        'show_title' => 'Tampilkan Dokumentasi',
+        'inputs' => [
+            'image' => 'Foto',
+            'remark' => 'Catatan',
+        ],
+    ],
+
+    'roles' => [
+        'name' => 'Roles',
+        'index_title' => 'Role',
+        'create_title' => 'Create Role',
+        'edit_title' => 'Edit Role',
+        'show_title' => 'Tampilkan Role',
+        'inputs' => [
+            'name' => 'Nama',
+        ],
+    ],
+
+    'permissions' => [
+        'name' => 'Permissions',
+        'index_title' => 'Permission',
+        'create_title' => 'Create Permission',
+        'edit_title' => 'Edit Permission',
+        'show_title' => 'Tampilkan Permission',
+        'inputs' => [
+            'name' => 'Nama',
+        ],
+    ],
+];
