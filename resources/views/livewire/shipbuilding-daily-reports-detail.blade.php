@@ -153,14 +153,14 @@
                         ></x-inputs.date>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.slider
+                        <x-inputs.number
                             name="dailyReport.actual_progress"
                             wire:model="dailyReport.actual_progress"
                             label="{{ __('crud.daily_reports.inputs.actual_progress') }}"
                             placeholder="{{ __('crud.daily_reports.inputs.actual_progress') }}"
                             max="255"
                             step="0.01"
-                        ></x-inputs.slider>
+                        ></x-inputs.number>
                     </x-inputs.group>
 
                     <x-inputs.group class="w-full">
@@ -241,13 +241,13 @@
                         </x-inputs.tomselect>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.slider
+                        <x-inputs.number
                             name="dailyReport.temperature"
                             wire:model="dailyReport.temperature"
                             label="{{ __('crud.daily_reports.inputs.temperature') }}"
                             placeholder="{{ __('crud.daily_reports.inputs.temperature') }}"
                             max="100"
-                        ></x-inputs.slider>
+                        ></x-inputs.number>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.textarea

@@ -96,14 +96,14 @@
                         ></x-inputs.text>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.slider
+                        <x-inputs.number
                             name="shipbuildingTask.weight"
                             wire:model="shipbuildingTask.weight"
                             label="{{ __('crud.shipbuilding_tasks.inputs.weight') }}"
                             placeholder="{{ __('crud.shipbuilding_tasks.inputs.weight') }}"
                             max="255"
                             step="0.01"
-                        ></x-inputs.slider>
+                        ></x-inputs.number>
                     </x-inputs.group>
 
                     <x-inputs.group class="w-full">
@@ -119,34 +119,34 @@
                         </x-inputs.select>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.slider
+                        <x-inputs.number
                             name="shipbuildingTask.progress"
                             wire:model="shipbuildingTask.progress"
                             label="{{ __('crud.shipbuilding_tasks.inputs.progress') }}"
                             placeholder="{{ __('crud.shipbuilding_tasks.inputs.progress') }}"
                             max="255"
                             step="0.01"
-                        ></x-inputs.slider>
+                        ></x-inputs.number>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.slider
+                        <x-inputs.number
                             name="shipbuildingTask.target"
                             wire:model="shipbuildingTask.target"
                             label="{{ __('crud.shipbuilding_tasks.inputs.target') }}"
                             placeholder="{{ __('crud.shipbuilding_tasks.inputs.target') }}"
                             max="255"
                             step="0.01"
-                        ></x-inputs.slider>
+                        ></x-inputs.number>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.slider
+                        <x-inputs.number
                             name="shipbuildingTask.deviation"
                             wire:model="shipbuildingTask.deviation"
                             label="{{ __('crud.shipbuilding_tasks.inputs.deviation') }}"
                             placeholder="{{ __('crud.shipbuilding_tasks.inputs.deviation') }}"
                             max="255"
                             step="0.01"
-                        ></x-inputs.slider>
+                        ></x-inputs.number>
                     </x-inputs.group>
                 </div>
             </div>

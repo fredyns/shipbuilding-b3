@@ -84,12 +84,12 @@
                         ></x-inputs.text>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.slider
+                        <x-inputs.number
                             name="dailyEquipment.quantity"
                             wire:model="dailyEquipment.quantity"
                             label="{{ __('crud.daily_report_equipments.inputs.quantity') }}"
                             placeholder="{{ __('crud.daily_report_equipments.inputs.quantity') }}"
-                        ></x-inputs.slider>
+                        ></x-inputs.number>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.text
