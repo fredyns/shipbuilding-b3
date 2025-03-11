@@ -73,7 +73,7 @@
                     <div class="md:w-1/2 lg:w-1/2 p-2">
                         <x-partials.card class="">
                             <x-slot name="title">
-                                <a href="{{ route('shipbuildings.show',$shipbuilding) }}" target="_blank">
+                                <a href="{{ route('shipbuildings.show',$shipbuilding) }}">
                                     {{ $shipbuilding->number }} |
                                     <b>{{ $shipbuilding->name }}</b> |
                                     week #{{ $shipbuilding->week() ?? "-" }} |
