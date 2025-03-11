@@ -78,24 +78,25 @@
                         <x-inputs.text
                             name="dailyPersonnel.role"
                             wire:model="dailyPersonnel.role"
-                            label="{{ __('crud.daily_personnels.inputs.role') }}"
-                            placeholder="{{ __('crud.daily_personnels.inputs.role') }}"
+                            label="{{ __('crud.daily_report_personnels.inputs.role') }}"
+                            placeholder="{{ __('crud.daily_report_personnels.inputs.role') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.toggle
+                        <x-inputs.checkbox
                             name="dailyPersonnel.present"
-                            :value="old('present', ($editing ? $dailyPersonnel->present : 0))"
-                            label="{{ __('crud.daily_personnels.inputs.present') }}"
-                        ></x-inputs.toggle>
+                            :checked="old('present', ($editing ? $dailyPersonnel->present : false))"
+                            label="{{ __('crud.daily_report_personnels.inputs.present') }}"
+                            :value="true"
+                        ></x-inputs.checkbox>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.text
                             name="dailyPersonnel.description"
                             wire:model="dailyPersonnel.description"
-                            label="{{ __('crud.daily_personnels.inputs.description') }}"
-                            placeholder="{{ __('crud.daily_personnels.inputs.description') }}"
+                            label="{{ __('crud.daily_report_personnels.inputs.description') }}"
+                            placeholder="{{ __('crud.daily_report_personnels.inputs.description') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>
@@ -162,7 +163,7 @@
                         {{ $dailyPersonnel->role ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{ $dailyPersonnel->present ?? '-' }}
+                        {{ print_r($dailyPersonnel->present,true)  }}
                     </td>
                     <td class="px-4 py-3 text-left">
                         {{ $dailyPersonnel->description ?? '-' }}

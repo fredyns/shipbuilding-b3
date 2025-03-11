@@ -78,8 +78,8 @@
                         <x-inputs.text
                             name="dailyEquipment.name"
                             wire:model="dailyEquipment.name"
-                            label="{{ __('crud.daily_equipments.inputs.name') }}"
-                            placeholder="{{ __('crud.daily_equipments.inputs.name') }}"
+                            label="{{ __('crud.daily_report_equipments.inputs.name') }}"
+                            placeholder="{{ __('crud.daily_report_equipments.inputs.name') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>
@@ -87,16 +87,16 @@
                         <x-inputs.slider
                             name="dailyEquipment.quantity"
                             wire:model="dailyEquipment.quantity"
-                            label="{{ __('crud.daily_equipments.inputs.quantity') }}"
-                            placeholder="{{ __('crud.daily_equipments.inputs.quantity') }}"
+                            label="{{ __('crud.daily_report_equipments.inputs.quantity') }}"
+                            placeholder="{{ __('crud.daily_report_equipments.inputs.quantity') }}"
                         ></x-inputs.slider>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.text
                             name="dailyEquipment.remark"
                             wire:model="dailyEquipment.remark"
-                            label="{{ __('crud.daily_equipments.inputs.remark') }}"
-                            placeholder="{{ __('crud.daily_equipments.inputs.remark') }}"
+                            label="{{ __('crud.daily_report_equipments.inputs.remark') }}"
+                            placeholder="{{ __('crud.daily_report_equipments.inputs.remark') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>

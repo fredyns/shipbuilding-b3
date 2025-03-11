@@ -31,7 +31,7 @@ class DailyPersonnel extends Model
     protected $table = 'daily_personnels';
 
     protected $casts = [
-        'present' => 'boolean',
+//        'present' => 'boolean',
     ];
 
     public function dailyReport()

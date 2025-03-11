@@ -78,25 +78,25 @@
                         <x-inputs.text
                             name="dailyMaterial.name"
                             wire:model="dailyMaterial.name"
-                            label="{{ __('crud.daily_materials.inputs.name') }}"
-                            placeholder="{{ __('crud.daily_materials.inputs.name') }}"
+                            label="{{ __('crud.daily_report_materials.inputs.name') }}"
+                            placeholder="{{ __('crud.daily_report_materials.inputs.name') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
-                        <x-inputs.slider
+                        <x-inputs.number
                             name="dailyMaterial.quantity"
                             wire:model="dailyMaterial.quantity"
-                            label="{{ __('crud.daily_materials.inputs.quantity') }}"
-                            placeholder="{{ __('crud.daily_materials.inputs.quantity') }}"
-                        ></x-inputs.slider>
+                            label="{{ __('crud.daily_report_materials.inputs.quantity') }}"
+                            placeholder="{{ __('crud.daily_report_materials.inputs.quantity') }}"
+                        ></x-inputs.number>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.text
                             name="dailyMaterial.remark"
                             wire:model="dailyMaterial.remark"
-                            label="{{ __('crud.daily_materials.inputs.remark') }}"
-                            placeholder="{{ __('crud.daily_materials.inputs.remark') }}"
+                            label="{{ __('crud.daily_report_materials.inputs.remark') }}"
+                            placeholder="{{ __('crud.daily_report_materials.inputs.remark') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>

@@ -72,8 +72,8 @@
                         <x-inputs.text
                             name="dailyActivity.name"
                             wire:model="dailyActivity.name"
-                            label="{{ __('crud.daily_activities.inputs.name') }}"
-                            placeholder="{{ __('crud.daily_activities.inputs.name') }}"
+                            label="{{ __('crud.daily_report_activities.inputs.name') }}"
+                            placeholder="{{ __('crud.daily_report_activities.inputs.name') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>
@@ -81,8 +81,8 @@
                         <x-inputs.text
                             name="dailyActivity.pic"
                             wire:model="dailyActivity.pic"
-                            label="{{ __('crud.daily_activities.inputs.pic') }}"
-                            placeholder="{{ __('crud.daily_activities.inputs.pic') }}"
+                            label="{{ __('crud.daily_report_activities.inputs.pic') }}"
+                            placeholder="{{ __('crud.daily_report_activities.inputs.pic') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>

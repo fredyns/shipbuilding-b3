@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var $dailyReport \App\Models\DailyReport
+ */
+?>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -18,22 +23,21 @@
                 --}}
 
                 <div class="flex flex-wrap mt-2 px-4">
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full md:w-1/3 lg:w-1/3">
                         <h5 class="font-medium text-gray-700">
                             @lang('crud.daily_reports.inputs.date')
                         </h5>
                         <span>
-                            {{ optional($dailyReport->date)->format('l, d F Y')
-                            }}
+                            {{ optional($dailyReport->date)->format('l, d F Y') }}
                         </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full md:w-1/3 lg:w-1/3">
                         <h5 class="font-medium text-gray-700">
                             @lang('crud.daily_reports.inputs.week')
                         </h5>
                         <span> {{ $dailyReport->week ?? '-' }} </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full md:w-1/3 lg:w-1/3">
                         <h5 class="font-medium text-gray-700">
                             @lang('crud.daily_reports.inputs.actual_progress')
                         </h5>
@@ -41,58 +45,31 @@
                             {{ $dailyReport->actual_progress ?? '-' }}
                         </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full md:w-1/3 lg:w-1/3">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.daily_reports.inputs.morning_weather_id')
+                            Pagi
                         </h5>
                         <span>
-                            {{ optional($dailyReport->morningWeather)->name ??
-                            '-' }}
+                            {{ optional($dailyReport->morningWeather)->name ?? '-' }} /
+                            {{ optional($dailyReport->morningHumidity)->name ?? '-' }}
                         </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full md:w-1/3 lg:w-1/3">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.daily_reports.inputs.morning_humidity_id')
+                            Siang
                         </h5>
                         <span>
-                            {{ optional($dailyReport->morningHumidity)->name ??
-                            '-' }}
+                            {{ optional($dailyReport->middayWeather)->name ?? '-' }} /
+                            {{ optional($dailyReport->middayHumidity)->name ?? '-' }}
                         </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full md:w-1/3 lg:w-1/3">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.daily_reports.inputs.midday_weather_id')
+                            Sore
                         </h5>
                         <span>
-                            {{ optional($dailyReport->middayWeather)->name ??
-                            '-' }}
-                        </span>
-                    </div>
-                    <div class="mb-4 w-full">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.daily_reports.inputs.midday_humidity_id')
-                        </h5>
-                        <span>
-                            {{ optional($dailyReport->middayHumidity)->name ??
-                            '-' }}
-                        </span>
-                    </div>
-                    <div class="mb-4 w-full">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.daily_reports.inputs.afternoon_weather_id')
-                        </h5>
-                        <span>
-                            {{ optional($dailyReport->afternoonWeather)->name ??
-                            '-' }}
-                        </span>
-                    </div>
-                    <div class="mb-4 w-full">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.daily_reports.inputs.afternoon_humidity_id')
-                        </h5>
-                        <span>
-                            {{ optional($dailyReport->afternoonHumidity)->name
-                            ?? '-' }}
+                            {{ optional($dailyReport->afternoonWeather)->name ?? '-' }} /
+                            {{ optional($dailyReport->afternoonHumidity)->name ?? '-' }}
                         </span>
                     </div>
                     <div class="mb-4 w-full">
@@ -152,7 +129,7 @@
             @can('view-any', App\Models\DailyPersonnel::class)
                 <x-partials.card class="mt-5">
                     <x-slot name="title">
-                        @lang('crud.daily_report_personnels.name')
+                        Personil Harian
                     </x-slot>
 
                     <livewire:daily-report-daily-personnels-detail
@@ -162,7 +139,7 @@
             @endcan @can('view-any', App\Models\DailyEquipment::class)
                 <x-partials.card class="mt-5">
                     <x-slot name="title">
-                        @lang('crud.daily_report_equipments.name')
+                        Peralatan Harian
                     </x-slot>
 
                     <livewire:daily-report-daily-equipments-detail

@@ -6,7 +6,7 @@
 
 <!-- Boolean Toggle -->
 <div
-    x-data="{{ old($name, $value) ? "{ toggle{$name}: 1 }" : "{ toggle{$name}: 0 }" }}"
+    x-data="{{ old($name, $value) ? "{ 'toggle{$name}': 1 }" : "{ 'toggle{$name}': 0 }" }}"
 
     x-id="['toggle-label-{{ $name }}']"
 >

@@ -79,7 +79,7 @@
                         >
                             <x-inputs.partials.label
                                 name="dailyDocumentationImage"
-                                label="{{ __('crud.daily_documentations.inputs.image') }}"
+                                label="{{ __('crud.daily_report_documentations.inputs.image') }}"
                             ></x-inputs.partials.label>
                             <br/>
 
@@ -128,8 +128,8 @@
                         <x-inputs.text
                             name="dailyDocumentation.remark"
                             wire:model="dailyDocumentation.remark"
-                            label="{{ __('crud.daily_documentations.inputs.remark') }}"
-                            placeholder="{{ __('crud.daily_documentations.inputs.remark') }}"
+                            label="{{ __('crud.daily_report_documentations.inputs.remark') }}"
+                            placeholder="{{ __('crud.daily_report_documentations.inputs.remark') }}"
                             maxlength="255"
                         ></x-inputs.text>
                     </x-inputs.group>
