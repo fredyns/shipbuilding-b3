@@ -11,7 +11,8 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-form method="POST" action="{{ route('daily-reports.store') }}">
-                @include('app.daily_reports.form-inputs')
+
+                @include('app.daily_reports.create-inputs')
 
                 <x-partials.card class="mt-5">
                     <x-slot name="title">

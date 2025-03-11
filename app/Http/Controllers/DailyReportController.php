@@ -9,6 +9,7 @@ use App\Models\DailyReport;
 use App\Models\Humidity;
 use App\Models\Shipbuilding;
 use App\Models\Weather;
+use Carbon\Carbon;
 use fredyns\stringcleaner\StringCleaner;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -47,17 +48,43 @@ class DailyReportController extends Controller
     {
         $this->authorize('create', DailyReport::class);
 
-        $shipbuildings = Shipbuilding::pluck('name', 'id');
+        // related data
+        $shipbuildingID = request('shipbuilding_id');
+        if (!is_numeric($shipbuildingID) or $shipbuildingID <= 0) {
+            return redirect()
+                ->route('dashboard')
+                ->withError("Shipbuilding ID is not valid.");
+        }
+
+        $shipbuilding = Shipbuilding::where('id', $shipbuildingID)->firstOrFail();
+        $lastReport = $shipbuilding->dailyReports()->orderBy('date', 'desc')->first();
+
+        /**
+         * IDE PENGEMBANGAN:
+         *  - lihat laporan harian untuk tanggal sekarang ($today)
+         *      - trus mau diedit atau nambah laporan di tanggal setelahnya?
+         *  - lihat laporan mingguan di periode sebelumnya
+         *      - default progres bisa start dr situ
+         *  - konek ke API cuaca google atau opensource lainnya untuk isian default
+         */
+
+        // generate new data
+        $today = new Carbon();
+        $week = Date::weekDiff($shipbuilding->start_date, $today);
+        $dailyReport = new DailyReport([
+            'shipbuilding_id' => $shipbuildingID,
+            'week' => $week,
+            'actual_progress' => optional($lastReport)->actual_progress ?? 0,
+        ]);
+        $dailyReport->date = $today;
+
+        // form options
         $weathers = Weather::pluck('name', 'id');
         $humidities = Humidity::pluck('name', 'id');
 
         return view(
             'app.daily_reports.create',
-            compact(
-                'shipbuildings',
-                'weathers',
-                'humidities',
-            )
+            compact('shipbuilding', 'dailyReport', 'weathers', 'humidities')
         );
     }
 
