@@ -75,6 +75,7 @@ class DailyReportController extends Controller
             'shipbuilding_id' => $shipbuildingID,
             'week' => $week,
             'actual_progress' => optional($lastReport)->actual_progress ?? 0,
+            'temperature' => 27,
         ]);
         $dailyReport->date = $today;
 
