@@ -18,7 +18,7 @@ use App\Lib\SCurve;
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-partials.card>
                 <x-slot name="title">
-                    <span>Shipbuilding</span>
+                    <span>Pembangunan Kapal</span>
                     <!--
                     @can('delete', $shipbuilding)
                         <div class="float-end mr-1">
@@ -135,7 +135,7 @@ use App\Lib\SCurve;
 
             <x-partials.card class="mt-5">
                 <x-slot name="title">
-                    S-Curve
+                    Kurva-S
                 </x-slot>
 
                 <div class="block w-full overflow-auto scrolling-touch mt-4">
@@ -145,7 +145,36 @@ use App\Lib\SCurve;
 
             <x-partials.card class="mt-5">
                 <x-slot name="title">
-                    Progress Worksheets
+                    Laporan Harian
+                </x-slot>
+
+                <livewire:shipbuilding-daily-reports-detail
+                    :shipbuilding="$shipbuilding"
+                />
+            </x-partials.card>
+
+            <x-partials.card class="mt-5">
+                <x-slot name="title">
+                    Laporan Mingguan
+                    <a
+                        href="{{ route('shipbuildings.weeks', $shipbuilding) }}"
+                        class="button float-end button-primary"
+                        target="_blank"
+                    >
+                        <i class="icon ion-md-table-cells mr-1"></i>
+                        All Weeks
+                    </a>
+                </x-slot>
+
+                <livewire:shipbuilding-weekly-reports-detail
+                    :shipbuilding="$shipbuilding"
+                    :allWeek="false"
+                />
+            </x-partials.card>
+
+            <x-partials.card class="mt-5">
+                <x-slot name="title">
+                    Lembar Pekerjaan
                 </x-slot>
                 <div>
                     <div>
@@ -198,35 +227,6 @@ use App\Lib\SCurve;
                     </div>
                 </div>
 
-            </x-partials.card>
-
-            <x-partials.card class="mt-5">
-                <x-slot name="title">
-                    Weekly Reports
-                    <a
-                        href="{{ route('shipbuildings.weeks', $shipbuilding) }}"
-                        class="button float-end button-primary"
-                        target="_blank"
-                    >
-                        <i class="icon ion-md-table-cells mr-1"></i>
-                        All Weeks
-                    </a>
-                </x-slot>
-
-                <livewire:shipbuilding-weekly-reports-detail
-                    :shipbuilding="$shipbuilding"
-                    :allWeek="false"
-                />
-            </x-partials.card>
-
-            <x-partials.card class="mt-5">
-                <x-slot name="title">
-                    Daily Reports
-                </x-slot>
-
-                <livewire:shipbuilding-daily-reports-detail
-                    :shipbuilding="$shipbuilding"
-                />
             </x-partials.card>
 
         </div>
