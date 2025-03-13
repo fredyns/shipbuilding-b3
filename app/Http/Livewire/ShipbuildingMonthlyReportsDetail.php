@@ -32,7 +32,7 @@ class ShipbuildingMonthlyReportsDetail extends Component
     public $modalTitle = 'New MonthlyReport';
 
     protected $rules = [
-        'monthlyReportMonth' => ['required', 'date'],
+        'monthlyReportMonth' => ['required', 'date_format:Y-m'],
         'monthlyReport.planned_progress' => [
             'nullable',
             'numeric',
