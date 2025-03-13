@@ -45,7 +45,7 @@ class ShipbuildingMonthlyReportsDetail extends Component
             'min:0',
             'max:100',
         ],
-        'monthlyReportReportFile' => ['file', 'max:1024', 'nullable', 'extension:pdf,docx,xlsx,pptx'],
+        'monthlyReportReportFile' => ['file', 'max:1024', 'nullable', 'extensions:pdf,docx,xlsx,pptx'],
         'monthlyReport.summary' => ['nullable', 'string'],
     ];
 
