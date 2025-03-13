@@ -94,7 +94,7 @@ use App\Lib\SCurve;
                                     @lang('crud.shipbuildings.inputs.start_date')
                                 </h5>
                                 <span>
-                                    {{ optional($shipbuilding->start_date)->format('l, d F Y') }}
+                                    {{ optional($shipbuilding->start_date)->translatedFormat('l, d F Y') }}
                                 </span>
                             </div>
                             <div class="mb-4 w-full">
@@ -102,7 +102,7 @@ use App\Lib\SCurve;
                                     @lang('crud.shipbuildings.inputs.end_date')
                                 </h5>
                                 <span>
-                                    {!! optional($shipbuilding->end_date)->format('l, d F Y') ?? "<i>ongoing</i>" !!}
+                                    {!! optional($shipbuilding->end_date)->translatedFormat('l, d F Y') ?? "<i>ongoing</i>" !!}
                                 </span>
                             </div>
                         </div>
@@ -169,6 +169,16 @@ use App\Lib\SCurve;
                 <livewire:shipbuilding-weekly-reports-detail
                     :shipbuilding="$shipbuilding"
                     :allWeek="false"
+                />
+            </x-partials.card>
+
+            <x-partials.card class="mt-5">
+                <x-slot name="title">
+                    Laporan Bulanan
+                </x-slot>
+
+                <livewire:shipbuilding-monthly-reports-detail
+                    :shipbuilding="$shipbuilding"
                 />
             </x-partials.card>
 

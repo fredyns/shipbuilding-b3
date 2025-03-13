@@ -323,6 +323,22 @@ return [
         ],
     ],
 
+    'shipbuilding_monthly_reports' => [
+        'name' => 'Laporan Bulanan',
+        'index_title' => 'Laporan Bulanan',
+        'new_title' => 'Tambah Laporan Bulanan1',
+        'create_title' => 'Tambah Laporan Bulanan',
+        'edit_title' => 'Edit Laporan Bulanan',
+        'show_title' => 'Tampilkan Laporan Bulanan',
+        'inputs' => [
+            'month' => 'Bulan',
+            'planned_progress' => 'Planned Progress',
+            'actual_progres' => 'Actual Progres',
+            'report_file' => 'Laporan',
+            'summary' => 'Ringkasan',
+        ],
+    ],
+
     'roles' => [
         'name' => 'Roles',
         'index_title' => 'Role',

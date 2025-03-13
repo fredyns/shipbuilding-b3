@@ -323,6 +323,22 @@ return [
         ],
     ],
 
+    'shipbuilding_monthly_reports' => [
+        'name' => 'Shipbuilding Monthly Reports',
+        'index_title' => 'Monthly Reports List',
+        'new_title' => 'Add Monthly Report',
+        'create_title' => 'Add Monthly Report',
+        'edit_title' => 'Edit Monthly Report',
+        'show_title' => 'Show Monthly Report',
+        'inputs' => [
+            'month' => 'Month',
+            'planned_progress' => 'Planned Progress',
+            'actual_progres' => 'Actual Progres',
+            'report_file' => 'Report File',
+            'summary' => 'Summary',
+        ],
+    ],
+
     'roles' => [
         'name' => 'Roles',
         'index_title' => 'Roles List',

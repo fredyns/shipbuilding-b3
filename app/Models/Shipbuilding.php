@@ -38,6 +38,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property DailyReport[] $dailyReports
  *
+ * @property MonthlyReport[] $monthlyReports
+ *
  *
  */
 class Shipbuilding extends Model
@@ -139,5 +141,10 @@ class Shipbuilding extends Model
     public function dailyReports()
     {
         return $this->hasMany(DailyReport::class);
+    }
+
+    public function monthlyReports()
+    {
+        return $this->hasMany(MonthlyReport::class);
     }
 }
