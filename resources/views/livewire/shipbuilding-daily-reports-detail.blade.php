@@ -164,7 +164,7 @@
                     </x-inputs.group>
 
                     <x-inputs.group class="w-full">
-                        <x-inputs.tomselect
+                        <x-inputs.select
                             name="dailyReport.morning_weather_id"
                             wire:model="dailyReport.morning_weather_id"
                             label="{{ __('crud.daily_reports.inputs.morning_weather_id') }}"
@@ -173,11 +173,11 @@
                             @foreach($weathersForSelect as $value => $label)
                                 <option value="{{ $value }}">{{ $label }}</option>
                             @endforeach
-                        </x-inputs.tomselect>
+                        </x-inputs.select>
                     </x-inputs.group>
 
                     <x-inputs.group class="w-full">
-                        <x-inputs.tomselect
+                        <x-inputs.select
                             name="dailyReport.morning_humidity_id"
                             wire:model="dailyReport.morning_humidity_id"
                             label="{{ __('crud.daily_reports.inputs.morning_humidity_id') }}"
@@ -186,11 +186,11 @@
                             @foreach($humiditiesForSelect as $value => $label)
                                 <option value="{{ $value }}">{{ $label }}</option>
                             @endforeach
-                        </x-inputs.tomselect>
+                        </x-inputs.select>
                     </x-inputs.group>
 
                     <x-inputs.group class="w-full">
-                        <x-inputs.tomselect
+                        <x-inputs.select
                             name="dailyReport.midday_weather_id"
                             wire:model="dailyReport.midday_weather_id"
                             label="{{ __('crud.daily_reports.inputs.midday_weather_id') }}"
@@ -199,11 +199,11 @@
                             @foreach($weathersForSelect as $value => $label)
                                 <option value="{{ $value }}">{{ $label }}</option>
                             @endforeach
-                        </x-inputs.tomselect>
+                        </x-inputs.select>
                     </x-inputs.group>
 
                     <x-inputs.group class="w-full">
-                        <x-inputs.tomselect
+                        <x-inputs.select
                             name="dailyReport.midday_humidity_id"
                             wire:model="dailyReport.midday_humidity_id"
                             label="{{ __('crud.daily_reports.inputs.midday_humidity_id') }}"
@@ -212,11 +212,11 @@
                             @foreach($humiditiesForSelect as $value => $label)
                                 <option value="{{ $value }}">{{ $label }}</option>
                             @endforeach
-                        </x-inputs.tomselect>
+                        </x-inputs.select>
                     </x-inputs.group>
 
                     <x-inputs.group class="w-full">
-                        <x-inputs.tomselect
+                        <x-inputs.select
                             name="dailyReport.afternoon_weather_id"
                             wire:model="dailyReport.afternoon_weather_id"
                             label="{{ __('crud.daily_reports.inputs.afternoon_weather_id') }}"
@@ -225,11 +225,11 @@
                             @foreach($weathersForSelect as $value => $label)
                                 <option value="{{ $value }}">{{ $label }}</option>
                             @endforeach
-                        </x-inputs.tomselect>
+                        </x-inputs.select>
                     </x-inputs.group>
 
                     <x-inputs.group class="w-full">
-                        <x-inputs.tomselect
+                        <x-inputs.select
                             name="dailyReport.afternoon_humidity_id"
                             wire:model="dailyReport.afternoon_humidity_id"
                             label="{{ __('crud.daily_reports.inputs.afternoon_humidity_id') }}"
@@ -238,7 +238,7 @@
                             @foreach($humiditiesForSelect as $value => $label)
                                 <option value="{{ $value }}">{{ $label }}</option>
                             @endforeach
-                        </x-inputs.tomselect>
+                        </x-inputs.select>
                     </x-inputs.group>
                     <x-inputs.group class="w-full">
                         <x-inputs.number
