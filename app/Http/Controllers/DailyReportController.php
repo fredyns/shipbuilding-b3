@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\DailyReport\DocxGenerator;
 use App\Helpers\Date;
 use App\Http\Requests\DailyReportStoreRequest;
 use App\Http\Requests\DailyReportUpdateRequest;
@@ -17,6 +18,24 @@ use Illuminate\View\View;
 
 class DailyReportController extends Controller
 {
+    public function docx(Request $request, DailyReport $dailyReport)
+    {
+        $this->authorize('view', $dailyReport);
+
+        $docx = (new DocxGenerator($dailyReport))->run();
+        $filename = "Laporan Harian {$dailyReport->shipbuilding->name}.docx";
+
+        header("Content-Description: File Transfer");
+        header('Content-Disposition: attachment; filename="' . $filename . '"');
+        header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+        header('Content-Transfer-Encoding: binary');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Expires: 0');
+
+        $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($docx, 'Word2007');
+        $xmlWriter->save("php://output");
+    }
+
     /**
      * Display a listing of the resource.
      */
