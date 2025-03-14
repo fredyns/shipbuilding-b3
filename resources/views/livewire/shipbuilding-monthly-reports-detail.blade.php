@@ -247,13 +247,15 @@ use App\Helpers\Format;
                         {{ Format::percent($monthlyReport->actual_progres, '-') }}
                     </td>
                     <td class="px-4 py-3 text-center">
-                        <a
-                            href="{{ \Storage::url($monthlyReport->report_file) }}"
-                            class="button button-primary"
-                            target="blank"
-                        >
-                            <i class="icon ion-md-download"></i>
-                        </a>
+                        @if($monthlyReport->report_file)
+                            <a
+                                href="{{ \Storage::url($monthlyReport->report_file) }}"
+                                class="button button-primary"
+                                target="blank"
+                            >
+                                <i class="icon ion-md-download"></i>
+                            </a>
+                        @else - @endif
                     </td>
                     <td class="px-4 py-3 text-right" style="width: 134px;">
                         <div
