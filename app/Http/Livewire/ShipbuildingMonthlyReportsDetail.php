@@ -86,7 +86,7 @@ class ShipbuildingMonthlyReportsDetail extends Component
 
         $this->monthlyReportMonth = optional(
             $this->monthlyReport->month
-        )->format('Y-m-d');
+        )->format('Y-m');
 
         $this->dispatchBrowserEvent('refresh');
 
@@ -103,7 +103,7 @@ class ShipbuildingMonthlyReportsDetail extends Component
 
         $this->monthlyReportMonth = optional(
             $this->monthlyReport->month
-        )->format('Y-m-d');
+        )->format('Y-m');
 
         $this->dispatchBrowserEvent('refresh');
 

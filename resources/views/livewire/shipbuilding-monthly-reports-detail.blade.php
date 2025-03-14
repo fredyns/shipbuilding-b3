@@ -111,7 +111,7 @@ use App\Helpers\Format;
                         <x-inputs.basic
                             type="month"
                             name="monthlyReportMonth"
-                            :value="optional($monthlyReport->month)->translatedFormat('Y-m')"
+                            wire:model="monthlyReportMonth"
                             label="{{ __('crud.shipbuilding_monthly_reports.inputs.month') }}"
                             placeholder="{{ __('crud.shipbuilding_monthly_reports.inputs.month') }}"
                         ></x-inputs.basic>
