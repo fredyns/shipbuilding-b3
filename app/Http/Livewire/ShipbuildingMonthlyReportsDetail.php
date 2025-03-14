@@ -2,14 +2,14 @@
 
 namespace App\Http\Livewire;
 
-use Livewire\Component;
-use Illuminate\View\View;
-use Livewire\WithPagination;
-use App\Models\Shipbuilding;
 use App\Models\MonthlyReport;
-use Livewire\WithFileUploads;
-use Illuminate\Support\Facades\Storage;
+use App\Models\Shipbuilding;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\View\View;
+use Livewire\Component;
+use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class ShipbuildingMonthlyReportsDetail extends Component
 {
@@ -132,6 +132,22 @@ class ShipbuildingMonthlyReportsDetail extends Component
 
     public function save(): void
     {
+        /**
+         * 'email' => Rule::unique('users')->where(fn (Builder $query) => $query->where('account_id', 1))
+         */
+        $this->rules['monthlyReportMonth'] = [
+            'required',
+            'date_format:Y-m',
+            function (string $attribute, mixed $value, \Closure $fail) {
+                $exist = MonthlyReport::where('shipbuilding_id', $this->shipbuilding->id)
+                    ->where('month', $value . '-01')
+                    ->exists();
+
+                if ($exist) {
+                    $fail("Laporan pada bulan tersebut sudah ada, silahkan pilih bulan lainnya.");
+                }
+            },
+        ];
         $this->validate();
 
         if (!$this->monthlyReport->shipbuilding_id) {
