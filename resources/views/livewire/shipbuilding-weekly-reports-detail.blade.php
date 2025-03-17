@@ -273,7 +273,7 @@ use App\Helpers\Format;
                 <th class="px-4 py-3 text-right">
                     Actual
                 </th>
-                <th class="px-4 py-3 text-right">
+                <th class="px-4 py-3 text-center">
                     File
                 </th>
                 <th></th>
@@ -302,6 +302,19 @@ use App\Helpers\Format;
                     </td>
                     <td class="px-4 py-3 text-right">
                         {{ Format::percent($weeklyReport->actual_progress, '-') }}
+                    </td>
+                    <td class="px-4 py-3 text-center">
+                        @if($weeklyReport->report_file)
+                            <a
+                                href="{{ \Storage::url($weeklyReport->report_file) }}"
+                                class="button button-sm button-primary"
+                                target="blank"
+                            >
+                                <i class="icon ion-md-download"></i>
+                            </a>
+                        @else
+                            -
+                        @endif
                     </td>
                     <td class="px-4 py-3 text-right" style="width: 134px;">
                         <div
