@@ -113,7 +113,7 @@
             <div class="mt-5">
                 <div class="flex flex-wrap">
                     @if($adminMode)
-                        <x-inputs.group class="w-full">
+                        <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
                             <x-inputs.number
                                 name="weeklyReport.week"
                                 wire:model="weeklyReport.week"
@@ -121,7 +121,7 @@
                                 placeholder="{{ __('crud.weekly_reports.inputs.week') }}"
                             ></x-inputs.number>
                         </x-inputs.group>
-                        <x-inputs.group class="w-full">
+                        <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
                             <x-inputs.date
                                 name="weeklyReportDate"
                                 wire:model="weeklyReportDate"
@@ -129,7 +129,7 @@
                                 placeholder="{{ __('crud.weekly_reports.inputs.date') }}"
                             ></x-inputs.date>
                         </x-inputs.group>
-                        <x-inputs.group class="w-full">
+                        <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
                             <x-inputs.number
                                 name="weeklyReport.planned_progress"
                                 wire:model="weeklyReport.planned_progress"
@@ -139,13 +139,13 @@
                             ></x-inputs.number>
                         </x-inputs.group>
                     @else
-                        <div class="mb-4 px-4 w-full">
+                        <div class="mb-4 px-4 w-full lg:w-1/2 md:w-1/2">
                             <h5 class="font-medium text-gray-700">
                                 @lang('crud.shipbuilding_weekly_reports.inputs.week')
                             </h5>
                             <span> {{ $weeklyReport->week ?? '-' }} </span>
                         </div>
-                        <div class="mb-4 px-4 w-full">
+                        <div class="mb-4 px-4 w-full lg:w-1/2 md:w-1/2">
                             <h5 class="font-medium text-gray-700">
                                 @lang('crud.shipbuilding_weekly_reports.inputs.date')
                             </h5>
@@ -153,7 +153,7 @@
                                 {{ optional($weeklyReport->date)->format('l, d F Y') }}
                             </span>
                         </div>
-                        <div class="mb-4 px-4 w-full">
+                        <div class="mb-4 px-4 w-full lg:w-1/2 md:w-1/2">
                             <h5 class="font-medium text-gray-700">
                                 @lang('crud.shipbuilding_weekly_reports.inputs.planned_progress')
                             </h5>
@@ -162,7 +162,7 @@
                             </span>
                         </div>
                     @endif
-                    <x-inputs.group class="w-full">
+                    <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
                         <x-inputs.number
                             name="weeklyReport.actual_progress"
                             wire:model="weeklyReport.actual_progress"
