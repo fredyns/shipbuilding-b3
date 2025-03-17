@@ -159,10 +159,9 @@ use App\Lib\SCurve;
                     <a
                         href="{{ route('shipbuildings.weeks', $shipbuilding) }}"
                         class="button float-end button-primary"
-                        target="_blank"
                     >
                         <i class="icon ion-md-table-cells mr-1"></i>
-                        All Weeks
+                        Semua
                     </a>
                 </x-slot>
 
