@@ -196,10 +196,11 @@ class DailyReportController extends Controller
     {
         $this->authorize('delete', $dailyReport);
 
+        $shipbuildingID = $dailyReport->shipbuilding_id;
         $dailyReport->delete();
 
         return redirect()
-            ->route('daily-reports.index')
+            ->route('shipbuildings.show', $shipbuildingID)
             ->withSuccess(__('crud.common.removed'));
     }
 }

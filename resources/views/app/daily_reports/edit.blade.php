@@ -25,22 +25,7 @@ $shipbuilding = $dailyReport->shipbuilding;
                     </x-slot>
                     <div class="mt-4 px-4">
                         <a
-                            href="{{ route('daily-reports.index') }}"
-                            class="button"
-                        >
-                            <i
-                                class="
-                                    mr-1
-                                    icon
-                                    ion-md-return-left
-                                    text-primary
-                                "
-                            ></i>
-                            @lang('crud.common.back')
-                        </a>
-
-                        <a
-                            href="{{ route('daily-reports.show', $dailyReport) }}"
+                            href="{{ route('shipbuildings.show', $shipbuilding) }}"
                             class="button"
                         >
                             <i class="mr-1 icon ion-md-backspace text-primary">
