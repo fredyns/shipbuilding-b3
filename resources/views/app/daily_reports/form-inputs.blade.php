@@ -5,7 +5,6 @@
  * @var $weathers string[]
  * @var $humidities string[]
  */
-$shipbuilding = $dailyReport->shipbuilding;
 ?>
 
 <style>
@@ -32,7 +31,7 @@ $shipbuilding = $dailyReport->shipbuilding;
     --}}
 
     <div class="flex flex-wrap">
-        <x-inputs.group class="w-full">
+        <x-inputs.group class="w-full md:w-1/3 lg:w-1/3">
             <x-inputs.tomselect
                 name="shipbuilding_id"
                 label="{{ __('crud.daily_reports.inputs.shipbuilding_id') }}"
@@ -42,7 +41,7 @@ $shipbuilding = $dailyReport->shipbuilding;
             </x-inputs.tomselect>
         </x-inputs.group>
 
-        <x-inputs.group class="w-full">
+        <x-inputs.group class="w-full md:w-1/3 lg:w-1/3">
             <x-inputs.date
                 name="date"
                 value="{{ old('date',  optional($dailyReport->date)->format('Y-m-d') ) }}"
@@ -53,7 +52,7 @@ $shipbuilding = $dailyReport->shipbuilding;
             ></x-inputs.date>
         </x-inputs.group>
 
-        <x-inputs.group class="w-full">
+        <x-inputs.group class="w-full md:w-1/3 lg:w-1/3">
             <x-inputs.number
                 name="actual_progress"
                 :value="old('actual_progress',  $dailyReport->actual_progress )"
