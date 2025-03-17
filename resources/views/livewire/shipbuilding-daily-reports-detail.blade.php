@@ -363,13 +363,12 @@
                             aria-label="Row Actions"
                             class="relative inline-flex align-middle"
                         >
-                            <button
-                                type="button"
+                            <a
+                                href="{{ route('daily-reports.show', $dailyReport) }}"
                                 class="button mr-1"
-                                wire:click="viewDailyReport('{{ $dailyReport->id }}')"
                             >
                                 <i class="icon ion-md-eye"></i>
-                            </button>
+                            </a>
                             @can('update', $dailyReport)
                                 <a
                                     href="{{ route('daily-reports.edit', $dailyReport) }}"
