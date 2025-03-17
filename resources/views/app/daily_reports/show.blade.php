@@ -92,9 +92,9 @@
                     <span>@lang('text.actions')</span>
                 </x-slot>
                 <div class="mt-4 px-4">
-                    <a href="{{ route('daily-reports.index') }}" class="button">
+                    <a href="{{ route('shipbuildings.show', $dailyReport->shipbuilding) }}" class="button">
                         <i class="mr-1 icon ion-md-return-left"></i>
-                        @lang('crud.common.back')
+                        Kembali ke Pembangunan Kapal
                     </a>
 
                     @can('update', $dailyReport)
@@ -170,12 +170,12 @@
                 <x-partials.card class="mt-5">
                     <x-slot name="title">
                         @lang('crud.daily_report_documentations.name')
-                </x-slot>
+                    </x-slot>
 
-                <livewire:daily-report-daily-documentations-detail
-                    :dailyReport="$dailyReport"
-                />
-            </x-partials.card>
+                    <livewire:daily-report-daily-documentations-detail
+                        :dailyReport="$dailyReport"
+                    />
+                </x-partials.card>
             @endcan
         </div>
     </div>
