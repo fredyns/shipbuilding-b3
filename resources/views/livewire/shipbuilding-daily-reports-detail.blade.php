@@ -371,13 +371,12 @@
                                 <i class="icon ion-md-eye"></i>
                             </button>
                             @can('update', $dailyReport)
-                                <button
-                                    type="button"
-                                    class="button mr-1"
-                                    wire:click="editDailyReport('{{ $dailyReport->id }}')"
+                                <a
+                                    href="{{ route('daily-reports.edit', $dailyReport) }}"
+                                    class="button"
                                 >
                                     <i class="icon ion-md-create"></i>
-                                </button>
+                                </a>
                             @endcan
                         </div>
                     </td>
