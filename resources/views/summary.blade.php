@@ -74,10 +74,13 @@
                         <x-partials.card class="">
                             <x-slot name="title">
                                 <a href="{{ route('shipbuildings.show',$shipbuilding) }}">
-                                    {{ $shipbuilding->number }} |
-                                    <b>{{ $shipbuilding->name }}</b> |
-                                    week #{{ $shipbuilding->week() ?? "-" }} |
-                                    progress <b>{{ \App\Helpers\Format::percent($shipbuilding->progress) }}</b>
+                                    {{ $shipbuilding->number }}
+                                    <span class="text-gray-300">|</span>
+                                    <b>{{ $shipbuilding->name }}</b>
+                                    <span class="text-gray-300">|</span>
+                                    week #{{ $shipbuilding->week() ?? "-" }}
+                                    <span class="text-gray-300">|</span>
+                                    <b>{{ \App\Helpers\Format::percent($shipbuilding->progress) }}</b>
                                 </a>
                             </x-slot>
 
