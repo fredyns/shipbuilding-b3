@@ -1,12 +1,23 @@
-@php use App\Helpers\Format; @endphp
+<?php
+
+use App\Helpers\Format;
+
+/**
+ * @var $shipbuilding \App\Models\Shipbuilding
+ * @var $weeklyReport \App\Models\WeeklyReport
+ */
+?>
 <div>
     <div>
         @if($adminMode)
             @can('create', App\Models\WeeklyReport::class)
-                <button class="button" wire:click="newWeeklyReport">
+                <a
+                    href="{{ route('weekly-reports.create', ['shipbuilding_id' => $shipbuilding->id]) }}"
+                    class="button"
+                >
                     <i class="mr-1 icon ion-md-add text-primary"></i>
                     @lang('crud.common.new')
-                </button>
+                </a>
             @endcan
             @can('delete-any', App\Models\WeeklyReport::class)
                 <button
@@ -257,10 +268,13 @@
                     @lang('crud.shipbuilding_weekly_reports.inputs.date')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_weekly_reports.inputs.planned_progress')
+                    Planned
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.shipbuilding_weekly_reports.inputs.actual_progress')
+                    Actual
+                </th>
+                <th class="px-4 py-3 text-right">
+                    File
                 </th>
                 <th></th>
             </tr>

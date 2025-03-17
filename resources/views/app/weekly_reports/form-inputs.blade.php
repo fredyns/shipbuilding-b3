@@ -30,7 +30,7 @@
                 label="{{ __('crud.weekly_reports.inputs.shipbuilding_id') }}"
                 required
             >
-                @php $selected = old('shipbuilding_id', ($editing ? $weeklyReport->shipbuilding_id : '')) @endphp
+                @php $selected = old('shipbuilding_id', ($editing ? $weeklyReport->shipbuilding_id : request('shipbuilding_id'))) @endphp
                 <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Shipbuilding</option>
                 @foreach($shipbuildings as $value => $label)
                     <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
