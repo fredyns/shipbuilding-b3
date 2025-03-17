@@ -20,7 +20,7 @@
                     </x-slot>
                     <div class="mt-4 px-4">
                         <a
-                            href="{{ route('daily-reports.index') }}"
+                            href="javascript: history.go(-1)"
                             class="button"
                         >
                             <i
@@ -32,7 +32,7 @@
                                 "
                             >
                             </i>
-                            @lang('crud.common.back')
+                            Kembali
                         </a>
 
                         <button
@@ -40,7 +40,7 @@
                             class="button button-primary float-right"
                         >
                             <i class="mr-1 icon ion-md-save"></i>
-                            @lang('crud.common.create')
+                            @lang('crud.common.save')
                         </button>
                     </div>
                 </x-partials.card>
