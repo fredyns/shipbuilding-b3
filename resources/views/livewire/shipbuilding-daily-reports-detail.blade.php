@@ -298,7 +298,7 @@
                         title="{{ trans('crud.common.select_all') }}"
                     />
                 </th>
-                <th class="px-4 py-3 text-left">
+                <th class="px-4 py-3 text-center">
                     Tanggal
                 </th>
                 <th class="px-4 py-3 text-right">
@@ -333,7 +333,7 @@
                             wire:model="selected"
                         />
                     </td>
-                    <td class="px-4 py-3 text-left">
+                    <td class="px-4 py-3 text-right">
                         {{ optional($dailyReport->date)->translatedFormat("D, d M'y") }}
                     </td>
                     <td class="px-4 py-3 text-right">
