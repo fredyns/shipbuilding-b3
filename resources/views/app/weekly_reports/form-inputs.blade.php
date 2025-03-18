@@ -38,7 +38,7 @@
             </x-inputs.tomselect>
         </x-inputs.group>
 
-        <x-inputs.group class="w-full">
+        <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
             <x-inputs.slider
                 name="week"
                 :value="old('week', ($editing ? $weeklyReport->week : ''))"
@@ -48,7 +48,7 @@
             ></x-inputs.slider>
         </x-inputs.group>
 
-        <x-inputs.group class="w-full">
+        <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
             <x-inputs.date
                 name="date"
                 value="{{ old('date', ($editing ? optional($weeklyReport->date)->format('Y-m-d') : '')) }}"
@@ -57,26 +57,26 @@
             ></x-inputs.date>
         </x-inputs.group>
 
-        <x-inputs.group class="w-full">
-            <x-inputs.slider
+        <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
+            <x-inputs.number
                 name="planned_progress"
                 :value="old('planned_progress', ($editing ? $weeklyReport->planned_progress : ''))"
                 label="{{ __('crud.weekly_reports.inputs.planned_progress') }}"
                 placeholder="{{ __('crud.weekly_reports.inputs.planned_progress') }}"
                 max="100"
                 step="0.01"
-            ></x-inputs.slider>
+            ></x-inputs.number>
         </x-inputs.group>
 
-        <x-inputs.group class="w-full">
-            <x-inputs.slider
+        <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
+            <x-inputs.number
                 name="actual_progress"
                 :value="old('actual_progress', ($editing ? $weeklyReport->actual_progress : ''))"
                 label="{{ __('crud.weekly_reports.inputs.actual_progress') }}"
                 placeholder="{{ __('crud.weekly_reports.inputs.actual_progress') }}"
                 max="100"
                 step="0.01"
-            ></x-inputs.slider>
+            ></x-inputs.number>
         </x-inputs.group>
 
         <x-inputs.group class="w-full">
