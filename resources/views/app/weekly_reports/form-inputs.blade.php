@@ -16,25 +16,15 @@
     }
 </style>
 
-<x-partials.card>
+<x-partials.card class="mt-5">
     <x-slot name="title">
-        <span>Laporan Baru</span>
+        <span>Form Laporan Mingguan</span>
     </x-slot>
 
     <div class="flex flex-wrap">
-        <x-inputs.group class="w-full">
-            <x-inputs.tomselect
-                name="shipbuilding_id"
-                label="{{ __('crud.weekly_reports.inputs.shipbuilding_id') }}"
-                required
-            >
-                @php $selected = old('shipbuilding_id', ($editing ? $weeklyReport->shipbuilding_id : request('shipbuilding_id'))) @endphp
-                <option disabled {{ empty($selected) ? 'selected' : '' }}>Please select the Shipbuilding</option>
-                @foreach($shipbuildings as $value => $label)
-                    <option value="{{ $value }}" {{ $selected == $value ? 'selected' : '' }} >{{ $label }}</option>
-                @endforeach
-            </x-inputs.tomselect>
-        </x-inputs.group>
+        <div style="display: none;">
+            <input type="hidden" name="shipbuilding_id" value="{{ $weeklyReport->shipbuilding_id }}">
+        </div>
 
         <x-inputs.group class="w-full lg:w-1/2 md:w-1/2">
             <x-inputs.slider
