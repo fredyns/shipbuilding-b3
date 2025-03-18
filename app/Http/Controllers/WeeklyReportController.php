@@ -63,11 +63,6 @@ class WeeklyReportController extends Controller
                 $validated['summary']
             );
         }
-        if (isset($validated['report_file'])) {
-            $validated['report_file'] = StringCleaner::forRTF(
-                $validated['report_file']
-            );
-        }
 
         $uploadPath = 'public/weekly-reports/' . date('Y/m/d');
         if ($request->hasFile('report_file')) {
@@ -124,9 +119,6 @@ class WeeklyReportController extends Controller
         $validated = $request->validated();
 
         $validated['summary'] = StringCleaner::forRTF($validated['summary']);
-        $validated['report_file'] = StringCleaner::forRTF(
-            $validated['report_file']
-        );
 
         $uploadPath = 'public/weekly-reports/' . date('Y/m/d');
         if ($request->hasFile('report_file')) {
