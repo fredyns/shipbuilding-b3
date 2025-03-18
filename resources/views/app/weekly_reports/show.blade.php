@@ -1,7 +1,12 @@
+<?php
+/**
+ * @var $weeklyReport \App\Models\WeeklyReport
+ */
+?>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <a href="javascript: history.go(-1)" class="mr-4">
+            <a href="{{ route('shipbuildings.show', $weeklyReport->shipbuilding_id) }}" class="mr-4">
                 <i class="mr-1 icon ion-md-arrow-back"></i>
             </a>
             @lang('crud.weekly_reports.show_title')
@@ -23,8 +28,7 @@
                             @lang('crud.weekly_reports.inputs.shipbuilding_id')
                         </h5>
                         <span>
-                            {{ optional($weeklyReport->shipbuilding)->name ??
-                            '-' }}
+                            {{ optional($weeklyReport->shipbuilding)->name ?? '-' }}
                         </span>
                     </div>
                     <div class="mb-4 w-full">
@@ -89,7 +93,7 @@
                 </x-slot>
                 <div class="mt-4 px-4">
                     <a
-                        href="{{ route('weekly-reports.index') }}"
+                        href="{{ route('shipbuildings.show', $weeklyReport->shipbuilding_id) }}"
                         class="button"
                     >
                         <i class="mr-1 icon ion-md-return-left"></i>

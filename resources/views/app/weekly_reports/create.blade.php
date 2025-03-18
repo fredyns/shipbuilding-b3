@@ -23,7 +23,7 @@
                     </x-slot>
                     <div class="mt-4 px-4">
                         <a
-                            href="{{ route('weekly-reports.index') }}"
+                            href="javascript: history.go(-1)"
                             class="button"
                         >
                             <i

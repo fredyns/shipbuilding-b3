@@ -295,7 +295,9 @@ use App\Helpers\Format;
                         {{ $weeklyReport->week ?? '-' }}
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{ optional($weeklyReport->date)->format('D, d M Y') }}
+                        <a href="{{ route('weekly-reports.show', $weeklyReport) }}">
+                            {{ optional($weeklyReport->date)->format('D, d M Y') }}
+                        </a>
                     </td>
                     <td class="px-4 py-3 text-right">
                         {{ Format::percent($weeklyReport->planned_progress, '-') }}
@@ -322,21 +324,19 @@ use App\Helpers\Format;
                             aria-label="Row Actions"
                             class="relative inline-flex align-middle"
                         >
-                            <button
-                                type="button"
+                            <a
+                                href="{{ route('weekly-reports.show', $weeklyReport) }}"
                                 class="button mr-1"
-                                wire:click="viewWeeklyReport('{{ $weeklyReport->id }}')"
                             >
                                 <i class="icon ion-md-eye"></i>
-                            </button>
+                            </a>
                             @can('update', $weeklyReport)
-                                <button
-                                    type="button"
+                                <a
+                                    href="{{ route('weekly-reports.edit', $weeklyReport) }}"
                                     class="button mr-1"
-                                    wire:click="editWeeklyReport('{{ $weeklyReport->id }}')"
                                 >
                                     <i class="icon ion-md-create"></i>
-                                </button>
+                                </a>
                             @endcan
                         </div>
                     </td>
