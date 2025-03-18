@@ -63,12 +63,16 @@ class WeeklyReportController extends Controller
 
         /* @var $shipbuilding Shipbuilding */
         $shipbuilding = Shipbuilding::findOrFail($validated['shipbuilding_id']);
-        if ($shipbuilding->start_date) {
+        if ($shipbuilding->start_date && $validated['date']) {
             $weekDiff = Date::weekDiff($shipbuilding->start_date, $validated['date']);
             if ($weekDiff != $validated['week']) {
                 $date = new Carbon($validated['date']);
                 return redirect()->back()->withErrors(['week' => "Tanggal {$date->format('d M Y')} harusnya minggu ke-{$weekDiff}"]);
             }
+        } else if ($shipbuilding->start_date) {
+            $date = new Carbon($shipbuilding->start_date);
+            $date->addWeeks($validated['week']);
+            $validated['date'] = $date->format('Y-m-d');
         }
 
         if (isset($validated['summary'])) {
@@ -133,12 +137,16 @@ class WeeklyReportController extends Controller
 
         /* @var $shipbuilding Shipbuilding */
         $shipbuilding = Shipbuilding::findOrFail($validated['shipbuilding_id']);
-        if ($shipbuilding->start_date) {
+        if ($shipbuilding->start_date && $validated['date']) {
             $weekDiff = Date::weekDiff($shipbuilding->start_date, $validated['date']);
             if ($weekDiff != $validated['week']) {
                 $date = new Carbon($validated['date']);
                 return redirect()->back()->withErrors(['week' => "Tanggal {$date->format('d M Y')} harusnya minggu ke-{$weekDiff}"]);
             }
+        } else if ($shipbuilding->start_date) {
+            $date = new Carbon($shipbuilding->start_date);
+            $date->addWeeks($validated['week']);
+            $validated['date'] = $date->format('Y-m-d');
         }
 
         $validated['summary'] = StringCleaner::forRTF($validated['summary']);
