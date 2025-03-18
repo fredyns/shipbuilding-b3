@@ -51,7 +51,7 @@
                             @lang('crud.weekly_reports.inputs.planned_progress')
                         </h5>
                         <span>
-                            {{ App\Helpers\Format::percent($lastReport->planned_progress, '-')}}
+                            {{ App\Helpers\Format::percent($weeklyReport->planned_progress, '-')}}
                         </span>
                     </div>
                     <div class="mb-4 w-full lg:w-1/2 md:w-1/2">
@@ -59,7 +59,7 @@
                             @lang('crud.weekly_reports.inputs.actual_progress')
                         </h5>
                         <span>
-                            {{ App\Helpers\Format::percent($lastReport->actual_progress, '-')}}
+                            {{ App\Helpers\Format::percent($weeklyReport->actual_progress, '-')}}
                         </span>
                     </div>
                     <div class="mb-4 w-full">
