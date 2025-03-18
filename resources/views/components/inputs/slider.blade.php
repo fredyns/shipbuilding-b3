@@ -54,5 +54,5 @@
 
 </div>
 @error($name)
-@include('resources.views.components.inputs.partials.error')
+@include('components.inputs.partials.error')
 @enderror
