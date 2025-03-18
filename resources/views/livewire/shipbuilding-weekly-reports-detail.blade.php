@@ -343,17 +343,15 @@ use App\Helpers\Format;
                 </tr>
             @endforeach
             </tbody>
-            @if($allWeek)
-                <tfoot>
-                <tr>
-                    <td colspan="{{ $adminMode ? 6 : 5 }}">
-                        <div class="mt-10 px-4">
-                            {{ $weeklyReports->render() }}
-                        </div>
-                    </td>
-                </tr>
-                </tfoot>
-            @endif
+            <tfoot>
+            <tr>
+                <td colspan="{{ $adminMode ? 6 : 5 }}">
+                    <div class="mt-10 px-4">
+                        {{ $weeklyReports->render() }}
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
         </table>
     </div>
 </div>
