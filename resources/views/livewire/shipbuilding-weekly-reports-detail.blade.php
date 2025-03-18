@@ -3,6 +3,7 @@
 use App\Helpers\Format;
 
 /**
+ * @var $this \App\Http\Livewire\ShipbuildingWeeklyReportsDetail
  * @var $shipbuilding \App\Models\Shipbuilding
  * @var $weeklyReport \App\Models\WeeklyReport
  */
@@ -10,15 +11,17 @@ use App\Helpers\Format;
 <div>
     <div>
         @if($adminMode)
-            @can('create', App\Models\WeeklyReport::class)
-                <a
-                    href="{{ route('weekly-reports.create', ['shipbuilding_id' => $shipbuilding->id]) }}"
-                    class="button"
-                >
-                    <i class="mr-1 icon ion-md-add text-primary"></i>
-                    @lang('crud.common.new')
-                </a>
-            @endcan
+            @if($allWeek or $this->canCreateReport())
+                @can('create', App\Models\WeeklyReport::class)
+                    <a
+                        href="{{ route('weekly-reports.create', ['shipbuilding_id' => $shipbuilding->id]) }}"
+                        class="button"
+                    >
+                        <i class="mr-1 icon ion-md-add text-primary"></i>
+                        @lang('crud.common.new')
+                    </a>
+                @endcan
+            @endif
             @can('delete-any', App\Models\WeeklyReport::class)
                 <button
                     class="button button-danger"

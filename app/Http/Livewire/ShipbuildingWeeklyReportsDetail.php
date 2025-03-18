@@ -45,6 +45,24 @@ class ShipbuildingWeeklyReportsDetail extends Component
         'weeklyReportReportFile' => ['file', 'max:1024', 'nullable'],
     ];
 
+    public function canCreateReport()
+    {
+        $last = $this->lastReport();
+        if (!$last) return true;
+
+        $currentWeek = $this->shipbuilding->week();
+        if (!$currentWeek) return true;
+
+        return $last->week < $currentWeek;
+    }
+
+    public function lastReport()
+    {
+        return $this->shipbuilding->weeklyReports()
+            ->orderBy('week', 'desc')
+            ->first();
+    }
+
     public function mount(Shipbuilding $shipbuilding, $allWeek = false): void
     {
         $this->shipbuilding = $shipbuilding;
