@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Date;
 use App\Http\Requests\WeeklyReportStoreRequest;
 use App\Http\Requests\WeeklyReportUpdateRequest;
 use App\Models\Shipbuilding;
 use App\Models\WeeklyReport;
+use Carbon\Carbon;
 use fredyns\stringcleaner\StringCleaner;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -58,6 +60,17 @@ class WeeklyReportController extends Controller
         $this->authorize('create', WeeklyReport::class);
 
         $validated = $request->validated();
+
+        /* @var $shipbuilding Shipbuilding */
+        $shipbuilding = Shipbuilding::findOrFail($validated['shipbuilding_id']);
+        if ($shipbuilding->start_date) {
+            $weekDiff = Date::weekDiff($shipbuilding->start_date, $validated['date']);
+            if ($weekDiff != $validated['week']) {
+                $date = new Carbon($validated['date']);
+                return redirect()->back()->withErrors(['week' => "Tanggal {$date->format('d M Y')} harusnya minggu ke-{$weekDiff}"]);
+            }
+        }
+
         if (isset($validated['summary'])) {
             $validated['summary'] = StringCleaner::forRTF(
                 $validated['summary']
@@ -117,6 +130,16 @@ class WeeklyReportController extends Controller
         $this->authorize('update', $weeklyReport);
 
         $validated = $request->validated();
+
+        /* @var $shipbuilding Shipbuilding */
+        $shipbuilding = Shipbuilding::findOrFail($validated['shipbuilding_id']);
+        if ($shipbuilding->start_date) {
+            $weekDiff = Date::weekDiff($shipbuilding->start_date, $validated['date']);
+            if ($weekDiff != $validated['week']) {
+                $date = new Carbon($validated['date']);
+                return redirect()->back()->withErrors(['week' => "Tanggal {$date->format('d M Y')} harusnya minggu ke-{$weekDiff}"]);
+            }
+        }
 
         $validated['summary'] = StringCleaner::forRTF($validated['summary']);
 

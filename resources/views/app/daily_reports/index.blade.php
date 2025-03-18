@@ -74,8 +74,7 @@
                         @forelse($dailyReports as $dailyReport)
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3 text-left">
-                                    {{ optional($dailyReport->date)->format('D,
-                                    d M Y') }}
+                                    {{ optional($dailyReport->date)->format('D, d M Y') }}
                                 </td>
                                 <td class="px-4 py-3 text-right">
                                     {{ $dailyReport->actual_progress ?? '-' }}
