@@ -17,11 +17,9 @@
 </style>
 
 <x-partials.card>
-    {{--
     <x-slot name="title">
-        <span>@lang('card.title')</span>
+        <span>Laporan Baru</span>
     </x-slot>
-    --}}
 
     <div class="flex flex-wrap">
         <x-inputs.group class="w-full">
@@ -84,7 +82,6 @@
                 name="summary"
                 label="{{ __('crud.weekly_reports.inputs.summary') }}"
                 placeholder="{{ __('crud.weekly_reports.inputs.summary') }}"
-                maxlength="255"
             >
                 {{ old('summary', ($editing ? $weeklyReport->summary : '')) }}
             </x-inputs.textarea>
