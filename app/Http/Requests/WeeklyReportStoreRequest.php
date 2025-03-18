@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class WeeklyReportStoreRequest extends FormRequest
 {
@@ -21,7 +22,12 @@ class WeeklyReportStoreRequest extends FormRequest
     {
         return [
             'shipbuilding_id' => ['required', 'exists:shipbuildings,id'],
-            'week' => ['required', 'numeric'],
+            'week' => [
+                'required',
+                'numeric',
+                Rule::unique('weekly_reports')
+                    ->where(fn($query) => $query->where('shipbuilding_id', $this->input('shipbuilding_id'))),
+            ],
             'date' => ['nullable', 'date'],
             'planned_progress' => ['nullable', 'numeric'],
             'actual_progress' => ['nullable', 'numeric'],

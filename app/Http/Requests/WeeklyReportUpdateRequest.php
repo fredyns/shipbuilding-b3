@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class WeeklyReportUpdateRequest extends FormRequest
 {
@@ -21,7 +22,13 @@ class WeeklyReportUpdateRequest extends FormRequest
     {
         return [
             'shipbuilding_id' => ['required', 'exists:shipbuildings,id'],
-            'week' => ['required', 'numeric'],
+            'week' => [
+                'required',
+                'numeric',
+                Rule::unique('weekly_reports')
+                    ->where(fn($query) => $query->where('shipbuilding_id', $this->input('shipbuilding_id')))
+                    ->ignore($this->route('weekly_report')->id), // Ignore the current record during update
+            ],
             'date' => ['nullable', 'date'],
             'planned_progress' => ['nullable', 'numeric'],
             'actual_progress' => ['nullable', 'numeric'],
