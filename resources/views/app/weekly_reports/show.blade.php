@@ -31,13 +31,13 @@
                             {{ optional($weeklyReport->shipbuilding)->name ?? '-' }}
                         </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full lg:w-1/2 md:w-1/2">
                         <h5 class="font-medium text-gray-700">
                             @lang('crud.weekly_reports.inputs.week')
                         </h5>
                         <span> {{ $weeklyReport->week ?? '-' }} </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full lg:w-1/2 md:w-1/2">
                         <h5 class="font-medium text-gray-700">
                             @lang('crud.weekly_reports.inputs.date')
                         </h5>
@@ -46,7 +46,7 @@
                             }}
                         </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full lg:w-1/2 md:w-1/2">
                         <h5 class="font-medium text-gray-700">
                             @lang('crud.weekly_reports.inputs.planned_progress')
                         </h5>
@@ -54,7 +54,7 @@
                             {{ $weeklyReport->planned_progress ?? '-' }}
                         </span>
                     </div>
-                    <div class="mb-4 w-full">
+                    <div class="mb-4 w-full lg:w-1/2 md:w-1/2">
                         <h5 class="font-medium text-gray-700">
                             @lang('crud.weekly_reports.inputs.actual_progress')
                         </h5>
