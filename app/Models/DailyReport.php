@@ -49,7 +49,7 @@ use Snippet\Helpers\JsonField;
  *
  * @property DailyActivity[] $dailyActivities
  *
- * @property DailyDocumetation[] $dailyDocumetations
+ * @property DailyDocumentation[] $dailyDocumentations
  *
  *
  */
