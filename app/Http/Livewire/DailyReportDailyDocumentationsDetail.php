@@ -122,6 +122,7 @@ class DailyReportDailyDocumentationsDetail extends Component
         }
 
         if ($this->dailyDocumentationImage) {
+            // todo: set upload path
             $this->dailyDocumentation->image = $this->dailyDocumentationImage->store(
                 'public'
             );
