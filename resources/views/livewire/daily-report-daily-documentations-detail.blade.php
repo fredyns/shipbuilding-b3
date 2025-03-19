@@ -110,13 +110,27 @@
                             </template>
 
                             <div class="mt-2">
-                                <input
-                                    type="file"
-                                    name="dailyDocumentationImage"
-                                    id="dailyDocumentationImage{{ $uploadIteration }}"
-                                    wire:model="dailyDocumentationImage"
-                                    @change="fileChosen"
-                                />
+                                <div
+                                    x-data="{ isUploading: false, progress: 0 }"
+                                    x-on:livewire-upload-start="isUploading = true"
+                                    x-on:livewire-upload-finish="isUploading = false"
+                                    x-on:livewire-upload-error="isUploading = false"
+                                    x-on:livewire-upload-progress="progress = $event.detail.progress"
+                                >
+                                    <!-- File Input -->
+                                    <input
+                                        type="file"
+                                        name="dailyDocumentationImage"
+                                        id="dailyDocumentationImage{{ $uploadIteration }}"
+                                        wire:model="dailyDocumentationImage"
+                                        @change="fileChosen"
+                                    />
+
+                                    <!-- Progress Bar -->
+                                    <div x-show="isUploading">
+                                        <progress max="100" x-bind:value="progress"></progress>
+                                    </div>
+                                </div>
                             </div>
 
                             @error('dailyDocumentationImage')
