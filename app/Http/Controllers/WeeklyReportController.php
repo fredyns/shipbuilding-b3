@@ -93,9 +93,9 @@ class WeeklyReportController extends Controller
             $weekDiff = Date::weekDiff($shipbuilding->start_date, $validated['date']);
             if ($weekDiff != $validated['week']) {
                 $date = new Carbon($validated['date']);
-                return redirect()->back()
-                    ->withErrors(['week' => "Tanggal {$date->format('d M Y')} harusnya minggu ke-{$weekDiff}"])
-                    ->withInput();
+//                return redirect()->back()
+//                    ->withErrors(['week' => "Tanggal {$date->format('d M Y')} harusnya minggu ke-{$weekDiff}"])
+//                    ->withInput();
             }
         } else if ($shipbuilding->start_date) {
             $date = new Carbon($shipbuilding->start_date);
@@ -169,9 +169,9 @@ class WeeklyReportController extends Controller
             $weekDiff = Date::weekDiff($shipbuilding->start_date, $validated['date']);
             if ($weekDiff != $validated['week']) {
                 $date = new Carbon($validated['date']);
-                return redirect()->back()
-                    ->withErrors(['week' => "Tanggal {$date->format('d M Y')} harusnya minggu ke-{$weekDiff}"])
-                    ->withInput();
+//                return redirect()->back()
+//                    ->withErrors(['week' => "Tanggal {$date->format('d M Y')} harusnya minggu ke-{$weekDiff}"])
+//                    ->withInput();
             }
         } else if ($shipbuilding->start_date) {
             $date = new Carbon($shipbuilding->start_date);
