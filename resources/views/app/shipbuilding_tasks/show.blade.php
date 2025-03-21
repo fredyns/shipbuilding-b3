@@ -129,7 +129,7 @@
             @can('view-any', App\Models\ShipbuildingTask::class)
                 <x-partials.card class="mt-5">
                     <x-slot name="title">
-                        @lang('crud.shipbuilding_task_shipbuilding_tasks.name')
+                        @lang('crud.shipbuilding_shipbuilding_tasks.name')
                     </x-slot>
 
                     <livewire:shipbuilding-task-shipbuilding-tasks-detail
