@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Lib\SCurve;
 use App\Models\Scopes\Searchable;
+use Carbon\Carbon;
 use Datetime;
 use Generator;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,8 +20,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property float $progress
  * @property string $ship_type_id
  * @property string $shipyard_id
- * @property Datetime $start_date
- * @property Datetime $end_date
+ * @property Carbon $start_date
+ * @property Carbon $end_date
  * @property string $tasks_level_deep
  * @property string $tasks_count
  * @property float $tasks_weight_sum

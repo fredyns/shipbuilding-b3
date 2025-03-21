@@ -2,18 +2,17 @@
 
 namespace App\Models;
 
-use Datetime;
-use Snippet\Helpers\JsonField;
 use App\Models\Scopes\Searchable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Snippet\Helpers\JsonField;
 
 /**
  * This is the model class for table "monthly_reports".
  *
  * @property string $id
- * @property Datetime $month
+ * @property Carbon $month
  * @property string $shipbuilding_id
  * @property float $planned_progress
  * @property float $actual_progres

@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\Scopes\Searchable;
-use Datetime;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Snippet\Helpers\JsonField;
@@ -14,7 +14,7 @@ use Snippet\Helpers\JsonField;
  * @property string $id
  * @property string $shipbuilding_id
  * @property string $week
- * @property Datetime $date
+ * @property Carbon $date
  * @property float $planned_progress
  * @property float $actual_progress
  * @property string $summary
