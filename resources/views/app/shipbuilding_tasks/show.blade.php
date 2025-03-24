@@ -94,7 +94,6 @@ $shipbuilding = $shipbuildingTask->shipbuilding;
                                 <th class="px-4 py-3 text-right">
                                     @lang('crud.shipbuilding_shipbuilding_tasks.inputs.deviation')
                                 </th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody class="text-gray-600">

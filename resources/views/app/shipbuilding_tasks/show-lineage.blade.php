@@ -8,7 +8,7 @@ use App\Helpers\Format;
 @endif
 <tr class="hover:bg-gray-100">
     <td class="px-4 text-left">
-        <a href="{{ route('shipbuilding-tasks.show', $task) }}" class="text-blue-900 font-bold" target="_blank">
+        <a href="{{ route('shipbuilding-tasks.show', $task) }}">
             @if($task->level > 1)
                 @php $tab = ($task->level - 1) * 2 @endphp
                 <span style="font-family: monospace;">{!! str_repeat("&nbsp;", $tab) !!}Ͱ&nbsp;</span>
@@ -27,24 +27,5 @@ use App\Helpers\Format;
     </td>
     <td class="px-4 text-right">
         {{ Format::percent($task->deviation, "-") }}
-    </td>
-    <td class="px-4 text-right" style="width: 134px;">
-        <div
-            role="group"
-            aria-label="Row Actions"
-            class="relative inline-flex align-middle"
-        >
-            <a
-                href="{{ route('shipbuilding-tasks.show', $task) }}"
-                class="mr-1" target="_blank"
-            >
-                <button
-                    type="button"
-                    class="button"
-                >
-                    <i class="icon ion-md-eye"></i>
-                </button>
-            </a>
-        </div>
     </td>
 </tr>
