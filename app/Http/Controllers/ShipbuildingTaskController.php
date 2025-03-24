@@ -87,15 +87,15 @@ class ShipbuildingTaskController extends Controller
     {
         $this->authorize('view', $shipbuildingTask);
 
-        if ($shipbuildingTask->enable_sub_progress == TaskType::CATEGORY) {
-            $view = 'app.shipbuilding_tasks.show-category';
-        } else if ($shipbuildingTask->enable_sub_progress == TaskType::WORK_ITEM) {
+        if ($shipbuildingTask->enable_sub_progress == TaskType::WORK_ITEM) {
             $view = 'app.shipbuilding_tasks.show-worksheet';
+//        } else if ($shipbuildingTask->enable_sub_progress == TaskType::CATEGORY) {
+//            $view = 'app.shipbuilding_tasks.show-category';
         } else {
             $view = 'app.shipbuilding_tasks.show';
         }
 
-        return view('app.shipbuilding_tasks.show', compact('shipbuildingTask'));
+        return view($view, compact('shipbuildingTask'));
     }
 
     /**
