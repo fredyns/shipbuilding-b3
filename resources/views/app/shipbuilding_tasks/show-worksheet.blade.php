@@ -121,46 +121,12 @@ $shipbuilding = $shipbuildingTask->shipbuilding;
 
             <x-partials.card class="mt-5">
                 <x-slot name="title">
-                    Daftar Pekerjaan
+                    Breakdown Pekerjaan
                 </x-slot>
 
-                <div class="block w-full overflow-auto scrolling-touch mt-4">
-                    <table class="w-full max-w-full mb-4 bg-transparent">
-                        <thead class="text-gray-700">
-                        <tr>
-                            <th class="px-4 py-3 text-left">
-                                @lang('crud.shipbuilding_shipbuilding_tasks.inputs.name')
-                            </th>
-                            <th class="px-4 py-3 text-right">
-                                @lang('crud.shipbuilding_shipbuilding_tasks.inputs.weight')
-                            </th>
-                            <th class="px-4 py-3 text-right">
-                                @lang('crud.shipbuilding_shipbuilding_tasks.inputs.progress')
-                            </th>
-                            <th class="px-4 py-3 text-right">
-                                @lang('crud.shipbuilding_shipbuilding_tasks.inputs.target')
-                            </th>
-                            <th class="px-4 py-3 text-right">
-                                @lang('crud.shipbuilding_shipbuilding_tasks.inputs.deviation')
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody class="text-gray-600">
-                        @forelse($shipbuildingTask->children() as $subTask)
-                            @include('app.shipbuilding_tasks.show-subtask', [
-                                'task' => $subTask,
-                                'offset' => $shipbuildingTask->level,
-                            ])
-                        @empty
-                            <tr class="hover:bg-gray-100">
-                                <td colspan="5" class="px-4 text-left">
-                                    <i>tidak ditemukan</i>
-                                </td>
-                            </tr>
-                        @endforelse
-                        </tbody>
-                    </table>
-                </div>
+                <livewire:shipbuilding-task-subtasks-detail
+                    :parentTask="$shipbuildingTask"
+                />
             </x-partials.card>
 
         </div>
