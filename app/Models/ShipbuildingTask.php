@@ -36,8 +36,10 @@ use Snippet\Helpers\JsonField;
  *
  * @property Shipbuilding $shipbuilding
  *
+ * @property ShipbuildingTask $parentTask
  * @property ShipbuildingTask $shipbuildingTask
  *
+ * @property ShipbuildingTask[] $subTasks
  * @property ShipbuildingTask[] $shipbuildingTasks
  *
  *
@@ -96,9 +98,19 @@ class ShipbuildingTask extends Model
         return $this->belongsTo(Shipbuilding::class);
     }
 
+    public function parentTask()
+    {
+        return $this->belongsTo(ShipbuildingTask::class, 'parent_task_id');
+    }
+
     public function shipbuildingTask()
     {
         return $this->belongsTo(ShipbuildingTask::class, 'parent_task_id');
+    }
+
+    public function subTasks()
+    {
+        return $this->hasMany(ShipbuildingTask::class, 'parent_task_id');
     }
 
     public function shipbuildingTasks()

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ShipbuildingTaskStoreRequest;
 use App\Http\Requests\ShipbuildingTaskUpdateRequest;
+use App\Lib\TaskType;
 use App\Models\Shipbuilding;
 use App\Models\ShipbuildingTask;
 use fredyns\stringcleaner\StringCleaner;
@@ -85,6 +86,14 @@ class ShipbuildingTaskController extends Controller
     ): View
     {
         $this->authorize('view', $shipbuildingTask);
+
+        if ($shipbuildingTask->enable_sub_progress == TaskType::CATEGORY) {
+            $view = 'app.shipbuilding_tasks.show-category';
+        } else if ($shipbuildingTask->enable_sub_progress == TaskType::WORK_ITEM) {
+            $view = 'app.shipbuilding_tasks.show-worksheet';
+        } else {
+            $view = 'app.shipbuilding_tasks.show';
+        }
 
         return view('app.shipbuilding_tasks.show', compact('shipbuildingTask'));
     }
