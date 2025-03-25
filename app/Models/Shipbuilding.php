@@ -17,15 +17,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $number
  * @property string $name
  * @property string $description
- * @property float $progress
+ * @property float $progress = tasks_score_sum / tasks_weight_sum
  * @property string $ship_type_id
  * @property string $shipyard_id
  * @property Carbon $start_date
  * @property Carbon $end_date
- * @property string $tasks_level_deep
- * @property string $tasks_count
- * @property float $tasks_weight_sum
- * @property float $tasks_score_sum
+ * @property string $tasks_level_deep = max(tasks.level)
+ * @property string $tasks_count = count(tasks)
+ * @property float $tasks_weight_sum = sum(tasks.weight)::where(tasks.level==1)
+ * @property float $tasks_score_sum = sum(tasks.score)::where(tasks.level==1)
  * @property string $cover_image
  * @property float $target
  *
@@ -64,6 +64,10 @@ class Shipbuilding extends Model
         'cover_image',
         'target',
     ];
+
+    /**
+     * calculated fields
+     */
 
     protected $searchableFields = ['*'];
 

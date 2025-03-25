@@ -12,26 +12,31 @@ use Snippet\Helpers\JsonField;
  *
  * @property string $id
  * @property string $shipbuilding_id
- * @property string $level
- * @property string $sort_order
+ * @property string $level = parent.level + 1
+ * @property string $sort_order = lastPeer.sort_order + 1
  * @property string $parent_task_id
- * @property string $item_type
+ * @property string $item_type = parent.enable_sub_progress
  * @property string $name
  * @property string $description
  * @property float $weight
  * @property string $enable_sub_progress
- * @property integer $lock_element_set
+ * @property integer $lock_element_set = worksheet.id
  * @property array $progress_options
  * @property float $progress
- * @property float $target
- * @property float $deviation
- * @property float $score
- * @property string $sub_tasks_count
- * @property float $sub_tasks_weight_sum
- * @property float $sub_tasks_score_sum
- * @property float $on_group_progress
+ *                  (sub_tasks_count>0) = sub_tasks_score_sum / sub_tasks_weight_sum
+ * @property float $target {calculate weekly}
+ * @property float $deviation = target - progress {calculate weekly}
+ * @property float $score = progress * weight
+ * @property string $sub_tasks_count = count(subtasks)
+ * @property float $sub_tasks_weight_sum = sum(subtasks.weight)
+ * @property float $sub_tasks_score_sum = sum(subtasks.score)
+ * @property float $on_group_progress = score / parent.sub_tasks_weight_sum
  * @property float $on_project_weight
+ *                 (level==1) = weight
+ *                 (level>1) = (weight / parent.sub_tasks_weight_sum) * parent.weight
  * @property float $on_project_progress
+ *                  (level==1) = progress
+ *                  (level>1) = progress * on_project_weight
  * @property array $metadata
  *
  * @property Shipbuilding $shipbuilding
@@ -73,24 +78,6 @@ class ShipbuildingTask extends Model
         'on_project_progress',
         'metadata',
     ];
-
-    /**
-     * calculated fields:
-     * level = parent.level + 1
-     * sort_order = lastPeer.sort_order + 1
-     * item_type = parent.enable_sub_progress
-     * lock_element_set = worksheet.id
-     * deviation = target - progress
-     * score = progress * weight
-     * sub_tasks_count = count(subtasks)
-     * sub_tasks_weight_sum = sum(subtasks.weight)
-     * sub_tasks_score_sum = sum(subtasks.score)
-     * on_group_progress = score / parent.sub_tasks_weight_sum
-     * on_project_weight (level==1) = weight
-     * on_project_weight (level>1) = (weight / parent.sub_tasks_weight_sum) * parent.weight
-     * on_project_progress (level==1) = progress
-     * on_project_progress (level>1) = progress * on_project_weight
-     */
 
     protected $searchableFields = ['*'];
 
