@@ -204,6 +204,9 @@ use App\Lib\SCurve;
                             <thead class="text-gray-700">
                             <tr>
                                 <th class="px-4 py-3 text-left">
+                                    No
+                                </th>
+                                <th class="px-4 py-3 text-left">
                                     @lang('crud.shipbuilding_shipbuilding_tasks.inputs.name')
                                 </th>
                                 <th class="px-4 py-3 text-right">
@@ -218,7 +221,6 @@ use App\Lib\SCurve;
                                 <th class="px-4 py-3 text-right">
                                     @lang('crud.shipbuilding_shipbuilding_tasks.inputs.deviation')
                                 </th>
-                                <th></th>
                             </tr>
                             </thead>
                             <tbody class="text-gray-600">
@@ -227,9 +229,10 @@ use App\Lib\SCurve;
                                     ->shipbuildingTasks()
                                     ->whereNull('parent_task_id')
                                     ->get();
+                                $iterate = 0;
                             @endphp
                             @foreach ($shipbuildingTasks as $shipbuildingTask)
-                                @include('app.shipbuildings.show-task-row', ['task' => $shipbuildingTask])
+                                @include('app.shipbuildings.show-task-row', ['task' => $shipbuildingTask, 'iterate' => ++$iterate])
                             @endforeach
                             </tbody>
                         </table>
