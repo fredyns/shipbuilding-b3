@@ -65,18 +65,6 @@ use App\Helpers\Format;
                         </h5>
                         <span> {{ Format::percent($shipbuildingTask->progress, "-") }} </span>
                     </div>
-                    <div class="mb-4 w-full">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.subtasks.inputs.target')
-                        </h5>
-                        <span> {{ Format::percent($shipbuildingTask->target, "-") }} </span>
-                    </div>
-                    <div class="mb-4 w-full">
-                        <h5 class="font-medium text-gray-700">
-                            @lang('crud.subtasks.inputs.deviation')
-                        </h5>
-                        <span> {{ Format::percent($shipbuildingTask->deviation, "-") }} </span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -148,32 +136,10 @@ use App\Helpers\Format;
 
                     <x-inputs.group class="w-full">
                         <x-inputs.number
-                            name="shipbuildingTask.target"
-                            wire:model="shipbuildingTask.target"
-                            label="{{ __('crud.shipbuilding_tasks.inputs.target') }}"
-                            placeholder="{{ __('crud.shipbuilding_tasks.inputs.target') }}"
-                            max="255"
-                            step="0.01"
-                        ></x-inputs.number>
-                    </x-inputs.group>
-
-                    <x-inputs.group class="w-full">
-                        <x-inputs.number
                             name="shipbuildingTask.progress"
                             wire:model="shipbuildingTask.progress"
                             label="{{ __('crud.shipbuilding_tasks.inputs.progress') }}"
                             placeholder="{{ __('crud.shipbuilding_tasks.inputs.progress') }}"
-                            max="255"
-                            step="0.01"
-                        ></x-inputs.number>
-                    </x-inputs.group>
-
-                    <x-inputs.group class="w-full">
-                        <x-inputs.number
-                            name="shipbuildingTask.deviation"
-                            wire:model="shipbuildingTask.deviation"
-                            label="{{ __('crud.shipbuilding_tasks.inputs.deviation') }}"
-                            placeholder="{{ __('crud.shipbuilding_tasks.inputs.deviation') }}"
                             max="255"
                             step="0.01"
                         ></x-inputs.number>
@@ -233,12 +199,6 @@ use App\Helpers\Format;
                 </th>
                 <th class="px-4 py-3 text-right">
                     @lang('crud.subtasks.inputs.progress')
-                </th>
-                <th class="px-4 py-3 text-right">
-                    @lang('crud.subtasks.inputs.target')
-                </th>
-                <th class="px-4 py-3 text-right">
-                    @lang('crud.subtasks.inputs.deviation')
                 </th>
             </tr>
             </thead>

@@ -40,12 +40,6 @@ $newNumberingLevel = count($numbering);
     <td class="px-4 py-3 text-right">
         {{ Format::percent($task->progress, "-") }}
     </td>
-    <td class="px-4 py-3 text-right">
-        {{ Format::percent($task->target, "-") }}
-    </td>
-    <td class="px-4 py-3 text-right">
-        {{ Format::percent($task->deviation, "-") }}
-    </td>
 </tr>
 @if($children)
     @php $i = 0 @endphp
