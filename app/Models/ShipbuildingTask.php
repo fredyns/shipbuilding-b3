@@ -33,7 +33,7 @@ use Snippet\Helpers\JsonField;
  * @property float $on_peer_progress = score / parent.subtasks_weight_sum
  * @property float $on_project_weight
  *                 (level==1) = weight
- *                 (level>1) = (weight / parent.subtasks_weight_sum) * parent.weight
+ *                 (level>1) = (weight / parent.subtasks_weight_sum) * parent.on_project_weight
  * @property float $on_project_progress
  *                  (level==1) = progress
  *                  (level>1) = progress * on_project_weight
