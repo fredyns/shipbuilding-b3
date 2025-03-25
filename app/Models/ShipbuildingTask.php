@@ -74,6 +74,24 @@ class ShipbuildingTask extends Model
         'metadata',
     ];
 
+    /**
+     * calculated fields:
+     * level = parent.level + 1
+     * sort_order = lastPeer.sort_order + 1
+     * item_type = parent.enable_sub_progress
+     * lock_element_set = worksheet.id
+     * deviation = target - progress
+     * score = progress * weight
+     * sub_tasks_count = count(subtasks)
+     * sub_tasks_weight_sum = sum(subtasks.weight)
+     * sub_tasks_score_sum = sum(subtasks.score)
+     * on_group_progress = score / parent.sub_tasks_weight_sum
+     * on_project_weight (level==1) = weight
+     * on_project_weight (level>1) = (weight / parent.sub_tasks_weight_sum) * parent.weight
+     * on_project_progress (level==1) = progress
+     * on_project_progress (level>1) = progress * on_project_weight
+     */
+
     protected $searchableFields = ['*'];
 
     protected $table = 'shipbuilding_tasks';
