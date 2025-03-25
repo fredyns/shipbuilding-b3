@@ -23,17 +23,17 @@ use Snippet\Helpers\JsonField;
  * @property integer $lock_element_set = worksheet.id
  * @property array $progress_options
  * @property float $progress
- *                  (sub_tasks_count>0) = sub_tasks_score_sum / sub_tasks_weight_sum
+ *                  (subtasks_count>0) = subtasks_score_sum / subtasks_weight_sum
  * @property float $target {calculate weekly}
  * @property float $deviation = target - progress {calculate weekly}
  * @property float $score = progress * weight
- * @property string $sub_tasks_count = count(subtasks)
- * @property float $sub_tasks_weight_sum = sum(subtasks.weight)
- * @property float $sub_tasks_score_sum = sum(subtasks.score)
- * @property float $on_group_progress = score / parent.sub_tasks_weight_sum
+ * @property string $subtasks_count = count(subtasks)
+ * @property float $subtasks_weight_sum = sum(subtasks.weight)
+ * @property float $subtasks_score_sum = sum(subtasks.score)
+ * @property float $on_peer_progress = score / parent.subtasks_weight_sum
  * @property float $on_project_weight
  *                 (level==1) = weight
- *                 (level>1) = (weight / parent.sub_tasks_weight_sum) * parent.weight
+ *                 (level>1) = (weight / parent.subtasks_weight_sum) * parent.weight
  * @property float $on_project_progress
  *                  (level==1) = progress
  *                  (level>1) = progress * on_project_weight
@@ -70,10 +70,10 @@ class ShipbuildingTask extends Model
         'target',
         'deviation',
         'score',
-        'sub_tasks_count',
-        'sub_tasks_weight_sum',
-        'sub_tasks_score_sum',
-        'on_group_progress',
+        'subtasks_count',
+        'subtasks_weight_sum',
+        'subtasks_score_sum',
+        'on_peer_progress',
         'on_project_weight',
         'on_project_progress',
         'metadata',

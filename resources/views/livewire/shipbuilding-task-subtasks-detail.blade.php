@@ -43,37 +43,37 @@ use App\Helpers\Format;
                 <div class="flex flex-wrap">
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.name')
+                            @lang('crud.subtasks.inputs.name')
                         </h5>
                         <span> {{ $shipbuildingTask->name ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.parent_task_id')
+                            @lang('crud.subtasks.inputs.parent_task_id')
                         </h5>
                         <span> {{ optional($shipbuildingTask->parentTask)->name ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.weight')
+                            @lang('crud.subtasks.inputs.weight')
                         </h5>
                         <span> {{ Format::percent($shipbuildingTask->weight, "-") }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.progress')
+                            @lang('crud.subtasks.inputs.progress')
                         </h5>
                         <span> {{ Format::percent($shipbuildingTask->progress, "-") }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.target')
+                            @lang('crud.subtasks.inputs.target')
                         </h5>
                         <span> {{ Format::percent($shipbuildingTask->target, "-") }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.deviation')
+                            @lang('crud.subtasks.inputs.deviation')
                         </h5>
                         <span> {{ Format::percent($shipbuildingTask->deviation, "-") }} </span>
                     </div>
@@ -226,19 +226,19 @@ use App\Helpers\Format;
                     No
                 </th>
                 <th class="px-4 py-3 text-left">
-                    @lang('crud.sub_tasks.inputs.name')
+                    @lang('crud.subtasks.inputs.name')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.sub_tasks.inputs.weight')
+                    @lang('crud.subtasks.inputs.weight')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.sub_tasks.inputs.progress')
+                    @lang('crud.subtasks.inputs.progress')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.sub_tasks.inputs.target')
+                    @lang('crud.subtasks.inputs.target')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.sub_tasks.inputs.deviation')
+                    @lang('crud.subtasks.inputs.deviation')
                 </th>
             </tr>
             </thead>

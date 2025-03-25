@@ -26,31 +26,31 @@
                 <div class="flex flex-wrap">
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.name')
+                            @lang('crud.subtasks.inputs.name')
                         </h5>
                         <span> {{ $shipbuildingTask->name ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.weight')
+                            @lang('crud.subtasks.inputs.weight')
                         </h5>
                         <span> {{ $shipbuildingTask->weight ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.progress')
+                            @lang('crud.subtasks.inputs.progress')
                         </h5>
                         <span> {{ $shipbuildingTask->progress ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.target')
+                            @lang('crud.subtasks.inputs.target')
                         </h5>
                         <span> {{ $shipbuildingTask->target ?? '-' }} </span>
                     </div>
                     <div class="mb-4 w-full">
                         <h5 class="font-medium text-gray-700">
-                            @lang('crud.sub_tasks.inputs.deviation')
+                            @lang('crud.subtasks.inputs.deviation')
                         </h5>
                         <span> {{ $shipbuildingTask->deviation ?? '-' }} </span>
                     </div>
@@ -178,19 +178,19 @@
             <thead class="text-gray-700">
             <tr>
                 <th class="px-4 py-3 text-left">
-                    @lang('crud.sub_tasks.inputs.name')
+                    @lang('crud.subtasks.inputs.name')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.sub_tasks.inputs.weight')
+                    @lang('crud.subtasks.inputs.weight')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.sub_tasks.inputs.progress')
+                    @lang('crud.subtasks.inputs.progress')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.sub_tasks.inputs.target')
+                    @lang('crud.subtasks.inputs.target')
                 </th>
                 <th class="px-4 py-3 text-right">
-                    @lang('crud.sub_tasks.inputs.deviation')
+                    @lang('crud.subtasks.inputs.deviation')
                 </th>
                 <th></th>
             </tr>

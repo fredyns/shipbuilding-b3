@@ -137,7 +137,7 @@ return [
         ],
     ],
 
-    'sub_tasks' => [
+    'subtasks' => [
         'name' => 'Sub Pekerjaan',
         'index_title' => 'Sub Pekerjaan',
         'new_title' => 'Tambah Sub Pekerjaan',

@@ -70,10 +70,10 @@ class ShipbuildingTaskControllerTest extends TestCase
         unset($data['sort_order']);
         unset($data['lock_element_set']);
         unset($data['score']);
-        unset($data['sub_tasks_count']);
-        unset($data['sub_tasks_weight_sum']);
-        unset($data['sub_tasks_score_sum']);
-        unset($data['on_group_progress']);
+        unset($data['subtasks_count']);
+        unset($data['subtasks_weight_sum']);
+        unset($data['subtasks_score_sum']);
+        unset($data['on_peer_progress']);
         unset($data['on_project_weight']);
         unset($data['on_project_progress']);
         unset($data['metadata']);
@@ -142,8 +142,8 @@ class ShipbuildingTaskControllerTest extends TestCase
             'weight' => $this->faker->randomNumber(1),
             'enable_sub_progress' => 'none',
             'progress_options' => [],
-            'sub_tasks_count' => $this->faker->randomNumber(0),
-            'sub_tasks_weight_sum' => $this->faker->randomNumber(1),
+            'subtasks_count' => $this->faker->randomNumber(0),
+            'subtasks_weight_sum' => $this->faker->randomNumber(1),
             'metadata' => [],
             'shipbuilding_id' => $shipbuilding->id,
             'parent_task_id' => $shipbuildingTask->id,
@@ -158,10 +158,10 @@ class ShipbuildingTaskControllerTest extends TestCase
         unset($data['sort_order']);
         unset($data['lock_element_set']);
         unset($data['score']);
-        unset($data['sub_tasks_count']);
-        unset($data['sub_tasks_weight_sum']);
-        unset($data['sub_tasks_score_sum']);
-        unset($data['on_group_progress']);
+        unset($data['subtasks_count']);
+        unset($data['subtasks_weight_sum']);
+        unset($data['subtasks_score_sum']);
+        unset($data['on_peer_progress']);
         unset($data['on_project_weight']);
         unset($data['on_project_progress']);
         unset($data['metadata']);

@@ -59,7 +59,7 @@ class ShipbuildingTaskShipbuildingTasksDetail extends Component
     public function newShipbuildingTask(): void
     {
         $this->editing = false;
-        $this->modalTitle = trans('crud.sub_tasks.new_title');
+        $this->modalTitle = trans('crud.subtasks.new_title');
         $this->resetShipbuildingTaskData();
 
         $this->showModalForm();
@@ -70,7 +70,7 @@ class ShipbuildingTaskShipbuildingTasksDetail extends Component
     ): void
     {
         $this->editing = false;
-        $this->modalTitle = trans('crud.sub_tasks.show_title');
+        $this->modalTitle = trans('crud.subtasks.show_title');
         $this->shipbuildingTask = $shipbuildingTask;
 
         $this->dispatchBrowserEvent('refresh');
@@ -83,7 +83,7 @@ class ShipbuildingTaskShipbuildingTasksDetail extends Component
     ): void
     {
         $this->editing = true;
-        $this->modalTitle = trans('crud.sub_tasks.edit_title');
+        $this->modalTitle = trans('crud.subtasks.edit_title');
         $this->shipbuildingTask = $shipbuildingTask;
 
         $this->dispatchBrowserEvent('refresh');

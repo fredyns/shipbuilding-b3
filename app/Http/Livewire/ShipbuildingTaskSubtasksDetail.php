@@ -72,7 +72,7 @@ class ShipbuildingTaskSubtasksDetail extends Component
     public function newShipbuildingTask(): void
     {
         $this->editing = false;
-        $this->modalTitle = trans('crud.sub_tasks.new_title');
+        $this->modalTitle = trans('crud.subtasks.new_title');
         $this->resetShipbuildingTaskData();
 
         $this->showModalForm();
@@ -81,7 +81,7 @@ class ShipbuildingTaskSubtasksDetail extends Component
     public function viewShipbuildingTask(ShipbuildingTask $shipbuildingTask): void
     {
         $this->editing = false;
-        $this->modalTitle = trans('crud.sub_tasks.show_title');
+        $this->modalTitle = trans('crud.subtasks.show_title');
         $this->shipbuildingTask = $shipbuildingTask;
 
         $this->dispatchBrowserEvent('refresh');
@@ -92,7 +92,7 @@ class ShipbuildingTaskSubtasksDetail extends Component
     public function editShipbuildingTask(ShipbuildingTask $shipbuildingTask): void
     {
         $this->editing = true;
-        $this->modalTitle = trans('crud.sub_tasks.edit_title');
+        $this->modalTitle = trans('crud.subtasks.edit_title');
         $this->shipbuildingTask = $shipbuildingTask;
 
         $this->dispatchBrowserEvent('refresh');
@@ -134,7 +134,7 @@ class ShipbuildingTaskSubtasksDetail extends Component
 
         $parent = ShipbuildingTask::find($this->shipbuildingTask->parent_task_id);
         if ($parent) {
-            $this->shipbuildingTask->level = eval($parent->level) + 1;
+            $this->shipbuildingTask->level = $parent->level + 1;
             $this->shipbuildingTask->item_type = $parent->enable_sub_progress;
         }
 

@@ -31,8 +31,8 @@ class ShipbuildingTaskFactory extends Factory
             'weight' => $this->faker->randomNumber(1),
             'enable_sub_progress' => 'none',
             'progress_options' => [],
-            'sub_tasks_count' => $this->faker->randomNumber(0),
-            'sub_tasks_weight_sum' => $this->faker->randomNumber(1),
+            'subtasks_count' => $this->faker->randomNumber(0),
+            'subtasks_weight_sum' => $this->faker->randomNumber(1),
             'metadata' => [],
             'shipbuilding_id' => Shipbuilding::factory(),
             'parent_task_id' => function () {
