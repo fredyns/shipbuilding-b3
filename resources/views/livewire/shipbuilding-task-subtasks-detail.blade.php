@@ -200,6 +200,7 @@ use App\Helpers\Format;
                 <th class="px-4 py-3 text-right">
                     @lang('crud.subtasks.inputs.progress')
                 </th>
+                <th></th>
             </tr>
             </thead>
             <tbody class="text-gray-600">

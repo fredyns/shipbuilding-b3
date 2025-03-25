@@ -27,7 +27,7 @@ $newNumberingLevel = count($numbering);
         {{ implode('.', $numbering) }}
     </td>
     <td class="px-4 py-3 text-left">
-        <a wire:click="editShipbuildingTask('{{ $task->id }}')" class="cursor-pointer">
+        <a wire:click="viewShipbuildingTask('{{ $task->id }}')" class="cursor-pointer">
             @if($tab > 0)
                 <span style="font-family: monospace;">{!! str_repeat("&nbsp;", $tab) !!}Ͱ&nbsp;</span>
             @endif
@@ -39,6 +39,30 @@ $newNumberingLevel = count($numbering);
     </td>
     <td class="px-4 py-3 text-right">
         {{ Format::percent($task->progress, "-") }}
+    </td>
+    <td class="px-4 py-1 text-right" style="width: 134px;">
+        <div
+            role="group"
+            aria-label="Row Actions"
+            class="relative inline-flex align-middle"
+        >
+            <button
+                type="button"
+                class="button button-xs mr-1 px-2 py-0 text-sm"
+                wire:click="viewShipbuildingTask('{{ $task->id }}')"
+            >
+                <i class="icon ion-md-eye"></i>
+            </button>
+            @can('update', $task)
+                <button
+                    type="button"
+                    class="button button-xs mr-1 px-2 py-0 text-sm"
+                    wire:click="editShipbuildingTask('{{ $task->id }}')"
+                >
+                    <i class="icon ion-md-create"></i>
+                </button>
+            @endcan
+        </div>
     </td>
 </tr>
 @if($children)
