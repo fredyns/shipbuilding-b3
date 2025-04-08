@@ -42,7 +42,7 @@ class ShipbuildingWeeklyReportsDetail extends Component
         'weeklyReport.planned_progress' => ['nullable', 'numeric'],
         'weeklyReport.actual_progress' => ['nullable', 'numeric'],
         'weeklyReport.summary' => ['nullable', 'max:255', 'string'],
-        'weeklyReportReportFile' => ['file', 'max:1024', 'nullable'],
+        'weeklyReportReportFile' => ['file', 'max:20500', 'nullable'],
     ];
 
     public function canCreateReport()
