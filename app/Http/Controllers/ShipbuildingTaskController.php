@@ -83,7 +83,7 @@ class ShipbuildingTaskController extends Controller
     public function show(
         Request          $request,
         ShipbuildingTask $shipbuildingTask
-    ): View
+    ): View|RedirectResponse
     {
         $this->authorize('view', $shipbuildingTask);
 
@@ -91,6 +91,8 @@ class ShipbuildingTaskController extends Controller
             $view = 'app.shipbuilding_tasks.show-worksheet';
 //        } else if ($shipbuildingTask->enable_sub_progress == TaskType::CATEGORY) {
 //            $view = 'app.shipbuilding_tasks.show-category';
+        } else if ($shipbuildingTask->worksheet_id) {
+            return redirect()->route('shipbuilding-tasks.show', $shipbuildingTask->worksheet_id);
         } else {
             $view = 'app.shipbuilding_tasks.show';
         }
