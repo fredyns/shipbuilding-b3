@@ -20,7 +20,7 @@ use Snippet\Helpers\JsonField;
  * @property string $description
  * @property float $weight
  * @property string $enable_sub_progress
- * @property integer $lock_element_set = worksheet.id
+ * @property integer $worksheet_id = worksheet.id
  * @property array $progress_options
  * @property float $progress
  *                  (subtasks_count>0) = subtasks_score_sum / subtasks_weight_sum
@@ -64,7 +64,7 @@ class ShipbuildingTask extends Model
         'description',
         'weight',
         'enable_sub_progress',
-        'lock_element_set',
+        'worksheet_id',
         'progress_options',
         'progress',
         'target',
