@@ -23,10 +23,10 @@ $children = $task->children();
 $newNumberingLevel = count($numbering);
 ?>
 <tr class="hover:bg-gray-100">
-    <td class="px-4 py-3 text-left">
+    <td class="px-4 text-left">
         {{ implode('.', $numbering) }}
     </td>
-    <td class="px-4 py-3 text-left">
+    <td class="px-4 text-left">
         <a wire:click="viewShipbuildingTask('{{ $task->id }}')" class="cursor-pointer">
             @if($tab > 0)
                 <span style="font-family: monospace;">{!! str_repeat("&nbsp;", $tab) !!}Ͱ&nbsp;</span>
@@ -34,13 +34,13 @@ $newNumberingLevel = count($numbering);
             <span>{{ $task->name ?? '-' }}</span>
         </a>
     </td>
-    <td class="px-4 py-3 text-right">
+    <td class="px-4 text-right">
         {{ Format::percent($task->weight, "-") }}
     </td>
-    <td class="px-4 py-3 text-right">
+    <td class="px-4 text-right">
         {{ Format::percent($task->progress, "-") }}
     </td>
-    <td class="px-4 py-1 text-right" style="width: 134px;">
+    <td class="px-4 text-right" style="width: 134px;">
         <div
             role="group"
             aria-label="Row Actions"
@@ -48,8 +48,9 @@ $newNumberingLevel = count($numbering);
         >
             <button
                 type="button"
-                class="button button-xs mr-1 px-2 py-0 text-sm"
+                class="button button-xs mr-1 px-2 py-0 text-xs"
                 wire:click="viewShipbuildingTask('{{ $task->id }}')"
+                style="padding: 4px 8px;"
             >
                 <i class="icon ion-md-eye"></i>
             </button>
@@ -58,6 +59,7 @@ $newNumberingLevel = count($numbering);
                     type="button"
                     class="button button-xs mr-1 px-2 py-0 text-sm"
                     wire:click="editShipbuildingTask('{{ $task->id }}')"
+                    style="padding: 4px 12px;"
                 >
                     <i class="icon ion-md-create"></i>
                 </button>
