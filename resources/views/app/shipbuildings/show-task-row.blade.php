@@ -18,13 +18,13 @@ $subIterate = 0;
         {{ $numbering }}
     </td>
     <td class="px-4 text-left">
-        <a href="{{ route('shipbuilding-tasks.show', $task) }}">
-            @if($task->level > 1)
-                @php $tab = ($task->level - 1) * 2 @endphp
-                <span style="font-family: monospace;">{!! str_repeat("&nbsp;", $tab) !!}Ͱ&nbsp;</span>
-            @endif
-            <span>{{ $task->name ?? '-' }}</span>
-        </a>
+        @if($task->enable_sub_progress == 'work-item')
+            <a href="{{ route('shipbuilding-tasks.show', $task) }}">
+                @include('app.shipbuildings.show-task-label', ['task' => $task])
+            </a>
+        @else
+            @include('app.shipbuildings.show-task-label', ['task' => $task])
+        @endif
     </td>
     <td class="px-4 text-right">
         {{ Format::percent($task->weight,"-") }}
