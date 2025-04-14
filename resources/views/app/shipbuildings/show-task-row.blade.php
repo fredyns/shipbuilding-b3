@@ -23,7 +23,9 @@ $subIterate = 0;
                 @include('app.shipbuildings.show-task-label', ['task' => $task])
             </a>
         @else
-            @include('app.shipbuildings.show-task-label', ['task' => $task])
+            <div title="bukan lembar kerja">
+                @include('app.shipbuildings.show-task-label', ['task' => $task])
+            </div>
         @endif
     </td>
     <td class="px-4 text-right">
