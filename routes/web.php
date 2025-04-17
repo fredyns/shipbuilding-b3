@@ -64,7 +64,7 @@ Route::prefix('/')
     ->group(function () {
         Route::get('shipbuildings/{shipbuilding}/weeks', [ShipbuildingController::class, 'weeks'])
             ->name('shipbuildings.weeks');
-        Route::get('daily-reports/{dailyReport}/docx', [DailyReportController::class, 'docx'])
+        Route::get('daily-reports/{daily_report}/docx', [DailyReportController::class, 'docx'])
             ->name('daily-reports.docx');
 
         Route::resource('roles', RoleController::class);
