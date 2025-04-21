@@ -23,7 +23,8 @@ class DailyReportController extends Controller
         $this->authorize('view', $dailyReport);
 
         $docx = (new DocxGenerator($dailyReport))->run();
-        $filename = "Laporan Harian {$dailyReport->shipbuilding->name}.docx";
+        $filename = "Laporan Harian {$dailyReport->shipbuilding->name} - "
+            . $dailyReport->date->format('Y-m-d') . ".docx";
 
         header("Content-Description: File Transfer");
         header('Content-Disposition: attachment; filename="' . $filename . '"');
