@@ -122,26 +122,30 @@ TXT;
             'borderSize' => 0,
             'width' => Converter::cmToTwip(16),
         ]);
+        $cellStyle = [
+            'borderBottomSize' => 25, // Bold bottom border
+            'borderBottomColor' => '000000',
+        ];
         $row = $table->addRow();
-        $bkiCell = $row->addCell(Converter::cmToTwip(5));
+        $bkiCell = $row->addCell(Converter::cmToTwip(5), $cellStyle);
         $bkiCell->addImage(
             file_get_contents('images/logo/bki-main.jpg'),
             [
-                'width' => converter::cmToPoint(2.12),
-                'height' => converter::cmToPoint(1.38),
+                'width' => converter::cmToPoint(2.75),
+                'height' => converter::cmToPoint(1.56),
             ]);
-        $titleCell = $row->addCell(Converter::cmToTwip(6));
+        $titleCell = $row->addCell(Converter::cmToTwip(6), $cellStyle);
         $titleCell->addText('Laporan Harian', fBold, pCenter);
         $titleCell->addText('Tanggal ' . $this->dailyReport->date->format('d/m/Y'), fBold, pCenter);
-        $bagCell = $row->addCell(Converter::cmToTwip(5));
+        $bagCell = $row->addCell(Converter::cmToTwip(5), $cellStyle);
         $bagCell->addImage(
             file_get_contents('images/logo/bag.jpg'),
             [
                 'width' => converter::cmToPoint(2.58),
                 'height' => converter::cmToPoint(1.45),
+                'alignment' => Jc::END,
             ]
         );
-        $header->addLine(['weight' => 3]);
 
 
     }
