@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\DailyReport\DocxGenerator;
+use App\Actions\DailyReport\DocxTemplate;
 use App\Helpers\Date;
 use App\Http\Requests\DailyReportStoreRequest;
 use App\Http\Requests\DailyReportUpdateRequest;
@@ -22,7 +22,7 @@ class DailyReportController extends Controller
     {
         $this->authorize('view', $dailyReport);
 
-        $docx = (new DocxGenerator($dailyReport))->run();
+        $docx = (new DocxTemplate($dailyReport))->run();
         $filename = "Laporan Harian {$dailyReport->shipbuilding->name} - "
             . $dailyReport->date->format('Y-m-d') . ".docx";
 
@@ -33,8 +33,7 @@ class DailyReportController extends Controller
         header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
         header('Expires: 0');
 
-        $xmlWriter = \PhpOffice\PhpWord\IOFactory::createWriter($docx, 'Word2007');
-        $xmlWriter->save("php://output");
+        $docx->saveAs("php://output");
     }
 
     /**
