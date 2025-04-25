@@ -369,6 +369,13 @@
                             >
                                 <i class="icon ion-md-eye"></i>
                             </a>
+                            <a
+                                href="{{ route('daily-reports.docx', $dailyReport) }}"
+                                class="button mr-1"
+                                title="download sebagai file word"
+                            >
+                                <i class="icon ion-md-download"></i>
+                            </a>
                             @can('update', $dailyReport)
                                 <a
                                     href="{{ route('daily-reports.edit', $dailyReport) }}"

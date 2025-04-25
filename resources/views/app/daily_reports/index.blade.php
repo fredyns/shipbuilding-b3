@@ -136,6 +136,18 @@
                                                     <i class="icon ion-md-eye"></i>
                                                 </button>
                                             </a>
+                                            <a
+                                                href="{{ route('daily-reports.docx', $dailyReport) }}"
+                                                class="mr-1"
+                                                title="download sebagai file word"
+                                            >
+                                                <button
+                                                    type="button"
+                                                    class="button"
+                                                >
+                                                    <i class="icon ion-md-download"></i>
+                                                </button>
+                                            </a>
                                         @endcan
                                     </div>
                                 </td>
