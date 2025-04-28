@@ -97,6 +97,11 @@
                         Kembali ke Pembangunan Kapal
                     </a>
 
+                    <a href="{{ route('daily-reports.docx', $dailyReport) }}" class="button">
+                        <i class="mr-1 icon ion-md-download"></i>
+                        Word
+                    </a>
+
                     @can('update', $dailyReport)
                         <a
                             href="{{ route('daily-reports.edit', $dailyReport) }}"
