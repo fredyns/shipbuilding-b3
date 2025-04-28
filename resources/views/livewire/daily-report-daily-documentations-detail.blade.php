@@ -201,7 +201,22 @@
                         />
                     </td>
                     <td class="px-4 py-3 text-left">
-                        {{ $dailyDocumentation->remark ?? '-' }}
+                        <div>
+                            {{ $dailyDocumentation->remark ?? '-' }}
+                        </div>
+
+                        <!-- Show the image -->
+                        @if($dailyDocumentation->image)
+                            <div>
+                                <img
+                                    src="{{ \Storage::url($dailyDocumentation->image) }}"
+                                    class="object-cover rounded border border-gray-200"
+                                    style="max-width: 960px;"
+                                />
+                            </div>
+                        @else
+                            <i class="text-gray-500">no-image</i>
+                        @endif
                     </td>
                     <td class="px-4 py-3 text-right" style="width: 134px;">
                         <div
