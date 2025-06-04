@@ -41,7 +41,7 @@ class DocxTemplate
         $this->template->cloneRowAndSetValues('eNo', iterator_to_array($this->equipmentData()));
         $this->template->cloneRowAndSetValues('mNo', iterator_to_array($this->materialData()));
         $this->template->cloneRowAndSetValues('aNo', iterator_to_array($this->activityData()));
-
+        $this->writeDocumentations();
 
         return $this->template;
     }
@@ -151,14 +151,29 @@ class DocxTemplate
 
         $i = 0;
         foreach ($this->dailyReport->dailyDocumentations as $documentation) {
+            $i++;
             $data = [
-                'dNo' => ++$i,
-                'documentationRemark' => htmlspecialchars($documentation->remark),
+                'dNo#'.$i => $i.DIRECTORY_SEPARATOR,
+                'dRemark#'.$i => htmlspecialchars($documentation->remark),
             ];
             $this->template->setValues($data);
 
             $imgPath = \Storage::url($documentation->image);
-            $this->template->setImageValue('documentationImage#' . $i, $imgPath, 1);
+
+            if (DIRECTORY_SEPARATOR === '\\') {
+                // Windows path
+                $imgPath = str_replace('/', '\\', $imgPath);
+            } else {
+                // Unix-like path
+                $imgPath = str_replace('\\', '/', $imgPath);
+            }
+
+            $imgPath = storage_path($imgPath);
+            $pattern = implode(DIRECTORY_SEPARATOR, ['storage', 'storage']);
+            $replace = implode(DIRECTORY_SEPARATOR, ['storage', 'app', 'public']);
+            $imgPath = str_replace($pattern, $replace, $imgPath);
+            $this->template->setImageValue('dImage#'.$i, $imgPath, 1);
+            //            $this->template->setValue('v#'.$i, $imgPath);
 
         }
 
