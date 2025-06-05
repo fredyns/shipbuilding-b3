@@ -141,10 +141,11 @@ class DocxTemplate
         if (!$this->dailyReport->dailyDocumentations()->exists()) {
             $data = [
                 'dNo' => '1',
-                'documentationImage' => '-',
-                'documentationRemark' => '-',
+                'dImage:width=15cm:height=:ratio=true' => '-',
+                'dRemark' => '',
             ];
             $this->template->setValues($data);
+            return;
         }
 
         $this->template->cloneRow('dNo', $this->dailyReport->dailyDocumentations()->count());
@@ -173,12 +174,12 @@ class DocxTemplate
             $replace = implode(DIRECTORY_SEPARATOR, ['storage', 'app', 'public']);
             $imgPath = str_replace($pattern, $replace, $imgPath);
             $this->template->setImageValue('dImage#'.$i, $imgPath);
-//            $this->template->setImageValue('dImage#'.$i, [
-//                'path' => $imgPath,
-//                'width' => '15cm',
-//                'height' => '',
-//                'ratio' => true,
-//            ]);
+            //            $this->template->setImageValue('dImage#'.$i, [
+            //                'path' => $imgPath,
+            //                'width' => '15cm',
+            //                'height' => '',
+            //                'ratio' => true,
+            //            ]);
         }
 
     }

@@ -63,7 +63,7 @@ class DailyReportController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request): View
+    public function create(Request $request): View|RedirectResponse
     {
         $this->authorize('create', DailyReport::class);
 
