@@ -52,6 +52,9 @@
                             <th class="px-4 py-3 text-left">
                                 @lang('crud.daily_reports.inputs.date')
                             </th>
+                            <th class="px-4 py-3 text-left">
+                                @lang('crud.daily_reports.inputs.shipbuilding_id')
+                            </th>
                             <th class="px-4 py-3 text-right">
                                 @lang('crud.daily_reports.inputs.actual_progress')
                             </th>
@@ -75,6 +78,9 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="px-4 py-3 text-left">
                                     {{ optional($dailyReport->date)->format('D, d M Y') }}
+                                </td>
+                                <td class="px-4 py-3 text-left">
+                                    {{ optional($dailyReport->shipbuilding)->name ?? '-' }}
                                 </td>
                                 <td class="px-4 py-3 text-right">
                                     {{ $dailyReport->actual_progress ?? '-' }}
@@ -154,7 +160,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="7">
+                                <td colspan="8">
                                     @lang('crud.common.no_items_found')
                                 </td>
                             </tr>
@@ -162,7 +168,7 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                            <td colspan="7">
+                            <td colspan="8">
                                 <div class="mt-10 px-4">
                                     {!! $dailyReports->render() !!}
                                 </div>
