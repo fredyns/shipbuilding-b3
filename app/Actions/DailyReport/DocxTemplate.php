@@ -153,7 +153,7 @@ class DocxTemplate
         foreach ($this->dailyReport->dailyDocumentations as $documentation) {
             $i++;
             $data = [
-                'dNo#'.$i => $i.DIRECTORY_SEPARATOR,
+                'dNo#'.$i => $i,
                 'dRemark#'.$i => htmlspecialchars($documentation->remark),
             ];
             $this->template->setValues($data);
@@ -172,9 +172,13 @@ class DocxTemplate
             $pattern = implode(DIRECTORY_SEPARATOR, ['storage', 'storage']);
             $replace = implode(DIRECTORY_SEPARATOR, ['storage', 'app', 'public']);
             $imgPath = str_replace($pattern, $replace, $imgPath);
-            $this->template->setImageValue('dImage#'.$i, $imgPath, 1);
-            //            $this->template->setValue('v#'.$i, $imgPath);
-
+            $this->template->setImageValue('dImage#'.$i, $imgPath);
+//            $this->template->setImageValue('dImage#'.$i, [
+//                'path' => $imgPath,
+//                'width' => '15cm',
+//                'height' => '',
+//                'ratio' => true,
+//            ]);
         }
 
     }
